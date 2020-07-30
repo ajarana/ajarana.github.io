@@ -1,0 +1,1 @@
+GitHub Pages only builds content for the root page from this `master` branch. My [portfolio website](https://ajarana.github.io/) was created via [Create React App](https://github.com/facebook/create-react-app), therefore the source code and proper version control branches are in this [repository](https://github.com/ajarana/portfolio-website).
