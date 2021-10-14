@@ -83,6 +83,27 @@ class Resume extends React.Component {
 
             <section className="subSection">
               <section className="flexSeparated">
+                <h3 className="secondaryHeader">Senior Front-End Developer</h3>
+                <p>
+                  January 2021 - Present
+                </p>
+              </section>
+
+              <h4>Ace Info Solutions</h4>
+
+              <ul>
+                <li>
+                  Used React and Typescript to build the front-end for a web application targeting modern Chromium and Safari browsers.
+                </li>
+
+                <li>
+                  Coordinated with a business analyst to design UI controls that met the project's  business needs and with back-end developers to ensure the REST API sent and received all necessary data.
+                </li>
+              </ul>
+            </section>
+
+            <section className="subSection">
+              <section className="flexSeparated">
                 <h3 className="secondaryHeader">Front-End Developer</h3> 
                 <p>
                   April 2019 - Present
@@ -136,21 +157,6 @@ class Resume extends React.Component {
                 </li>
               </ul>
             </section>
-
-            <section className="subSection">
-              <section className="flexSeparated">
-                <h3 className="secondaryHeader">Web Developer</h3>
-                <p>October 2016 - November 2018</p>
-              </section>
-              
-              <h4>Freelance</h4>
-
-              <ul>
-                <li>
-                  Provided front-end web services including content updates, styling, and client-side scripts.
-                </li>
-              </ul>
-          </section>
 
           </section>
 
