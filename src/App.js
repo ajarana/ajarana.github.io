@@ -10,7 +10,6 @@ import Bootstrap3SiteDevelopment from './components/blog/Bootstrap3SiteDevelopme
 import NewsFeedDevelopment from './components/blog/NewsFeedDevelopment'
 import { HashRouter as Router, Route } from "react-router-dom"
 import ScrollToTop from './components/etc/ScrollToTop'
-import { hot } from 'react-hot-loader/root'
 import 'normalize.css'
 import './App.scss'
 
@@ -62,4 +61,4 @@ class App extends Component {
   }
 }
 
-export default hot(App);
+export default App;

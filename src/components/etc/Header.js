@@ -1,5 +1,4 @@
 import React from 'react'
-import { hot } from 'react-hot-loader/root'
 import { NavLink } from "react-router-dom"
 
 class Header extends React.Component {
@@ -110,4 +109,4 @@ class Header extends React.Component {
   }
 }
 
-export default hot(Header)
+export default Header;

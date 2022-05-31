@@ -75,7 +75,7 @@ const Projects = props => {
       },
       lastUpdated: props.githubData.blockAid.lastUpdated,
       blog: '/blog/development-canvas-game',
-      url: 'https://ajarana.github.io/agame/index.html'
+      url: 'https://ajarana.github.io/agame'
     },
     {
       title: 'Mixtin',
@@ -87,7 +87,7 @@ const Projects = props => {
       },
       lastUpdated: props.githubData.mixtin.lastUpdated,
       blog: '/blog/development-bootstrap-3-site',
-      url: 'https://ajarana.github.io/mixtin/index.html'
+      url: 'https://ajarana.github.io/mixtin'
     },
     {
       title: 'News Feed',

@@ -56,15 +56,6 @@
 .portfolio {
   .imageHolder {
     width: 100%;
-
-    #firstImage {
-      background-image: url("%PUBLIC_URL%/assets/agame/agame2.local-4.png");
-      width: 263px;
-      height: 263px;
-
-      width: 320px;
-      height: 317px;
-    }
   }
   @media (min-width: 992px) {
     .imageHolder {
