@@ -1,5 +1,4 @@
 import React from 'react'
-import { hot } from 'react-hot-loader/root'
 
 class ResponsiveCanvasDevelopment extends React.Component {
   constructor() {
@@ -333,4 +332,4 @@ class ResponsiveCanvasDevelopment extends React.Component {
   }
 }
 
-export default hot(ResponsiveCanvasDevelopment)
+export default ResponsiveCanvasDevelopment;
