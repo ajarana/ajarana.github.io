@@ -23,15 +23,13 @@ class App extends Component {
       display: block;
       padding: 20px;
       margin: 10px;
-      color: #333; 
-      background: linear-gradient(217deg, hsl(207, 89%, 86%), hsl(207, 89%, 82%));
-      border: 2px solid #74c0e7;
-      font: 600 16px monospace; 
+      border: 2px solid #aaa;
       border-radius: 10px;
+      font: 600 16px monospace; 
       line-height: 1.75;
     `;
 
-    console.log("%cHello, I'm Andres. I developed this website, with the help of some packages, and designed it myself. I'm always open to learning new things, so please reach out at ajoelarana@gmail.com if you would like to talk.", style);
+    console.log("%cHi, I'm Andres. I developed and designed this website. My resume can be found here: https://ajarana.github.io/#/about/.", style);
   }
 
   render() {
