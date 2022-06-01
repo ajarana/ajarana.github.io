@@ -9,19 +9,20 @@ const Project = props => {
 
   const {
     assets,
-    blog,
+    blogPath,
     description,
     descriptionWarning,
     lastUpdated,
     title,
-    url
+    projectUrl,
+    codeUrl
   } = project;
 
   return (
     <section className="sectionContainer">
       <div className="project flexCenteredToFlexTopLeft flexWrapThenNoWrap invisible">
         <figure className="imageHolder flexCentered">
-          <a href={ url } target="_blank" rel="noopener noreferrer">
+          <a href={ projectUrl } target="_blank" rel="noopener noreferrer">
             <img className="images" 
                 src={ assets.src } 
                 alt={ assets.alt }
@@ -43,18 +44,18 @@ const Project = props => {
           </header>
 
           <ul className="linkContainer">
-            {(url) &&
+            {(projectUrl) &&
                 <li>
-                    <a href={ url } className="linkIcon" target="_blank" rel="noopener noreferrer">View project</a>
+                  <a href={ projectUrl } className="linkIcon" target="_blank" rel="noopener noreferrer">View project</a>
                 </li>   
             }
 
             <li>
-              <a href="https://github.com/ajarana/agame" className="linkIcon" target="_blank" rel="noopener noreferrer">View code</a>
+              <a href={ codeUrl } className="linkIcon" target="_blank" rel="noopener noreferrer">View code</a>
             </li>
 
             <li>
-              <NavLink to={ blog } className="linkIcon">Read more</NavLink>
+              <NavLink to={ blogPath } className="linkIcon">Read more</NavLink>
             </li>
           </ul>
         </div>
@@ -74,8 +75,9 @@ const Projects = props => {
         srcset: 'assets/agame/agame-1x.png, assets/agame/agame-2x.png 2x, assets/agame/agame-4x.png 4x'
       },
       lastUpdated: props.githubData.blockAid.lastUpdated,
-      blog: '/blog/development-canvas-game',
-      url: 'https://ajarana.github.io/agame'
+      blogPath: '/blog/development-canvas-game',
+      projectUrl: 'https://ajarana.github.io/agame',
+      codeUrl: 'https://github.com/ajarana/agame'
     },
     {
       title: 'Mixtin',
@@ -86,8 +88,9 @@ const Projects = props => {
         srcset: 'assets/mixtin/mixtin-1x-C.png, assets/mixtin/mixtin-2x-C.png 2x, assets/mixtin/mixtin-4x-C2.png 4x'
       },
       lastUpdated: props.githubData.mixtin.lastUpdated,
-      blog: '/blog/development-bootstrap-3-site',
-      url: 'https://ajarana.github.io/mixtin'
+      blogPath: '/blog/development-bootstrap-3-site',
+      projectUrl: 'https://ajarana.github.io/mixtin',
+      codeUrl: 'https://github.com/ajarana/mixtin'
     },
     {
       title: 'News Feed',
@@ -99,7 +102,8 @@ const Projects = props => {
         srcset: 'assets/arcade/arcade-1x-C2.png, assets/arcade/arcade-2x-C2.png 2x, assets/arcade/arcade-4x-C2.png 4x'
       },
       lastUpdated: props.githubData.newsFeed.lastUpdated,
-      blog: '/blog/development-reactjs-news-feed'
+      blogPath: '/blog/development-reactjs-news-feed',
+      codeUrl: 'https://github.com/ajarana/arcade'
     }
   ];
 
@@ -219,7 +223,7 @@ class Home extends Component {
 
               <ul className="linkContainer">
                   <li>
-                    <a href="https://github.com/ajarana/portfolio" className="linkIcon" target="_blank" rel="noopener noreferrer">Site code</a>
+                    <a href="https://github.com/ajarana/ajarana.github.io" className="linkIcon" target="_blank" rel="noopener noreferrer">Site code</a>
                   </li>
                   <li>
                     <NavLink className="linkIcon" to="/about/" rel="noopener noreferrer">
