@@ -12,7 +12,7 @@ class CanvasGameDevelopment extends React.Component {
 
       <section className="mainContainer blogContainer">
          <h1>Building an HTML5 Canvas Game</h1>
-         <p>I built <a href="/agame/">this game</a> game using vanilla JavaScript as my main tool. Below I elaborate on the things I learned about both JS and responsive design.</p>
+         <p>I built <a href="/agame/" target="_blank" rel="noopener noreferrer">this game</a> game using vanilla JavaScript as my main tool. Below I elaborate on the things I learned about both JS and responsive design.</p>
 
          <h2>Responsive Design</h2>
          <p>If you're building a web game these days, it should be <a href="https://adwords.googleblog.com/2015/05/building-for-next-moment.html" target="_blank" rel="noopener noreferrer">responsive</a>. Mobile usage is only going to increase as more users get access to powerful handheld devices with their ever-increasing capabilities.</p>

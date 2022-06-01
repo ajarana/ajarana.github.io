@@ -12,7 +12,7 @@ class NewsFeedDevelopment extends React.Component {
 
       <section className="mainContainer blogContainer">
          <h1>Building a ReactJS News Feed</h1>
-         <p>This <a href="/arcade/">news feed</a> was built using ReactJS and Redux. I also used plain, old CSS3 for the layout and icons. I didn't bother generating the header or footer with React, however, because it's a static component I use across my entire website.</p>
+         <p>This <a href="https://github.com/ajarana/arcade" target="_blank" rel="noopener noreferrer">news feed</a> was built using ReactJS and Redux. I also used plain, old CSS3 for the layout and icons. I didn't bother generating the header or footer with React, however, because it's a static component I use across my entire website.</p>
 
          <h2>React</h2>
          <p>As I mentioned before, everything besides the header and footer are rendered with ReactJS. I separated the layout between <a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0" target="_blank" rel="noopener noreferrer">presentational and container components</a> in order to separate elements that serve as sources of data versus those that are simply passed data to present.</p>

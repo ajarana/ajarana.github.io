@@ -12,7 +12,7 @@ class Bootstrap3SiteDevelopment extends React.Component {
 
         <section className="mainContainer blogContainer">
           <h1>Building a Bootstrap 3 Image Gallery</h1>
-          <p>I designed and developed <a href="/mixtin/">this gallery</a> using Boostrap 3 components, LESS, HTML5, and a little bit of JavaScript. Bootstrap takes care of a lot of things for you: the design, media queries, modular classes, meta tags, and UI transitions and animations. Customization requires a little more knowledge, but otherwise it is a very easy framework to work with.</p>
+          <p>I designed and developed <a href="/mixtin/" target="_blank" rel="noopener noreferrer">this gallery</a> using Boostrap 3 components, LESS, HTML5, and a little bit of JavaScript. Bootstrap takes care of a lot of things for you: the design, media queries, modular classes, meta tags, and UI transitions and animations. Customization requires a little more knowledge, but otherwise it is a very easy framework to work with.</p>
 
           <h2>Boostrap Components</h2>
           <p>Components used included navbars, containers, columns, among other components. Bootstrap's extensive <a href="http://getbootstrap.com/components/" target="_blank" rel="noopener noreferrer">documentation</a> does more than enough to get you through any problems.</p>
