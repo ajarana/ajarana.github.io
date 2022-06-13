@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import moment from 'moment';
 
+interface FooterState {
+  githubData: {
+    portfolio: {
+      lastUpdated: string;
+    }
+  }
+};
+
 class Footer extends Component {
-  constructor() {
-    super() 
-    
-    this.state = {
-      githubData: {
-        portfolio: {
-          lastUpdated: 'No data received yet.'
-        }
+  state: FooterState = {
+    githubData: {
+      portfolio: {
+        lastUpdated: 'No data received yet.'
       }
     }
   }
@@ -45,4 +49,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer
+export default Footer;
