@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Project } from "../../types/Project";
+import './index.scss';
 
 interface CodeProjectProps {
   project: Project;

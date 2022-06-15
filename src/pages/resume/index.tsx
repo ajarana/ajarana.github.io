@@ -1,4 +1,5 @@
 import React from 'react'
+import './index.scss';
 
 class Resume extends React.Component {
   render() {

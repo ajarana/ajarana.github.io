@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import moment from 'moment';
+import moment from 'moment'
+import './index.scss'
 
 interface FooterState {
   githubData: {

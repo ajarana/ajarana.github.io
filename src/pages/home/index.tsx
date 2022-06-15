@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import moment from 'moment';
+import moment from 'moment'
 import { NavLink } from "react-router-dom"
-import { CodeProjects } from './CodeProjects';
+import { CodeProjects } from '../../components/code-projects'
+import './index.scss'
 
 interface HomeState {
   githubData: {

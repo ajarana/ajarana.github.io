@@ -1,5 +1,5 @@
 import { Project } from "../../types/Project";
-import { CodeProject } from "./CodeProject";
+import { CodeProject } from "../code-project";
 
 interface CodeProjectsProps {
   projects: Project[];
