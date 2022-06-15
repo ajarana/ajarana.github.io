@@ -1,71 +1,63 @@
-import React from 'react'
+import React, { Component } from 'react'
+// import './index.scss'
 
-class ResponsiveCanvasDevelopment extends React.Component {
-  constructor() {
-    super()
-
-    this.aWrapper = null;
-    this.canvas = null;
-    this.ctx = null;
-
-    this.setCanvasScalingFactor = this.setCanvasScalingFactor.bind(this);
-    this.resizeCanvas = this.resizeCanvas.bind(this);
-  }
+class ResponsiveCanvasDevelopment extends Component<any, any> {
+  aWrapper: HTMLElement | null = null;
+  canvas: HTMLCanvasElement | null = null;
+  ctx: CanvasRenderingContext2D | null = null;
 
   componentDidMount() {
     this.aWrapper = document.getElementById("aWrapper");
-    this.canvas = document.getElementById("myCanvas");
-    this.ctx = this.canvas.getContext("2d");
+    this.canvas = document.getElementById("myCanvas") as HTMLCanvasElement;
+    this.ctx = this.canvas?.getContext("2d");
 
-    let that = this;
+    let cascadeFactor = 255;
+    let cascadeCoefficient = 1;
 
-    var cascadeFactor = 255;
-    var cascadeCoefficient = 1;
+    const draw = () => {
+      if (this.canvas?.width && this.ctx) {
+        const columns = 8;
+        const rows = 5;
+        const length = Math.round(this.canvas.width / (columns)) - 2;
 
-    function draw() {
-      //The number of color block columns and rows
-      var columns = 8;
-      var rows = 5;
-      //The length of each square
-      var length = Math.round(that.canvas.width/(columns)) - 2;
+        //Increments or decrements cascadeFactor by 1, based on cascadeCoefficient
+        cascadeFactor += cascadeCoefficient;
 
-      //Increments or decrements cascadeFactor by 1, based on cascadeCoefficient
-      cascadeFactor += cascadeCoefficient;
+        //Makes sure the canvas is clean at the beginning of a frame
+        this.ctx?.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      //Makes sure the canvas is clean at the beginning of a frame
-      that.ctx.clearRect(0, 0, that.canvas.width, that.canvas.height);
+        for (let i = columns; i >= 1; i--) {
+          for (let j = rows; j >= 1; j--) {
+            //Where the color magic happens
 
-      for (var i = columns; i >= 1; i--) {
-        for (var j = rows; j >= 1; j--) {
-          //Where the color magic happens
-
-          var r = (j*i*(cascadeFactor-110)),
-              g = (i*cascadeFactor),
-              b = (j*cascadeFactor),
+            let r = (j * i * (cascadeFactor - 110)),
+              g = (i * cascadeFactor),
+              b = (j * cascadeFactor),
               max = 248;
 
-          if (r > max) {
-            r = max;
-          }
-          if (g > max) {
-            g = max;
-          }
-          if (b > max) {
-            b = max;
-          }
+            if (r > max) {
+              r = max;
+            }
+            if (g > max) {
+              g = max;
+            }
+            if (b > max) {
+              b = max;
+            }
 
-          that.ctx.fillStyle = "rgba(" + r + "," + g + "," + b + "," + 0.6 + ")";
+            this.ctx.fillStyle = "rgba(" + r + "," + g + "," + b + "," + 0.6 + ")";
 
-          that.ctx.fillRect((length*(i-1)) + ((i-1)*2), (length*(j-1)) + ((j-1)*2), length, length);
+            this.ctx.fillRect((length * (i - 1)) + ((i - 1) * 2), (length * (j - 1)) + ((j - 1) * 2), length, length);
+          }
         }
-      }
 
-      if (cascadeFactor > 255 || cascadeFactor < 0) {
-        //Resets the color cascade
-        cascadeCoefficient = -cascadeCoefficient;
+        if (cascadeFactor > 255 || cascadeFactor < 0) {
+          //Resets the color cascade
+          cascadeCoefficient = -cascadeCoefficient;
+        }
+        //Continuously calls draw() again until cancelled
+        window.requestAnimationFrame(draw);
       }
-      //Continuously calls draw() again until cancelled
-      window.requestAnimationFrame(draw);
     }
 
     window.addEventListener("resize", this.resizeCanvas, false);
@@ -73,38 +65,37 @@ class ResponsiveCanvasDevelopment extends React.Component {
     draw();
   }
 
-  setCanvasScalingFactor() {
+  setCanvasScalingFactor = () => {
     return window.devicePixelRatio || 1;
   }
 
-  resizeCanvas() {
-    //Gets the devicePixelRatio
-    var pixelRatio = this.setCanvasScalingFactor();
-    var elem = document.getElementById("blog");
-    var width;
-    //The viewport is in portrait mode, so var width should be based off viewport WIDTH
-    if (window.innerHeight > window.innerWidth && window.getComputedStyle(elem,null)) {
+  resizeCanvas = () => {
+    if (this.aWrapper && this.canvas) {
+      //Gets the devicePixelRatio
+      const pixelRatio = this.setCanvasScalingFactor();
+      const elem = document.getElementById("blog") as HTMLElement;
+      let width: number;
+      //The viewport is in portrait mode, so width should be based off viewport WIDTH
+      if (window.innerHeight > window.innerWidth && window.getComputedStyle(elem, null)) {
         //Makes the canvas 100% of parent width
-        width = parseInt(window.getComputedStyle(elem,null).getPropertyValue("width"), 10) - (parseInt(window.getComputedStyle(elem,null).getPropertyValue("padding-right"), 10)*2);
-      // var width = parseInt(window.getComputedStyle(aWrapper,null).getPropertyValue("width"), 10) - (parseInt(window.getComputedStyle(aWrapper,null).getPropertyValue("padding-right"), 10)*2);
-    }
-    //The viewport is in landscape mode, so var width should be based off viewport HEIGHT
-    else {
+        width = parseInt(window.getComputedStyle(elem, null).getPropertyValue("width"), 10) - (parseInt(window.getComputedStyle(elem, null).getPropertyValue("padding-right"), 10) * 2);
+      }
+      //The viewport is in landscape mode, so width should be based off viewport HEIGHT
+      else {
         //Makes the canvas 100% of parent width
-        width = parseInt(window.getComputedStyle(elem,null).getPropertyValue("width"), 10) - (parseInt(window.getComputedStyle(elem,null).getPropertyValue("padding-right"), 10)*2);
+        width = parseInt(window.getComputedStyle(elem, null).getPropertyValue("width"), 10) - (parseInt(window.getComputedStyle(elem, null).getPropertyValue("padding-right"), 10) * 2);
+      }
+
+      //This is done in order to maintain the 1:1 aspect ratio, adjust as needed
+      const height = Math.round(0.625 * width);
+
+      //This will be used to downscale the canvas element when devicePixelRatio > 1
+      this.aWrapper.style.width = width + "px";
+      this.aWrapper.style.height = height + "px";
+
+      this.canvas.width = width * pixelRatio;
+      this.canvas.height = height * pixelRatio;
     }
-
-    //This is done in order to maintain the 1:1 aspect ratio, adjust as needed
-    // var height = width;
-    var height = Math.round(0.625 * width);
-    // var height = Math.round(0.825 * width);
-
-    //This will be used to downscale the canvas element when devicePixelRatio > 1
-    this.aWrapper.style.width = width + "px";
-    this.aWrapper.style.height = height + "px";
-
-    this.canvas.width = width * pixelRatio;
-    this.canvas.height = height * pixelRatio;
   }
 
   componentWillUnmount() {
@@ -192,7 +183,7 @@ class ResponsiveCanvasDevelopment extends React.Component {
           </ol>
           <p>To make a long story short, the most dependable of those 4 combos is the innerWidth/innerHeight pair. As of iOS 10, for example, both window.outerWidth and window.outerHeight return 0 on mobile Safari, Chrome, Firefox, and Opera Mini. These properties are also less useful because they include the whole browser window, rather than just the viewport where elements are actually rendered.</p>
           <p>Screen.width always returns the same value for iOS devices, whether the screen is in landscape or portrait mode. On Android, however, screen.width is dynamic and will change according to the device's current orientation. The same is true for screen.availWidth and screen.availHeight.</p>
-          <p>So now that we have a reliable way of altering the coordinate space, we can figure out how exactly we'll do that. If the viewport is in portrait mode (window.innerHeight > window.innerWidth), then our limiting factor is the viewport width, so we set our canvas's width relative to the viewport width. If the viewport is in landscape mode (window.innerWidth > window.innerHeight), then the limiting factor is the viewport height, so we set width relative to the viewport height.</p>
+          <p>So now that we have a reliable way of altering the coordinate space, we can figure out how exactly we'll do that. If the viewport is in portrait mode (window.innerHeight &gt; window.innerWidth), then our limiting factor is the viewport width, so we set our canvas's width relative to the viewport width. If the viewport is in landscape mode (window.innerWidth &gt; window.innerHeight), then the limiting factor is the viewport height, so we set width relative to the viewport height.</p>
           <p>Feel free to use whatever breakpoints you want:</p>
           <pre className="darkBackground"><code><span className="codePurple">function</span> <span className="codeBlue">resizeCanvas</span>() &#123;
           {`\n  `}
@@ -200,9 +191,9 @@ class ResponsiveCanvasDevelopment extends React.Component {
     {`\n  `}
     <span className="codePurple">var</span> pixelRatio = <span className="codeBlue">setCanvasScalingFactor</span>();
     {`\n  `}
-    <span className="codeGray">{'//'}The viewport is in portrait mode, so var width should be based off viewport WIDTH</span>
+    <span className="codeGray">{'//'}The viewport is in portrait mode, so width should be based off viewport WIDTH</span>
     {`\n\n  `}
-    <span className="codePurple">if</span> (<span className="codeRed">window</span>.<span className="codeRed">innerHeight</span> <span className="codeTeal">></span> <span className="codeRed">window</span>.<span className="codeRed">innerWidth</span>) &#123;
+    <span className="codePurple">if</span> (<span className="codeRed">window</span>.<span className="codeRed">innerHeight</span> <span className="codeTeal">&gt;</span> <span className="codeRed">window</span>.<span className="codeRed">innerWidth</span>) &#123;
     {`\n    `}
         <span className="codeGray">{'//'}Makes the canvas 100% of the viewport width</span>
         {`\n    `}
@@ -210,7 +201,7 @@ class ResponsiveCanvasDevelopment extends React.Component {
         {`\n  `}
     &#125;
     {`\n  `}
-  <span className="codeGray">{'//'}The viewport is in landscape mode, so var width should be based off viewport HEIGHT</span>
+  <span className="codeGray">{'//'}The viewport is in landscape mode, so width should be based off viewport HEIGHT</span>
   {`\n  `}
     <span className="codePurple">else</span> &#123;
     {`\n    `}
@@ -225,7 +216,7 @@ class ResponsiveCanvasDevelopment extends React.Component {
     <span className="codePurple">var</span> height = width;
 
     <span className="codeGray">
-    {`\n\n  `}{'//'}This will be used to downscale the canvas element when devicePixelRatio > 1</span>
+    {`\n\n  `}{'//'}This will be used to downscale the canvas element when devicePixelRatio &gt; 1</span>
     {`\n  `}
     <span className="codeRed">aWrapper</span>.<span className="codeRed">style</span>.<span className="codeRed">width</span> <span className="codeTeal">=</span> width <span className="codeTeal">+</span> <span className="codeGreen">"px"</span>;
     {`\n  `}
@@ -238,7 +229,7 @@ class ResponsiveCanvasDevelopment extends React.Component {
     <span className="codeRed">canvas</span>.<span className="codeRed">height</span> <span className="codeTeal">=</span> height <span className="codeTeal">*</span> pixelRatio;
     {`\n`}
 &#125;</code></pre>
-          <p><a  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round" target="_blank" rel="noopener noreferrer">Math.round</a> (only useful for when you don't want the canvas to be 100% of the viewport height/width) is used on <span className="code">var width</span> because floating point numbers are not a reliable way of drawing pixel-perfect canvas content. The resizing transitions might not be as smooth, but a few miniscule jumps is well worth high canvas content quality. </p>
+          <p><a  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round" target="_blank" rel="noopener noreferrer">Math.round</a> (only useful for when you don't want the canvas to be 100% of the viewport height/width) is used on <span className="code">width</span> because floating point numbers are not a reliable way of drawing pixel-perfect canvas content. The resizing transitions might not be as smooth, but a few miniscule jumps is well worth high canvas content quality. </p>
           <h2>Drawing some shapes</h2>
           <p>This function draws some rectangles to help show the responsive canvas in action. At the end, we use the <a  href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame" target="_blank" rel="noopener noreferrer">window.requestAnimationFrame</a> method. This allows the browser to call your draw function before its next repaint, with whatever frequency it deems appropriate. As a result, this option is preferable to the  <a  href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval" target="_blank" rel="noopener noreferrer">window.setInterval()</a> method of updating a canvas. </p>
           <pre className="darkBackground"><code><span className="codeGray">{'//'}To make dynamic colors</span>
@@ -267,9 +258,9 @@ class ResponsiveCanvasDevelopment extends React.Component {
     {`\n  `}
     <span className="codeRed">ctx</span>.<span className="codeBlue">clearRect</span>(<span className="codeOrange">0</span>, <span className="codeOrange">0</span>, <span className="codeRed">canvas</span>.<span className="codeRed">width</span>, <span className="codeRed">canvas</span>.<span className="codeRed">height</span>);
 {`\n\n  `}
-    <span className="codePurple">for</span> (<span className="codePurple">var</span> i<span className="codeTeal"> = </span>columns; i <span className="codeTeal">>=</span> <span className="codeOrange">1</span>; i<span className="codeTeal">--</span>) &#123;
+    <span className="codePurple">for</span> (<span className="codePurple">var</span> i<span className="codeTeal"> = </span>columns; i <span className="codeTeal">&gt;=</span> <span className="codeOrange">1</span>; i<span className="codeTeal">--</span>) &#123;
     {`\n    `}
-      <span className="codePurple">for</span> (<span className="codePurple">var</span> j<span className="codeTeal"> = </span>rows; j <span className="codeTeal">>=</span> <span className="codeOrange">1</span>; j<span className="codeTeal">--</span>) &#123;
+      <span className="codePurple">for</span> (<span className="codePurple">var</span> j<span className="codeTeal"> = </span>rows; j <span className="codeTeal">&gt;=</span> <span className="codeOrange">1</span>; j<span className="codeTeal">--</span>) &#123;
       {`\n      `}
         <span className="codeGray">{'//'}Where the color magic happens</span>
         {`\n      `}
@@ -283,7 +274,7 @@ class ResponsiveCanvasDevelopment extends React.Component {
     &#125;
     {`\n\n  `}
 
-    <span className="codePurple">if</span> (cascadeFactor <span className="codeTeal">></span> <span className="codeOrange">275</span> <span className="codeTeal">||</span> cascadeFactor <span className="codeTeal">&lt;</span> <span className="codeOrange">0</span>) &#123;
+    <span className="codePurple">if</span> (cascadeFactor <span className="codeTeal">&gt;</span> <span className="codeOrange">275</span> <span className="codeTeal">||</span> cascadeFactor <span className="codeTeal">&lt;</span> <span className="codeOrange">0</span>) &#123;
     {`\n    `}
       <span className="codeGray">{'//'}Resets the color cascade</span>
       {`\n    `}

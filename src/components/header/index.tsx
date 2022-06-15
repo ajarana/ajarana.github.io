@@ -1,15 +1,18 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
+import './index.scss';
 
 class Header extends React.Component {
   componentDidMount() {
-    var mobileButton = document.getElementById("mobileButton");
-    var html = document.getElementsByTagName("html");
-    var headerMenu = document.getElementById("headerMenu");
-    var menuItems = document.getElementsByClassName("menuItems");
+    var mobileButton = document.getElementById("mobileButton") as HTMLButtonElement;
+    var html = document.getElementsByTagName("html") as HTMLCollectionOf<HTMLElement>;
+    var headerMenu = document.getElementById("headerMenu") as HTMLElement;
+    var menuItems = document.getElementsByClassName("menuItems") as HTMLCollectionOf<HTMLElement>;
 
     for (let i = 0; i < menuItems.length; i++) {
-      menuItems[i].onclick = () => {
+      const menuItem = menuItems[i];
+
+      menuItem.onclick = () => {
         headerMenu.classList.add("transitionCollapse");
         headerMenu.classList.remove("transitionExpand");
         html[0].classList.remove("expanded");

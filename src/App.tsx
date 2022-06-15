@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import Header from './components/etc/Header'
-import Footer from './components/etc/Footer'
-import Home from './components/home/Home'
-import Blog from './components/blog/Blog'
-import Resume from './components/resume/Resume'
-import ResponsiveCanvasDevelopment from './components/blog/ResponsiveCanvasDevelopment'
-import CanvasGameDevelopment from './components/blog/CanvasGameDevelopment'
-import Bootstrap3SiteDevelopment from './components/blog/Bootstrap3SiteDevelopment'
-import NewsFeedDevelopment from './components/blog/NewsFeedDevelopment'
-import { HashRouter as Router, Route } from "react-router-dom"
-import ScrollToTop from './components/etc/ScrollToTop'
 import 'normalize.css'
 import './App.scss'
+import Header from './components/header'
+import Footer from './components/footer'
+import Home from './pages/home'
+import Blog from './pages/blog'
+import Resume from './pages/resume'
+import ResponsiveCanvasDevelopment from './pages/blog/ResponsiveCanvasDevelopment'
+import CanvasGameDevelopment from './pages/blog/CanvasGameDevelopment'
+import Bootstrap3SiteDevelopment from './pages/blog/Bootstrap3SiteDevelopment'
+import NewsFeedDevelopment from './pages/blog/NewsFeedDevelopment'
+import { HashRouter as Router, Route } from "react-router-dom"
+import ScrollToTop from './components/scroll-to-top'
 
 class App extends Component {
   componentDidMount() {

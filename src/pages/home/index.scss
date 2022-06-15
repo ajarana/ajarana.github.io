@@ -32,17 +32,17 @@
   
   .linkContainer {
     a {
-      color: $lightLinkBlue2;
+      color: var(--lightLinkBlue2);
 
       &:after {
-        border-color: $lightLinkBlue2 $lightLinkBlue2 transparent transparent;
+        border-color: var(--lightLinkBlue2) var(--lightLinkBlue2) transparent transparent;
       }
 
       &:hover {
-        color: $lightLinkBlue;
+        color: var(--lightLinkBlue);
 
         &:after {
-          border-color: $lightLinkBlue $lightLinkBlue transparent transparent;
+          border-color: var(--lightLinkBlue) var(--lightLinkBlue) transparent transparent;
         }
       }
     }
@@ -174,10 +174,6 @@ figure {
       order: 1;
     }
   }
-}
-
-.project {
-  transition: all 0.8s ease-in-out;
 }
 
 .invisible {
