@@ -165,8 +165,8 @@ class Home extends Component {
                     <a href="https://github.com/ajarana/ajarana.github.io" className="linkIcon" target="_blank" rel="noopener noreferrer">Site code</a>
                   </li>
                   <li>
-                    <NavLink className="linkIcon" to="/about/" rel="noopener noreferrer">
-                      About
+                    <NavLink className="linkIcon" to="/resume/" rel="noopener noreferrer">
+                      Resume
                     </NavLink>
                   </li>
                 </ul>
