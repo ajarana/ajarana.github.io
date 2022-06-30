@@ -29,7 +29,7 @@ class App extends Component {
       line-height: 1.75;
     `;
 
-    console.log("%cHi, I'm Andres. I developed and designed this website. My resume can be found here: https://ajarana.github.io/#/about/.", style);
+    console.log("%cHi, I'm Andres. I developed and designed this website. My resume can be found here: https://ajarana.github.io/#/resume/.", style);
   }
 
   render() {
@@ -43,7 +43,7 @@ class App extends Component {
 
             <Route exact path="/" component={Home} />
             <Route exact path="/blog" component={Blog} />
-            <Route exact path="/about" component={Resume} />
+            <Route exact path="/resume" component={Resume} />
             <Route path="/blog/development-responsive-canvas" component={ResponsiveCanvasDevelopment} />
             <Route path="/blog/development-canvas-game" component={CanvasGameDevelopment} />
             <Route path="/blog/development-bootstrap-3-site" component={Bootstrap3SiteDevelopment} />

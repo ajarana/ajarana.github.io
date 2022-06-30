@@ -74,10 +74,8 @@ class Header extends React.Component {
               </li>
   
               <li className="menuItems">
-                <NavLink className="plainLink headerLink" to="/about/" activeClassName="selected">
-                  <p>
-                    About
-                  </p>
+                <NavLink className="plainLink headerLink" to="/resume/" activeClassName="selected">
+                  <p>Resume</p>
                 </NavLink>
               </li>
 

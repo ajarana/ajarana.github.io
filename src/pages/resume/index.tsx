@@ -12,7 +12,7 @@ class Resume extends React.Component {
             <ul className="contact-information">
               <li>
                 <i className="fas fa-map-marker-alt"></i>
-                <span>Reston, VA</span>
+                <span>Centreville, VA</span>
               </li>
               <li>
                 <i className="fas fa-envelope"></i>
@@ -20,7 +20,7 @@ class Resume extends React.Component {
               </li>
               <li>
                 <i className="fas fa-mobile-alt"></i>
-                <span>703-434-0219</span> 
+                <span>(703) 434-0219</span> 
               </li>
               <li>
                   <i className="fas fa-laptop-code"></i>
@@ -33,29 +33,38 @@ class Resume extends React.Component {
             <h2>Skills</h2>
 
             <section className="subSection">
-              <section className="flexSection front-end-skills">
+              <section className="flexSection alignCenter front-end-skills">
                 <h4 className="secondaryHeader">Front End</h4>
 
-                <div>
                 <div className="skillsContainer">
                   <div className="skillList">
-                    <span>JavaScript</span><span>React</span><span>AngularJS</span><span>Node</span><span>CesiumJS</span><span>Vis.js</span><span>HTML5</span>
+                    <span>JavaScript</span>
+                    <span>CSS3</span>
+                    <span>HTML5</span>
+                    <span>React</span>
+                    <span>TypeScript</span>
+                    <span>Angular</span>
+                    <span>Responsive Design</span>
                   </div>
 
                   <div className="skillList">
-                  <span>Responsive Design</span><span>CSS3</span><span>Sass</span><span>LESS</span><span>Bootstrap</span><span>Foundation</span>
+                    <span>Sass</span>
+                    <span>Bootstrap</span>
+                    <span>Node</span>
+                    <span>Kendo UI</span>
+                    <span>Jasmine</span>
+                    <span>CesiumJS</span>
                   </div>
-                </div>
                 </div>
               </section>
 
-              <section className="flexSection">
-                <h4 className="secondaryHeader">Software</h4>
+              <section className="flexSection alignCenter">
+                <h4 className="secondaryHeader">Software Tools</h4>
 
                 <div>
                   <div className="skillsContainer">
                     <div className="skillList">
-                      <span>macOS</span><span>Ubuntu</span><span>Git</span><span>VS Code</span><span>Atom</span>
+                      <span>macOS</span><span>Ubuntu</span><span>Git</span><span>VS Code</span><span>Jira</span><span>Sentry</span><span>CircleCI</span>
                    </div>
                   </div>
                 </div>
@@ -83,9 +92,34 @@ class Resume extends React.Component {
 
             <section className="subSection">
               <section className="flexSeparated">
+                <h3 className="secondaryHeader">Senior Front-End Developer</h3>
+                <p>
+                  January 2021 - Present
+                </p>
+              </section>
+
+              <h4>Ace Info Solutions <span>(acquired by Guidehouse in October, 2021)</span></h4>
+
+              <ul>
+                <li>
+                  Using Angular and Kendo UI to develop and update the core features of a user management application.
+                </li>
+
+                <li>
+                  Coordinating with a UI/UX team in order to bring consistency and extensibility to common components shared across different projects.
+                </li>
+
+                <li>
+                  Developed the frontend for a minimally viable product using React and TypeScript. 
+                </li>
+              </ul>
+            </section>
+
+            <section className="subSection">
+              <section className="flexSeparated">
                 <h3 className="secondaryHeader">Front-End Developer</h3> 
                 <p>
-                  April 2019 - Present
+                  April 2019 - December 2020
                 </p>
               </section>
 
@@ -102,10 +136,6 @@ class Resume extends React.Component {
 
                 <li>
                   Built the majority of the lifefuels.com shop front end including cart, checkout, and subscription workflows using React.
-                </li>
-
-                <li>
-                  Actively particpate in the UI/UX design process for public-facing projects.
                 </li>
               </ul>
             </section>
@@ -129,28 +159,13 @@ class Resume extends React.Component {
                   using React and Vis.js.
                 </li>
                 <li>
-                  Interviewed new team members and trained new hires in the necessary front-end technologies, including React and AngularJS, to support existing company projects.
+                  Involved in interviewing candidates and mentored new team members to help them use React and AngularJS to support existing projects.
                 </li>
                 <li>
                   Attended customer meetings to provide feature status updates and gather feedback.
                 </li>
               </ul>
             </section>
-
-            <section className="subSection">
-              <section className="flexSeparated">
-                <h3 className="secondaryHeader">Web Developer</h3>
-                <p>October 2016 - November 2018</p>
-              </section>
-              
-              <h4>Freelance</h4>
-
-              <ul>
-                <li>
-                  Provided front-end web services including content updates, styling, and client-side scripts.
-                </li>
-              </ul>
-          </section>
 
           </section>
 
@@ -166,7 +181,7 @@ class Resume extends React.Component {
             </section>
               <ul>
                 <li>
-                Custom-built and designed portfolio that hosts all of my personal projects.
+                Portfolio website that I designed and developed.
                 </li>
               </ul>
             </section>
