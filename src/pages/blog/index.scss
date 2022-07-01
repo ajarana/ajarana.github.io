@@ -1,46 +1,47 @@
 #blogDirectory {
-   min-height: calc(100vh - 159px);
-   box-sizing: border-box;
-   padding: 4em 0;
-   text-align: center;
+	min-height: calc(100vh - 159px);
+	box-sizing: border-box;
+	padding: 4em 0;
+	text-align: center;
 
-   p {
-     margin-top: 0;
-   }
+	p {
+		margin-top: 0;
+	}
 
-   h2 {
-     margin-bottom: 0.5em;
-   }
+	h2 {
+		margin-bottom: 0.5em;
+	}
 
-   h2:not(:first-child) {
-     margin-top: 2em;
-   }
+	h2:not(:first-child) {
+		margin-top: 2em;
+	}
 }
 
 .blogDates {
-   margin: 4em 0;
+	margin: 4em 0;
 }
 
 .blogContainer {
-   transition: none;
-   overflow-wrap: break-word;
-   max-width: 700px;
-   margin: 0 auto;
+	transition: none;
+	overflow-wrap: break-word;
+	max-width: 700px;
+	margin: 0 auto;
 }
 
 .blogContainer pre {
-  white-space: pre-wrap;
+	white-space: pre-wrap;
 
-  padding: 25px;
-  border-radius: 3px;
+	padding: 25px;
+	border-radius: 3px;
 }
 
-.blogContainer p, li {
-   line-height: 1.6;
+.blogContainer p,
+li {
+	line-height: 1.6;
 }
 
 #reactThumbnail {
-   padding-top: 20px;
-   background-color: white;
-   border: 1px solid #e1e1e1;
+	padding-top: 20px;
+	background-color: white;
+	border: 1px solid #e1e1e1;
 }
