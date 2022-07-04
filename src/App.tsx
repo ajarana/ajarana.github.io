@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "normalize.css";
 import "./App.scss";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Home from "./pages/home";
-import Blog from "./pages/blog";
-import Resume from "./pages/resume";
 import ResponsiveCanvasDevelopment from "./pages/blog/ResponsiveCanvasDevelopment";
 import CanvasGameDevelopment from "./pages/blog/CanvasGameDevelopment";
 import Bootstrap3SiteDevelopment from "./pages/blog/Bootstrap3SiteDevelopment";
 import NewsFeedDevelopment from "./pages/blog/NewsFeedDevelopment";
 import { HashRouter as Router, Route } from "react-router-dom";
 import ScrollToTop from "./components/scroll-to-top";
+import HomePage from "./pages/home";
+import BlogPage from "./pages/blog";
+import ResumePage from "./pages/resume";
 
 class App extends Component {
 	componentDidMount() {
@@ -45,17 +45,17 @@ class App extends Component {
 						<Route
 							exact
 							path="/"
-							component={Home}
+							component={HomePage}
 						/>
 						<Route
 							exact
 							path="/blog"
-							component={Blog}
+							component={BlogPage}
 						/>
 						<Route
 							exact
 							path="/resume"
-							component={Resume}
+							component={ResumePage}
 						/>
 						<Route
 							path="/blog/development-responsive-canvas"

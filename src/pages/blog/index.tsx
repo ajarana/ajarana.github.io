@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
 
-class Blog extends React.Component {
+class BlogPage extends React.Component {
 	render() {
 		return (
 			<main>
@@ -40,4 +40,4 @@ class Blog extends React.Component {
 	}
 }
 
-export default Blog;
+export default BlogPage;

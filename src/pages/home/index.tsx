@@ -18,7 +18,7 @@ interface HomeState {
 	};
 }
 
-class Home extends Component {
+class HomePage extends Component {
 	state: HomeState = {
 		githubData: {
 			blockAid: {
@@ -217,4 +217,4 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+export default HomePage;
