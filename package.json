@@ -53,6 +53,10 @@
 		"sass": "^1.52.1"
 	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx,json,css,scss,html,webmanifest,md}": "prettier --write"
+		"*.{json,css,scss,html,webmanifest,md}": "prettier --write",
+		"*.{js,jsx,ts,tsx}": [
+			"prettier --write",
+			"eslint --max-warnings 0"
+		]
 	}
 }
