@@ -1,9 +1,9 @@
 #introduction {
-  color: #fff;
-  position: relative;
-  background-color: #333;
-  padding-left: 32px;
-  padding-right: 32px;
+	color: #fff;
+	position: relative;
+	background-color: #333;
+	padding-left: 32px;
+	padding-right: 32px;
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -11,11 +11,17 @@
 	-ms-user-select: none;
 	user-select: none;
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		font-weight: normal;
 	}
 
-	h1, p {
+	h1,
+	p {
 		margin: 0;
 
 		-webkit-touch-callout: auto;
@@ -29,129 +35,131 @@
 		font-size: 2.2em;
 		margin: 0 0 0.4em;
 	}
-  
-  .linkContainer {
-    a {
-      color: var(--lightLinkBlue2);
 
-      &:after {
-        border-color: var(--lightLinkBlue2) var(--lightLinkBlue2) transparent transparent;
-      }
+	.linkContainer {
+		a {
+			color: var(--lightLinkBlue2);
 
-      &:hover {
-        color: var(--lightLinkBlue);
+			&:after {
+				border-color: var(--lightLinkBlue2) var(--lightLinkBlue2) transparent
+					transparent;
+			}
 
-        &:after {
-          border-color: var(--lightLinkBlue) var(--lightLinkBlue) transparent transparent;
-        }
-      }
-    }
+			&:hover {
+				color: var(--lightLinkBlue);
 
-    @media (min-width: 992px) {
-      justify-content: center;
-    }
-  }
+				&:after {
+					border-color: var(--lightLinkBlue) var(--lightLinkBlue) transparent
+						transparent;
+				}
+			}
+		}
+
+		@media (min-width: 992px) {
+			justify-content: center;
+		}
+	}
 }
 
 .portfolio {
-  .imageHolder {
-    width: 100%;
-  }
-  @media (min-width: 992px) {
-    .imageHolder {
-      width: auto;
-    }
-  }
+	.imageHolder {
+		width: 100%;
+	}
+	@media (min-width: 992px) {
+		.imageHolder {
+			width: auto;
+		}
+	}
 
-  .sectionContainer {
-   padding: 5em 0;
-  }
+	.sectionContainer {
+		padding: 5em 0;
+	}
 
-  #newsSectionContainer .images {
-     padding-top: 20px;
-     background-color: white;
-     border: 1px solid #eee;
- }
+	#newsSectionContainer .images {
+		padding-top: 20px;
+		background-color: white;
+		border: 1px solid #eee;
+	}
 
- @media (min-width: 992px) {
-    .primaryImage {
-      display: none;
-   }
-}
- .secondaryImage {
-     display: none;
+	@media (min-width: 992px) {
+		.primaryImage {
+			display: none;
+		}
+	}
+	.secondaryImage {
+		display: none;
 
-     @media (min-width: 992px) {
-        display: inline-block;
-     }
- }
+		@media (min-width: 992px) {
+			display: inline-block;
+		}
+	}
 
-  .listContainer {
-    display: inline-block;
-    margin: 0 auto;
-    max-width: 550px;
-    text-align: center;
+	.listContainer {
+		display: inline-block;
+		margin: 0 auto;
+		max-width: 550px;
+		text-align: center;
 
-    @media (min-width: 992px) {
-      max-width: none;
-   }
+		@media (min-width: 992px) {
+			max-width: none;
+		}
 
-   p:not(.linkContainer) {
-      @media (min-width: 992px) {
-         text-align: left;
-      }
-   }
-  }
-  @media (min-width: 992px) {
-    .listContainer {
-      text-align: left;
-      margin-left: 5em;
-    }
-  }
+		p:not(.linkContainer) {
+			@media (min-width: 992px) {
+				text-align: left;
+			}
+		}
+	}
+	@media (min-width: 992px) {
+		.listContainer {
+			text-align: left;
+			margin-left: 5em;
+		}
+	}
 
-  #mixtinSectionContainer .listContainer {
-     @media (min-width: 992px) {
-        margin-left: 0;
-        margin-right: 5em;
-     }
- }
+	#mixtinSectionContainer .listContainer {
+		@media (min-width: 992px) {
+			margin-left: 0;
+			margin-right: 5em;
+		}
+	}
 
-  h3 {
+	h3 {
 		font-size: 1.6em;
-  }
+	}
 }
 
 .numberedItems {
-  margin: 10px 0;
+	margin: 10px 0;
 }
 
 .border {
-  height: 1px;
-  width: 100%;
-  margin: 0px auto;
-  background-color: #e9e9e9;
+	height: 1px;
+	width: 100%;
+	margin: 0px auto;
+	background-color: #e9e9e9;
 }
 
 .sectionHeaders {
-   margin: 1.3em 0 0;
+	margin: 1.3em 0 0;
 
-   .updated-time {
-     color: #999;
-     font-size: 16px;
-     margin-top: 0.6em;
-     display: block;
-   }
+	.updated-time {
+		color: #999;
+		font-size: 16px;
+		margin-top: 0.6em;
+		display: block;
+	}
 
-   @media (min-width: 992px) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0.5em 0 0;
-   }
+	@media (min-width: 992px) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0.5em 0 0;
+	}
 }
 
 .noPadding {
-  padding: 0;
+	padding: 0;
 }
 
 figure {
@@ -159,51 +167,51 @@ figure {
 }
 
 .sectionContainer:not(:last-child) {
-  border-bottom: 1px solid #e9e9e9
+	border-bottom: 1px solid #e9e9e9;
 }
 
 .sectionContainer:nth-child(2n) {
-  @media (min-width: 992px) {
-    .imageHolder {
-      order: 2
-    }
-  
-    .listContainer {
-      margin-left: 0;
-      margin-right: 50px;
-      order: 1;
-    }
-  }
+	@media (min-width: 992px) {
+		.imageHolder {
+			order: 2;
+		}
+
+		.listContainer {
+			margin-left: 0;
+			margin-right: 50px;
+			order: 1;
+		}
+	}
 }
 
 .invisible {
-  opacity: 0;
+	opacity: 0;
 }
 
 $cssColor1: hsl(200, 70%, 54%);
 $cssColor2: hsl(200, 70%, 74%);
 
 #css3 {
-  animation-duration: 2.5s;
-  animation-name: cssColorChange;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-delay: 0.5s;
-  color: $cssColor1;
-  font-weight: bold;
+	animation-duration: 2.5s;
+	animation-name: cssColorChange;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-delay: 0.5s;
+	color: $cssColor1;
+	font-weight: bold;
 }
 
 $htmlColor1: hsl(17, 80%, 54%);
 $htmlColor2: hsl(17, 80%, 74%);
 
 #html5 {
-  animation-duration: 2.5s;
-  animation-name: htmlColorChange;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-delay: 1s;
-  color: $htmlColor1;
-  font-weight: bold;
+	animation-duration: 2.5s;
+	animation-name: htmlColorChange;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-delay: 1s;
+	color: $htmlColor1;
+	font-weight: bold;
 }
 
 $reactColor1: hsl(193, 95%, 68%);
@@ -211,58 +219,58 @@ $reactColor2: hsl(193, 95%, 86%);
 $darkBorder: #444;
 
 #react {
-  animation-duration: 2.5s;
-  animation-name: reactColorChange;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  font-weight: bold;
+	animation-duration: 2.5s;
+	animation-name: reactColorChange;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	font-weight: bold;
 }
 
 .btn {
-  display: inline-block;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 3px;
-  background-color: #1485CC;
-  color: white;
-  cursor: pointer;
-  margin: 1.5rem 0;
+	display: inline-block;
+	border: none;
+	padding: 10px 22px;
+	border-radius: 3px;
+	background-color: #1485cc;
+	color: white;
+	cursor: pointer;
+	margin: 1.5rem 0;
 
-  span {
-    margin-left: 4px;
-  }
+	span {
+		margin-left: 4px;
+	}
 
-  &:hover {
-    color: white;
-  }
+	&:hover {
+		color: white;
+	}
 }
 
 @keyframes reactColorChange {
-  from {
-    color: $reactColor1;
-  }
+	from {
+		color: $reactColor1;
+	}
 
-  to {
-    color: $reactColor2;
-  }
+	to {
+		color: $reactColor2;
+	}
 }
 
 @keyframes cssColorChange {
-  from {
-    color: $cssColor1;
-  }
+	from {
+		color: $cssColor1;
+	}
 
-  to {
-    color: $cssColor2;
-  }
+	to {
+		color: $cssColor2;
+	}
 }
 
 @keyframes htmlColorChange {
-  from {
-    color: $htmlColor1;
-  }
+	from {
+		color: $htmlColor1;
+	}
 
-  to {
-    color: $htmlColor2;
-  }
+	to {
+		color: $htmlColor2;
+	}
 }
