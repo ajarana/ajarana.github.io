@@ -174,16 +174,17 @@ class HomePage extends Component {
 						className="main-container-full-width textAlignCenter"
 					>
 						<div className="hero-header-text">
-							<h2>UI Developer</h2>
+							<h2>Front-End Developer</h2>
 
 							<p>
-								I am a UI developer with a chemistry degree. This mobile-first
-								web app was made with <span id="react">React</span> and, for the
-								purposes of learning, without any <span id="css3">CSS3</span>{" "}
-								frameworks/libraries or <span id="html5">HTML5</span> templates.
-								Portfolio website and resume design are my own. Below are some
-								of my personal projects (
-								<span className="codeRed">warning:</span> they are out of date).
+								I am a front-end developer with a chemistry degree. This
+								mobile-first web app was made with <span id="react">React</span>{" "}
+								and, for the purposes of learning, without any{" "}
+								<span id="css3">CSS3</span> frameworks/libraries or{" "}
+								<span id="html5">HTML5</span> templates. Portfolio website and
+								resume design are my own. Below are some of my personal projects
+								(<span className="codeRed">warning:</span> they are out of
+								date).
 							</p>
 
 							<ul className="linkContainer">
