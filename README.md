@@ -1,6 +1,8 @@
 # ajarana.github.io
 
-This portfolio website was developed and designed by Andres Arana. You can view the current production build at [ajarana.github.io](https://ajarana.github.io/).
+This portfolio website was developed and designed by Andres Arana. Its graphic design and frontend architecture are currently being redesigned.
+
+You can view the current production build at [ajarana.github.io](https://ajarana.github.io/).
 
 ## Getting Started
 
