@@ -29,6 +29,7 @@ class App extends Component {
       line-height: 1.75;
     `;
 
+		// eslint-disable-next-line no-console
 		console.log(
 			"%cHi, I'm Andres. I developed and designed this website. My resume can be found here: https://ajarana.github.io/#/resume/.",
 			style
