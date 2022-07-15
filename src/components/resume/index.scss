@@ -58,11 +58,13 @@ $resume-dark-gray: #666;
 		}
 
 		.contact-information {
-			display: grid;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
 			list-style: none;
 			padding: 0;
-			justify-content: start;
-			align-items: center;
+			justify-content: flex-start;
+			align-items: flex-start;
 			font-size: 14px;
 			color: #666;
 
@@ -75,17 +77,8 @@ $resume-dark-gray: #666;
 			}
 
 			@media (min-width: $resume-breakpoint) {
-				grid-template-columns: 1fr 1fr 1fr 1fr;
-				justify-content: center;
-
-				li {
-					justify-content: center;
-				}
-
-				li:last-child {
-					grid-column: 4;
-					grid-column-end: 4;
-				}
+				flex-direction: row;
+				justify-content: space-evenly;
 			}
 		}
 	}
@@ -181,29 +174,37 @@ $resume-dark-gray: #666;
 	}
 
 	#skillSection {
+		$divider-width: 1px;
+		$divider-height: 8px;
+		$divider-margin: 6px;
+
 		.skillsContainer {
-			margin-top: 0.5em;
-			padding-left: 20px;
+			position: relative;
+			overflow: hidden;
 
 			.skillList {
+				display: flex;
+				row-gap: 4px;
+				flex-wrap: wrap;
 				position: relative;
-				line-height: 1.4;
+				list-style: none;
+				padding: 0;
+				margin: 8px 0 0 -#{($divider-margin * 2) + $divider-width};
 
-				span {
+				li {
 					display: flex;
 					align-items: center;
-					position: relative;
+					margin: 0;
+					line-height: 1.4;
 
 					&:before {
 						content: "";
 						display: inline-block;
-						width: 4px;
-						height: 4px;
-						border-radius: 100%;
-						background-color: #aaa;
-						position: absolute;
-						top: 8px;
-						left: -12px;
+						position: relative;
+						height: $divider-height;
+						width: $divider-width;
+						background-color: #bbb;
+						margin: 0 $divider-margin;
 					}
 				}
 			}
@@ -227,27 +228,15 @@ $resume-dark-gray: #666;
 					padding-left: 0;
 
 					.skillList {
-						line-height: 1.2;
+						row-gap: 2px;
+						margin: 0 0 0 -#{($divider-margin * 2) + $divider-width};
+
+						li {
+							line-height: 1.2;
+						}
 
 						&:before {
 							width: 0;
-						}
-
-						span {
-							display: inline-flex;
-
-							&:before {
-								content: none;
-							}
-
-							&:not(:last-child):after {
-								content: "";
-								display: inline-block;
-								height: 8px;
-								width: 1px;
-								background-color: #ccc;
-								margin: 0 6px;
-							}
 						}
 					}
 				}
@@ -270,7 +259,7 @@ $resume-dark-gray: #666;
 	}
 
 	.subSection {
-		ul {
+		.vertical-list {
 			list-style: none;
 			line-height: 1.2;
 			padding-left: 20px;
@@ -285,23 +274,13 @@ $resume-dark-gray: #666;
 					width: 4px;
 					height: 4px;
 					border-radius: 100%;
-					background-color: #aaa;
+					background-color: #bbb;
 					position: absolute;
 					top: 8px;
 					left: -12px;
 				}
 
-				&:not(:first-child) {
-					margin: 8px 0;
-				}
-
-				@media (min-width: $resume-breakpoint) {
-					line-height: 1.2;
-
-					&:before {
-						top: 6px;
-					}
-				}
+				margin: 8px 0;
 			}
 		}
 
@@ -318,8 +297,16 @@ $resume-dark-gray: #666;
 		}
 
 		@media (min-width: $resume-breakpoint) {
-			ul {
+			.vertical-list {
 				padding-left: 40px;
+
+				li {
+					line-height: 1.2;
+
+					&:before {
+						top: 6px;
+					}
+				}
 			}
 		}
 	}
