@@ -27,6 +27,7 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
+		"test:staged": "react-scripts test --env=jsdom --watchAll=false --findRelatedTests",
 		"eject": "react-scripts eject",
 		"prepare": "husky install"
 	},
@@ -58,6 +59,7 @@
 	"lint-staged": {
 		"*.{json,css,scss,html,webmanifest,md}": "prettier --write",
 		"*.{js,jsx,ts,tsx}": [
+			"npm run test:staged",
 			"prettier --write",
 			"eslint --max-warnings 0"
 		]
