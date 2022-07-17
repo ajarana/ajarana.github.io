@@ -34,7 +34,7 @@
 	"eslintConfig": {
 		"extends": "react-app",
 		"rules": {
-			"no-console": "error"
+			"no-console": "warn"
 		}
 	},
 	"browserslist": {
@@ -60,8 +60,8 @@
 		"*.{json,css,scss,html,webmanifest,md}": "prettier --write",
 		"*.{js,jsx,ts,tsx}": [
 			"npm run test:staged",
-			"prettier --write",
-			"eslint --max-warnings 0"
+			"eslint --max-warnings 0",
+			"prettier --write"
 		]
 	}
 }
