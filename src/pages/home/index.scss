@@ -38,19 +38,19 @@
 
 	.linkContainer {
 		a {
-			color: var(--lightLinkBlue2);
+			color: var(--light-link-blue-2);
 
 			&:after {
-				border-color: var(--lightLinkBlue2) var(--lightLinkBlue2) transparent
-					transparent;
+				border-color: var(--light-link-blue-2) var(--light-link-blue-2)
+					transparent transparent;
 			}
 
 			&:hover {
-				color: var(--lightLinkBlue);
+				color: var(--light-link-blue-1);
 
 				&:after {
-					border-color: var(--lightLinkBlue) var(--lightLinkBlue) transparent
-						transparent;
+					border-color: var(--light-link-blue-1) var(--light-link-blue-1)
+						transparent transparent;
 				}
 			}
 		}

@@ -6,7 +6,7 @@ $resume-gray: #797979;
 $resume-dark-gray: #666;
 
 // TODO: Create utility classes to reduce the amount of styling rules in this file.
-#resume {
+.resume {
 	font-size: 11pt;
 	max-width: 672px;
 	margin: 0 auto;
@@ -54,7 +54,7 @@ $resume-dark-gray: #666;
 
 		h1 {
 			color: #333;
-			margin: 0rem 0 1.5rem;
+			margin: 2.5rem 0 1.5rem;
 		}
 
 		.contact-information {

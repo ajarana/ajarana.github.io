@@ -1,5 +1,6 @@
 import "./index.scss";
 import { Candidate } from "../../types/Candidate";
+import Alert from "../alert";
 
 interface ResumeProps {
 	candidate: Candidate;
@@ -42,6 +43,14 @@ const Resume = (props: ResumeProps) => {
 	return (
 		<article>
 			<header>
+				<Alert alertType="Informational">
+					<h3>Note</h3>
+					<p>
+						This page is responsive. Resize the viewport to view its different
+						layouts. The smallest viewport supported is 320px.
+					</p>
+				</Alert>
+
 				<h1>{name}</h1>
 
 				<ul className="contact-information">

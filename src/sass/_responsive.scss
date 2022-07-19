@@ -12,9 +12,7 @@ body {
 
 a {
 	text-decoration: none;
-	// color: #0171ca;
 	color: #2c6ebe;
-	// color: pink!important;
 	transition: color 0.22s linear;
 
 	&:hover {
@@ -23,21 +21,16 @@ a {
 }
 
 .mainContainer {
-	// width: 90%;
 	width: 100%;
 	padding: 0 16px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	// transition: width 0.6s ease-out 0s;
 }
 @media (min-width: 768px) {
 	.mainContainer {
-		// width: 80%;
 		max-width: 1000px;
 		max-width: 1200px;
 		max-width: 1100px;
-		// max-width: 1100px;
-		// margin: 0 auto;
 		padding: 0 30px;
 	}
 }
@@ -124,7 +117,6 @@ a {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
-	// display: none;
 	flex-wrap: wrap;
 }
 
@@ -203,12 +195,10 @@ a {
 
 h1 {
 	font-size: 2.1em;
-	// font-size: 2.2em;
 	margin: 1.2em 0;
 }
 h2 {
 	font-size: 1.6em;
-	// font-size: 1.8em;
 	margin: 1.2em 0;
 }
 h3 {

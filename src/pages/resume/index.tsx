@@ -4,7 +4,7 @@ import "./index.scss";
 
 const ResumePage = () => {
 	return (
-		<main id="resume">
+		<main className="resume">
 			<Resume candidate={ANDRES_CANDIDATE_INFO} />
 		</main>
 	);
