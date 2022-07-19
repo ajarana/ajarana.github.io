@@ -43,6 +43,7 @@ The major components of this project include:
 - [Sass](https://github.com/sass/dart-sass)
 - [React Router](https://github.com/remix-run/react-router)
 - [Create React App](https://github.com/facebook/create-react-app)
+- [Font Awesome](https://fontawesome.com/)
 - [lint-staged](https://github.com/okonet/lint-staged)
 - [husky](https://github.com/typicode/husky)
 - [prettier](https://github.com/prettier/prettier)
