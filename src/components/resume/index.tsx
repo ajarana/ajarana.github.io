@@ -1,6 +1,13 @@
 import "./index.scss";
 import { Candidate } from "../../types/Candidate";
 import Alert from "../alert";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faEnvelope,
+	faLaptopCode,
+	faLocationDot,
+	faMobileAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 interface ResumeProps {
 	candidate: Candidate;
@@ -55,19 +62,19 @@ const Resume = (props: ResumeProps) => {
 
 				<ul className="contact-information">
 					<li>
-						<i className="fas fa-map-marker-alt"></i>
+						<FontAwesomeIcon icon={faLocationDot} />
 						<span>{location}</span>
 					</li>
 					<li>
-						<i className="fas fa-envelope"></i>
+						<FontAwesomeIcon icon={faEnvelope} />
 						<span>{email}</span>
 					</li>
 					<li>
-						<i className="fas fa-mobile-alt"></i>
+						<FontAwesomeIcon icon={faMobileAlt} />
 						<span>{phoneNumber}</span>
 					</li>
 					<li>
-						<i className="fas fa-laptop-code"></i>
+						<FontAwesomeIcon icon={faLaptopCode} />
 						<span>{portfolioUrl}</span>
 					</li>
 				</ul>
