@@ -1,8 +1,8 @@
-import React from "react";
+import { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./index.scss";
 
-class Header extends React.Component {
+class Header extends Component {
 	componentDidMount() {
 		var mobileButton = document.getElementById(
 			"mobileButton"

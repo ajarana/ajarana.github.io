@@ -1,7 +1,7 @@
-import React from "react";
+import { Component } from "react";
 import "./index.scss";
 
-class NewsFeedDevelopment extends React.Component {
+class NewsFeedDevelopment extends Component {
 	render() {
 		return (
 			<main>

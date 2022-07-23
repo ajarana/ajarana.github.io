@@ -1,7 +1,7 @@
-import React from "react";
+import { Component } from "react";
 import "./index.scss";
 
-class CanvasGameDevelopment extends React.Component {
+class CanvasGameDevelopment extends Component {
 	render() {
 		return (
 			<main>

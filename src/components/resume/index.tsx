@@ -1,13 +1,12 @@
-import "./index.scss";
 import { Candidate } from "../../types/Candidate";
-import Alert from "../alert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faEnvelope,
 	faLaptopCode,
 	faLocationDot,
-	faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
+
+const styles = require("./index.module.scss").default;
 
 interface ResumeProps {
 	candidate: Candidate;
@@ -19,7 +18,6 @@ const Resume = (props: ResumeProps) => {
 			name,
 			location,
 			email,
-			phoneNumber,
 			portfolioUrl,
 			skillLists,
 			previousJobs,
@@ -36,31 +34,23 @@ const Resume = (props: ResumeProps) => {
 		return (
 			<section
 				key={category}
-				className="flexSection alignCenter"
+				className={styles.skillsGroup}
 			>
-				<h4 className="secondaryHeader">{category}</h4>
+				<h3>{category}</h3>
 
-				<div className="skillsContainer">
-					<ul className="skillList">{listItems}</ul>
+				<div className={styles.skillsListContainer}>
+					<ul className={styles.skillList}>{listItems}</ul>
 				</div>
 			</section>
 		);
 	});
 
 	return (
-		<article>
+		<article className={styles.resume}>
 			<header>
-				<Alert alertType="Informational">
-					<h3>Note</h3>
-					<p>
-						This page is responsive. Resize the viewport to view its different
-						layouts. The smallest viewport supported is 320px.
-					</p>
-				</Alert>
-
 				<h1>{name}</h1>
 
-				<ul className="contact-information">
+				<ul className={styles.contactInformation}>
 					<li>
 						<FontAwesomeIcon icon={faLocationDot} />
 						<span>{location}</span>
@@ -70,10 +60,6 @@ const Resume = (props: ResumeProps) => {
 						<span>{email}</span>
 					</li>
 					<li>
-						<FontAwesomeIcon icon={faMobileAlt} />
-						<span>{phoneNumber}</span>
-					</li>
-					<li>
 						<FontAwesomeIcon icon={faLaptopCode} />
 						<span>{portfolioUrl}</span>
 					</li>
@@ -81,19 +67,19 @@ const Resume = (props: ResumeProps) => {
 			</header>
 
 			<section
-				id="skillSection"
-				className="resumeSection"
+				id={styles.skillSection}
+				className={styles.resumeSection}
 			>
 				<h2>Skills</h2>
 
 				{skillSections}
 			</section>
 
-			<div className="separator"></div>
+			<div className={styles.separator}></div>
 
 			<section
-				id="workSection"
-				className="resumeSection"
+				id={styles.workSection}
+				className={styles.resumeSection}
 			>
 				<h2>Work Experience</h2>
 
@@ -109,10 +95,10 @@ const Resume = (props: ResumeProps) => {
 							return (
 								<section
 									key={company}
-									className="subSection"
+									className={styles.accomplishment}
 								>
-									<section className="flexSeparated">
-										<h3 className="secondaryHeader">{jobTitle}</h3>
+									<section className={styles.accomplishmentHeader}>
+										<h3>{jobTitle}</h3>
 										<p>{datesWorked}</p>
 									</section>
 
@@ -123,7 +109,7 @@ const Resume = (props: ResumeProps) => {
 										)}
 									</h4>
 
-									<ul className="vertical-list">
+									<ul className={styles.verticalList}>
 										{responsibilities.map((responsibility, i) => (
 											<li key={i}>{responsibility}</li>
 										))}
@@ -135,18 +121,18 @@ const Resume = (props: ResumeProps) => {
 				</>
 			</section>
 
-			<div className="separator"></div>
+			<div className={styles.separator}></div>
 
-			<section className="resumeSection">
+			<section className={styles.resumeSection}>
 				<h2>Personal Projects</h2>
 
 				<>
 					{personalProjects.map(({ name, datesActive, description }) => (
 						<section
 							key={name}
-							className="subSection"
+							className={styles.accomplishment}
 						>
-							<section className="flexSeparated">
+							<section className={styles.accomplishmentHeader}>
 								<h3>{name}</h3>
 								<p>{datesActive}</p>
 							</section>
@@ -157,18 +143,18 @@ const Resume = (props: ResumeProps) => {
 				</>
 			</section>
 
-			<div className="separator"></div>
+			<div className={styles.separator}></div>
 
-			<section className="resumeSection">
+			<section className={styles.resumeSection}>
 				<h2>Education</h2>
 
 				<>
 					{degrees.map(({ name, datesAttended, schoolName }) => (
 						<section
 							key={name}
-							className="subSection"
+							className={styles.accomplishment}
 						>
-							<section className="flexSeparated">
+							<section className={styles.accomplishmentHeader}>
 								<h3>{name}</h3>
 								<p>{datesAttended}</p>
 							</section>

@@ -1,7 +1,7 @@
-import React from "react";
+import { Component } from "react";
 import "./index.scss";
 
-class Bootstrap3SiteDevelopment extends React.Component {
+class Bootstrap3SiteDevelopment extends Component {
 	render() {
 		return (
 			<main>

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import moment from "moment";
 import { NavLink } from "react-router-dom";
 import { CodeProjects } from "../../components/code-projects";

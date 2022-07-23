@@ -47,7 +47,7 @@ export const CodeProject = (props: CodeProjectProps) => {
 
 						<p>{description}</p>
 
-						<p className="codeRed">{warning}</p>
+						<p className="project-warning codeRed">{warning}</p>
 					</header>
 
 					<ul className="linkContainer">

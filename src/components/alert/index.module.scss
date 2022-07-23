@@ -1,8 +1,10 @@
+@import "../../sass/_mixins";
+@import "../../sass/_variables";
+
 .alert {
 	box-shadow: var(--box-shadow-1);
-	padding: 18px;
+	padding: var(--spacing-5);
 	border-radius: var(--border-radius-1);
-	font-size: 1rem;
 
 	&.informational {
 		background: var(--color-2);
@@ -10,26 +12,20 @@
 		color: var(--text-black);
 	}
 
-	h3 {
-		font-size: 18px;
-		margin: 0 0 8px;
+	.heading {
+		@include text-size-4;
+
+		font-weight: bold;
+		margin: 0 0 var(--spacing-2);
 	}
 
-	p {
-		line-height: var(--line-height-2);
-		font-size: 16px;
-	}
+	@media (min-width: $breakpoint-desktop) {
+		padding: var(--spacing-5);
 
-	@media (min-width: 992px) {
-		padding: var(--spacing-lg);
+		.heading {
+			@include text-size-5;
 
-		h3 {
-			font-size: 22px;
-			margin: 0 0 12px;
-		}
-
-		p {
-			font-size: 18px;
+			margin: 0 0 var(--spacing-3);
 		}
 	}
 }

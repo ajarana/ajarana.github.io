@@ -15,5 +15,5 @@ export const CodeProjects = (props: CodeProjectsProps) => {
 		/>
 	));
 
-	return <div className="mainContainer">{ProjectList}</div>;
+	return <div className="mainContainer codeProjects">{ProjectList}</div>;
 };

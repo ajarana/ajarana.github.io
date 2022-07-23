@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-// import './index.scss'
+import { Component } from "react";
 
 class ResponsiveCanvasDevelopment extends Component<any, any> {
 	aWrapper: HTMLElement | null = null;
@@ -261,10 +260,7 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
 							First, we need to create a canvas element that we can then access
 							through JavaScript.
 						</p>
-						<pre
-							id="lul"
-							className="darkBackground"
-						>
+						<pre className="darkBackground">
 							<code>
 								&lt;<span className="codeRed">div</span>{" "}
 								<span className="codeBlue">id</span>=

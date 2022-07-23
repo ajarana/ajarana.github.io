@@ -1,8 +1,78 @@
-@import "sass/colors";
-@import "sass/responsive";
-@import "sass/custom-properties";
+@import "sass/_colors";
+@import "sass/_responsive";
+@import "sass/_custom-properties";
+@import "sass/_mixins";
+@import "sass/_variables";
 
-// Utility classes
-.alignCenter {
-	align-items: center;
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	@include text-size-8;
+}
+
+h2 {
+	@include text-size-7;
+}
+
+h3 {
+	@include text-size-6;
+}
+
+h4 {
+	@include text-size-5;
+}
+
+h5 {
+	@include text-size-4;
+}
+
+h6,
+p,
+a,
+li {
+	@include text-size-3;
+}
+
+ol {
+	padding-left: var(--spacing-8);
+}
+
+ul {
+	list-style: none;
+}
+
+@media (min-width: $breakpoint-desktop) {
+	h1 {
+		@include text-size-9;
+	}
+
+	h2 {
+		@include text-size-8;
+	}
+
+	h3 {
+		@include text-size-7;
+	}
+
+	h4 {
+		@include text-size-6;
+	}
+
+	h5 {
+		@include text-size-5;
+	}
+
+	h6,
+	p,
+	a,
+	li {
+		@include text-size-4;
+	}
+
+	ol {
+		padding-left: var(--spacing-10);
+	}
 }

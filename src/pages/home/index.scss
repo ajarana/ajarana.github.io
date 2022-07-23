@@ -1,9 +1,11 @@
+@import "../../sass/mixins";
+
 #introduction {
 	color: #fff;
 	position: relative;
 	background-color: #333;
-	padding-left: 32px;
-	padding-right: 32px;
+	padding-left: var(--spacing-6);
+	padding-right: var(--spacing-6);
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -31,12 +33,9 @@
 		user-select: auto;
 	}
 
-	h2 {
-		font-size: 2.2em;
-		margin: 0 0 0.4em;
-	}
-
 	.linkContainer {
+		margin-bottom: 0;
+
 		a {
 			color: var(--light-link-blue-2);
 
@@ -73,6 +72,10 @@
 
 	.sectionContainer {
 		padding: 5em 0;
+
+		.linkContainer {
+			margin-bottom: 0;
+		}
 	}
 
 	#newsSectionContainer .images {
@@ -100,8 +103,18 @@
 		max-width: 550px;
 		text-align: center;
 
-		@media (min-width: 992px) {
+		p,
+		a {
+			@include text-size-4;
+		}
+
+		@media (min-width: $breakpoint-desktop) {
 			max-width: none;
+
+			p,
+			a {
+				@include text-size-5;
+			}
 		}
 
 		p:not(.linkContainer) {
@@ -123,10 +136,6 @@
 			margin-right: 5em;
 		}
 	}
-
-	h3 {
-		font-size: 1.6em;
-	}
 }
 
 .numberedItems {
@@ -143,10 +152,15 @@
 .sectionHeaders {
 	margin: 1.3em 0 0;
 
+	h3 {
+		@include text-size-5;
+	}
+
 	.updated-time {
+		@include text-size-3;
+
 		color: #999;
-		font-size: 16px;
-		margin-top: 0.6em;
+		margin: var(--spacing-1) 0 var(--spacing-4);
 		display: block;
 	}
 
@@ -154,7 +168,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin: 0.5em 0 0;
+		flex-flow: wrap;
+		margin: 0.5em 0 var(--spacing-2);
+		column-gap: var(--spacing-8);
+
+		.updated-time {
+			@include text-size-4;
+
+			margin: 0;
+		}
 	}
 }
 

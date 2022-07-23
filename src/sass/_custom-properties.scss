@@ -1,4 +1,4 @@
-// Coolors palette: https://coolors.co/527bcb-b9c7f3-e8edde-b80018-0c1618
+// Coolors palette: https://coolors.co/527bcb-b9c7f3-e8edde-cc001b-0c1618
 
 $lightness-delta: -15%;
 
@@ -15,7 +15,7 @@ $color-3: hsl(81, 28%, 90%);
 $color-3-dark: scale-color($color-3, $lightness: $lightness-delta);
 
 // Carnelian
-$color-4: hsl(81, 28%, 90%);
+$color-4: hsl(352, 100%, 44%);
 $color-4-dark: scale-color($color-4, $lightness: $lightness-delta);
 
 // Jet
@@ -36,19 +36,28 @@ $color-5-dark: scale-color($color-5, $lightness: $lightness-delta);
 	--color-4-dark: #{$color-4-dark};
 	--color-5: #{$color-5};
 	--color-5-dark: #{$color-5-dark};
-	--white: #fff;
-	--gray: #f8f8f8;
+	--white: hsl(0, 0%, 100%);
+	--gray: hsl(0, 0%, 46%);
+	--light-gray: hsl(0, 0%, 70%);
+	--black: hsl(0, 0%, 11%);
 	--text-black: #{$color-5};
 
 	// Misc.
 	--border-radius-1: 3px;
-	--font-size-base: 1rem;
-	--line-height-1: 1;
-	--line-height-2: 1.25;
 	--box-shadow-1: 2px 2px 5px 1px #{scale-color($color-5, $lightness: 80%)};
+	--container-width-1: 1100px;
 
 	// Spacing
-	--spacing-md: 12px;
-	--spacing-lg: 24px;
-	--spacing-xl: 36px;
+	--spacing-1: 4px;
+	--spacing-2: 8px;
+	--spacing-3: 12px;
+	--spacing-4: 16px;
+	--spacing-5: 20px;
+	--spacing-6: 24px;
+	--spacing-7: 28px;
+	--spacing-8: 32px;
+	--spacing-9: 36px;
+	--spacing-10: 40px;
+	--spacing-11: 44px;
+	--spacing-12: 48px;
 }

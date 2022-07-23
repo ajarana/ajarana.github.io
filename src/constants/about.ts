@@ -5,7 +5,6 @@ export const ANDRES_CANDIDATE_INFO: Candidate = deepFreeze({
 	name: "Andres Arana",
 	location: "Centreville, VA",
 	email: "ajoelarana@gmail.com",
-	phoneNumber: "(703) 434-0219",
 	portfolioUrl: "ajarana.github.io",
 	skillLists: [
 		{

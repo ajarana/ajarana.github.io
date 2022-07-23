@@ -1,0 +1,257 @@
+@import "../../sass/_mixins";
+@import "../../sass/_variables";
+
+.resume {
+	margin-bottom: var(--spacing-10);
+
+	h1 {
+		margin: var(--spacing-10) 0 var(--spacing-6);
+	}
+
+	h2 {
+		@include text-size-6;
+	}
+
+	header {
+		margin-bottom: var(--spacing-12);
+
+		.contactInformation {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			flex-wrap: wrap;
+			row-gap: var(--spacing-1);
+
+			li {
+				display: grid;
+				align-items: center;
+				grid-template-columns: 20px 1fr;
+				column-gap: var(--spacing-2);
+
+				svg,
+				span {
+					color: var(--gray);
+				}
+
+				svg {
+					justify-self: center;
+				}
+			}
+
+			@media (min-width: $breakpoint-desktop) {
+				flex-direction: row;
+				justify-content: space-evenly;
+			}
+		}
+	}
+
+	.resumeSection {
+		h2 {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			color: var(--color-4);
+
+			&:after {
+				content: "";
+				flex: 1;
+				height: 1px;
+				display: block;
+				background: #dfdfdf;
+				border-radius: 100%;
+				margin-left: var(--spacing-4);
+			}
+		}
+
+		.accomplishmentHeader {
+			display: grid;
+
+			h3 {
+				margin-right: auto;
+			}
+
+			p {
+				margin: 0 0 var(--spacing-2);
+				font-style: oblique;
+				color: var(--gray);
+			}
+		}
+	}
+
+	.separator {
+		width: 95%;
+		height: 1px;
+		margin: 1.5em auto;
+	}
+
+	#skillSection {
+		$divider-width: 1px;
+		$divider-height: 8px;
+		$divider-margin: 6px;
+
+		.skillsGroup {
+			flex-wrap: wrap;
+			margin-top: var(--spacing-4);
+			display: grid;
+
+			h3 {
+				@include text-size-3;
+
+				align-self: center;
+			}
+
+			.skillsListContainer {
+				position: relative;
+				overflow: hidden;
+
+				.skillList {
+					display: flex;
+					row-gap: var(--spacing-1);
+					flex-wrap: wrap;
+					position: relative;
+					list-style: none;
+					padding: 0;
+					margin: var(--spacing-2) 0 0 -#{($divider-margin * 2) + $divider-width};
+
+					li {
+						display: flex;
+						align-items: center;
+						margin: 0;
+
+						&:before {
+							content: "";
+							display: inline-block;
+							position: relative;
+							height: $divider-height;
+							width: $divider-width;
+							background-color: #bbb;
+							margin: 0 $divider-margin;
+						}
+					}
+				}
+			}
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			$divider-height: 12px;
+			$divider-margin: 8px;
+
+			.skillsGroup {
+				grid-template-columns: 130px 1fr;
+				gap: var(--spacing-6);
+
+				h3 {
+					@include text-size-4;
+				}
+
+				.skillsListContainer {
+					.skillList {
+						margin: 0 0 0 -#{($divider-margin * 2) + $divider-width};
+
+						li {
+							&:before {
+								height: $divider-height;
+								margin: 0 $divider-margin;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.accomplishment {
+		h3 {
+			@include text-size-5;
+
+			margin: 0 0 var(--spacing-2);
+		}
+
+		h4 {
+			@include text-size-3;
+
+			margin: 0 0 8px;
+		}
+
+		&:not(:first-child) {
+			margin-top: 24px;
+		}
+
+		&:first-of-type {
+			margin-top: 14px;
+		}
+
+		.verticalList {
+			$diameter: 4px;
+
+			list-style: none;
+			padding-left: 20px;
+
+			li {
+				position: relative;
+
+				&:before {
+					content: "";
+					display: inline-block;
+					width: $diameter;
+					height: $diameter;
+					border-radius: 100%;
+					background-color: #bbb;
+					position: absolute;
+					top: 10px;
+					left: -12px;
+				}
+
+				margin: 8px 0;
+			}
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			h3 {
+				@include text-size-6;
+			}
+
+			h4 {
+				@include text-size-4;
+			}
+
+			.verticalList {
+				$diameter: 5px;
+
+				padding-left: 40px;
+
+				li {
+					&:before {
+						width: $diameter;
+						height: $diameter;
+						top: 11px;
+					}
+				}
+			}
+		}
+	}
+
+	#workSection {
+		h4 {
+			font-weight: normal;
+		}
+	}
+
+	@media (min-width: $breakpoint-desktop) {
+		border: 1px solid var(--light-gray);
+		border-radius: var(--border-radius-1);
+		box-shadow: var(--box-shadow-1);
+		margin: var(--spacing-6) 0 0;
+		padding: var(--spacing-12);
+
+		h1 {
+			margin-top: 0;
+			text-align: center;
+		}
+
+		h2 {
+			@include text-size-7;
+		}
+	}
+}

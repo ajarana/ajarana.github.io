@@ -27,7 +27,6 @@ export interface Candidate {
 	name: string;
 	location: string;
 	email: string;
-	phoneNumber: string;
 	portfolioUrl: string;
 	skillLists: SkillList[];
 	previousJobs: Job[];

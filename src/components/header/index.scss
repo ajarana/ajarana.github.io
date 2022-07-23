@@ -1,3 +1,6 @@
+@import "../../sass/_variables";
+@import "../../sass/_mixins";
+
 $animation-duration: 0.33s;
 
 #header {
@@ -24,9 +27,10 @@ $animation-duration: 0.33s;
 		flex: 0 1 85%;
 
 		#logo {
+			@include text-size-6;
+
 			font-family: "Source Code Pro", monospace;
 			color: white;
-			font-size: 22px;
 			transition: color 0.2s linear 0s;
 
 			&:hover {
@@ -35,7 +39,7 @@ $animation-duration: 0.33s;
 		}
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: $breakpoint-desktop) {
 		#titleContainer,
 		.invis-aligner {
 			flex: 0 1 20%;
@@ -85,7 +89,7 @@ $animation-duration: 0.33s;
 			outline: none;
 		}
 	}
-	@media (min-width: 768px) {
+	@media (min-width: $breakpoint-desktop) {
 		#buttonWrapper {
 			display: none;
 		}
@@ -119,13 +123,13 @@ $animation-duration: 0.33s;
 
 			opacity: 0;
 			transition: none;
-			font-size: 1em;
 		}
+
 		.menuItems:first-child {
 			border-top: none;
 
 			a {
-				margin-top: 0.9em;
+				margin-top: var(--spacing-5);
 			}
 		}
 	}
@@ -144,10 +148,9 @@ $animation-duration: 0.33s;
 
 	.headerLink {
 		position: relative;
-		font-size: 1.4em;
 		color: white;
 		text-align: center;
-		padding: 0.9em 0;
+		padding: var(--spacing-5) 0;
 		width: 100%;
 		text-decoration: none;
 
@@ -156,20 +159,14 @@ $animation-duration: 0.33s;
 		}
 
 		p {
-			font-size: 1em;
+			@include text-size-6;
+
 			margin: 0;
 			transition: color 0.22s linear;
 		}
 	}
 
-	.header-link-icon {
-		$header-link-size: 11px;
-		font-size: $header-link-size;
-		position: absolute;
-		top: 0;
-		right: -$header-link-size - 6px;
-	}
-	@media (min-width: 768px) {
+	@media (min-width: $breakpoint-desktop) {
 		#headerMenu {
 			position: static;
 			position: relative;
@@ -187,7 +184,7 @@ $animation-duration: 0.33s;
 
 			p,
 			li {
-				font-size: 14px;
+				@include text-size-2;
 			}
 
 			.menuItems .selected {
@@ -234,26 +231,10 @@ $animation-duration: 0.33s;
 				position: absolute;
 				right: 0;
 				top: 0;
-
-				.secondaryLink {
-					border: 2px solid white;
-					background-color: transparent;
-					transition: background-color 0.22s linear;
-					color: white;
-					padding: 0 20px;
-					font-size: 14px;
-					height: 30px;
-
-					&:hover {
-						background-color: #1f1f1f;
-					}
-				}
 			}
 		}
 
 		#headerMenu .headerLink {
-			font-size: 14px;
-
 			p {
 				color: rgba(255, 255, 255, 0.72);
 				position: relative;
@@ -287,7 +268,7 @@ $animation-duration: 0.33s;
 			}
 		}
 	}
-} //end of Header
+}
 
 html.expanded {
 	overflow-y: scroll !important;
