@@ -33,38 +33,7 @@ class HomePage extends Component {
 		},
 	};
 
-	opacityEffectHandler() {
-		let projects = Array.from(document.getElementsByClassName("project"));
-
-		const checkProjectBounds = () => {
-			projects.forEach((project) => {
-				let boundingRect = project.getBoundingClientRect();
-				let upperPoint = boundingRect.bottom - boundingRect.height / 1.25;
-				let lowerPoint = boundingRect.bottom - boundingRect.height / 5;
-
-				if (
-					(upperPoint > 0 && upperPoint < window.innerHeight) ||
-					(lowerPoint > 0 && lowerPoint < window.innerHeight)
-				) {
-					if (project.classList.contains("invisible")) {
-						project.classList.remove("invisible");
-					}
-				}
-			});
-		};
-
-		window.setTimeout(() => {
-			window.onscroll = () => {
-				checkProjectBounds();
-			};
-
-			checkProjectBounds();
-		}, 100);
-	}
-
 	async componentDidMount() {
-		this.opacityEffectHandler();
-
 		let blockResponse = await fetch(
 			"https://api.github.com/repos/ajarana/agame"
 		);
