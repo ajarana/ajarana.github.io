@@ -1,0 +1,9 @@
+$lightness-delta: 20%;
+
+@function fixed-darken($color) {
+	@return scale-color($color, $lightness: -$lightness-delta);
+}
+
+@function fixed-lighten($color) {
+	@return scale-color($color, $lightness: $lightness-delta);
+}
