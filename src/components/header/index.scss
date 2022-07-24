@@ -1,8 +1,6 @@
 @import "../../sass/_variables";
 @import "../../sass/_mixins";
 
-$animation-duration: 0.33s;
-
 #header {
 	height: 48px;
 	background-color: #2b2b2b;
@@ -31,7 +29,7 @@ $animation-duration: 0.33s;
 
 			font-family: "Source Code Pro", monospace;
 			color: white;
-			transition: color 0.2s linear 0s;
+			transition: color $animation-duration linear;
 
 			&:hover {
 				color: rgba(255, 255, 255, 0.8);
@@ -67,7 +65,7 @@ $animation-duration: 0.33s;
 				position: relative;
 				bottom: 0;
 
-				transition: bottom $animation-duration ease-in-out 0s;
+				transition: bottom $animation-duration ease-in-out;
 			}
 
 			.hamburgerIcon {
@@ -76,8 +74,8 @@ $animation-duration: 0.33s;
 				height: 2px;
 				background-color: white;
 
-				transition: background-color $animation-duration ease-in-out 0s,
-					transform $animation-duration ease-in-out 0s,
+				transition: background-color $animation-duration ease-in-out,
+					transform $animation-duration ease-in-out,
 					opacity 0s ease-in-out $animation-duration,
 					margin-bottom $animation-duration ease-in-out $animation-duration;
 			}
@@ -135,15 +133,15 @@ $animation-duration: 0.33s;
 	}
 
 	.transitionExpand {
-		transition: height 0s ease-in 0s, width 0s ease-in 0s,
-			background-color $animation-duration ease-in 0s,
-			border-color $animation-duration ease-in 0s;
+		transition: height 0s ease-in, width 0s ease-in,
+			background-color $animation-duration ease-in,
+			border-color $animation-duration ease-in;
 	}
 	.transitionCollapse {
 		transition: height 0s ease-in $animation-duration,
 			width 0s ease-in $animation-duration,
-			background-color $animation-duration ease-in 0s,
-			border-color $animation-duration ease-in 0s;
+			background-color $animation-duration ease-in,
+			border-color $animation-duration ease-in;
 	}
 
 	.headerLink {
@@ -162,7 +160,7 @@ $animation-duration: 0.33s;
 			@include text-size-6;
 
 			margin: 0;
-			transition: color 0.22s linear;
+			transition: color $animation-duration linear;
 		}
 	}
 
@@ -208,13 +206,13 @@ $animation-duration: 0.33s;
 				height: 100%;
 				margin: 0;
 
-				transition: background-color 0.22s linear 0s;
+				transition: background-color $animation-duration linear;
 
 				a {
 					display: flex;
 					align-items: center;
 					height: 100%;
-					transition: color 0.22s linear;
+					transition: color $animation-duration linear;
 
 					&:hover {
 						p {
@@ -250,7 +248,7 @@ $animation-duration: 0.33s;
 					position: absolute;
 					bottom: 0;
 					left: calc((100% - #{$underlineLength}) / 2);
-					transition: all 0.22s ease-in-out;
+					transition: all $animation-duration ease-in-out;
 					border-radius: 3px;
 				}
 
@@ -290,7 +288,7 @@ html.expanded {
 
 		.menuItems {
 			visibility: visible;
-			transition: opacity $animation-duration ease-in-out 0.4s;
+			transition: opacity $animation-duration ease-in-out;
 			opacity: 1;
 		}
 	}
@@ -306,10 +304,10 @@ html.expanded {
 		.hamburgerIcon {
 			background-color: white;
 
-			transition: background-color $animation-duration ease-in-out 0s,
+			transition: background-color $animation-duration ease-in-out,
 				transform $animation-duration ease-in-out $animation-duration,
 				opacity 0s ease-in-out $animation-duration,
-				margin-bottom $animation-duration ease-in-out 0s;
+				margin-bottom $animation-duration ease-in-out;
 		}
 		.hamburgerIcon:not(:last-child) {
 			margin-bottom: -2px;

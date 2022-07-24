@@ -209,8 +209,10 @@ figure {
 $cssColor1: hsl(200, 70%, 54%);
 $cssColor2: hsl(200, 70%, 74%);
 
+$text-animation-duration: 2.5s;
+
 #css3 {
-	animation-duration: 2.5s;
+	animation-duration: $text-animation-duration;
 	animation-name: cssColorChange;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -223,7 +225,7 @@ $htmlColor1: hsl(17, 80%, 54%);
 $htmlColor2: hsl(17, 80%, 74%);
 
 #html5 {
-	animation-duration: 2.5s;
+	animation-duration: $text-animation-duration;
 	animation-name: htmlColorChange;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -237,7 +239,7 @@ $reactColor2: hsl(193, 95%, 86%);
 $darkBorder: #444;
 
 #react {
-	animation-duration: 2.5s;
+	animation-duration: $text-animation-duration;
 	animation-name: reactColorChange;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
