@@ -1,5 +1,5 @@
-@import "../../sass/_mixins";
-@import "../../sass/_variables";
+@use "../../sass/mixins";
+@use "../../sass/variables";
 
 .resume {
 	margin-bottom: var(--spacing-10);
@@ -9,7 +9,7 @@
 	}
 
 	h2 {
-		@include text-size-6;
+		@include mixins.text-size-6;
 	}
 
 	header {
@@ -39,7 +39,7 @@
 				}
 			}
 
-			@media (min-width: $breakpoint-desktop) {
+			@media (min-width: variables.$breakpoint-desktop) {
 				flex-direction: row;
 				justify-content: space-evenly;
 			}
@@ -96,7 +96,7 @@
 			display: grid;
 
 			h3 {
-				@include text-size-3;
+				@include mixins.text-size-3;
 
 				align-self: center;
 			}
@@ -133,7 +133,7 @@
 			}
 		}
 
-		@media (min-width: $breakpoint-desktop) {
+		@media (min-width: variables.$breakpoint-desktop) {
 			$divider-height: 12px;
 			$divider-margin: 8px;
 
@@ -142,7 +142,7 @@
 				gap: var(--spacing-6);
 
 				h3 {
-					@include text-size-4;
+					@include mixins.text-size-4;
 				}
 
 				.skillsListContainer {
@@ -163,13 +163,13 @@
 
 	.accomplishment {
 		h3 {
-			@include text-size-5;
+			@include mixins.text-size-5;
 
 			margin: 0 0 var(--spacing-2);
 		}
 
 		h4 {
-			@include text-size-3;
+			@include mixins.text-size-3;
 
 			margin: 0 0 8px;
 		}
@@ -207,13 +207,13 @@
 			}
 		}
 
-		@media (min-width: $breakpoint-desktop) {
+		@media (min-width: variables.$breakpoint-desktop) {
 			h3 {
-				@include text-size-6;
+				@include mixins.text-size-6;
 			}
 
 			h4 {
-				@include text-size-4;
+				@include mixins.text-size-4;
 			}
 
 			.verticalList {
@@ -238,7 +238,7 @@
 		}
 	}
 
-	@media (min-width: $breakpoint-desktop) {
+	@media (min-width: variables.$breakpoint-desktop) {
 		border: 1px solid var(--light-gray);
 		border-radius: var(--border-radius-1);
 		box-shadow: var(--box-shadow-1);
@@ -251,7 +251,7 @@
 		}
 
 		h2 {
-			@include text-size-7;
+			@include mixins.text-size-7;
 		}
 	}
 }

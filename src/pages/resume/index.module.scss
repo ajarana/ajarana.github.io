@@ -1,12 +1,12 @@
-@import "../../sass/_mixins";
-@import "../../sass/_variables";
+@use "../../sass/mixins";
+@use "../../sass/variables";
 
 .resumePage {
-	@include container-1;
+	@include mixins.container-1;
 
 	padding: var(--spacing-6);
 
-	@media (min-width: $breakpoint-desktop) {
+	@media (min-width: variables.$breakpoint-desktop) {
 		padding: var(--spacing-10);
 	}
 }

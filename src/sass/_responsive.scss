@@ -1,5 +1,7 @@
-@import "./_mixins.scss";
-@import "./_variables";
+@use "variables";
+@use "functions";
+@use "mixins";
+@use "colors";
 
 body {
 	color: var(--black);
@@ -8,22 +10,12 @@ body {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-a {
-	text-decoration: none;
-	color: #2c6ebe;
-	transition: color $animation-duration linear;
-
-	&:hover {
-		color: #206292;
-	}
-}
-
 .mainContainer {
-	@include container-1;
+	@include mixins.container-1;
 
 	padding: 0 var(--spacing-6);
 
-	@media (min-width: $breakpoint-desktop) {
+	@media (min-width: variables.$breakpoint-desktop) {
 		padding: 0 var(--spacing-10);
 	}
 }
@@ -246,11 +238,10 @@ a {
 		border-width: 3px;
 		border-style: solid;
 
-		border-color: #2c6ebe #2c6ebe transparent transparent;
-
+		border-color: colors.$blue colors.$blue transparent transparent;
 		transform: rotate(45deg);
 
-		transition: border-color $animation-duration linear;
+		transition: border-color variables.$animation-duration linear;
 		margin-left: 0.2em;
 		margin-bottom: 1px;
 		position: relative;
@@ -260,10 +251,10 @@ a {
 
 	&:hover:after {
 		animation-name: bounce;
-		animation-duration: $animation-duration;
+		animation-duration: variables.$animation-duration;
 		animation-direction: alternate;
 		animation-iteration-count: 2;
-		border-color: #206292 #206292 transparent transparent;
+		border-color: colors.$blue-dark colors.$blue-dark transparent transparent;
 	}
 
 	@media (min-width: 992px) {
@@ -320,7 +311,7 @@ a {
 	padding: 8em 16px;
 	border-bottom: 1px solid #eee;
 
-	@media (min-width: $breakpoint-desktop) {
+	@media (min-width: variables.$breakpoint-desktop) {
 		padding: 9em 30px;
 	}
 }
@@ -365,26 +356,26 @@ a {
 	box-sizing: content-box;
 
 	h2 {
-		@include text-size-8;
+		@include mixins.text-size-8;
 
 		margin-bottom: var(--spacing-4);
 	}
 
 	p,
 	a {
-		@include text-size-5;
+		@include mixins.text-size-5;
 	}
 
 	@media (min-width: 992px) {
 		max-width: 575px;
 
 		h2 {
-			@include text-size-9;
+			@include mixins.text-size-9;
 		}
 
 		p,
 		a {
-			@include text-size-6;
+			@include mixins.text-size-6;
 		}
 	}
 }

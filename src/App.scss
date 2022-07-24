@@ -1,39 +1,129 @@
-@import "sass/_colors";
-@import "sass/_responsive";
-@import "sass/_custom-properties";
-@import "sass/_mixins";
-@import "sass/_variables";
+@use "sass/colors";
+@use "sass/responsive";
+@use "sass/mixins";
+@use "sass/variables";
+@use "sass/functions";
+
+// Color palette: https://coolors.co/527bcb-b9c7f3-e8edde-cc001b-0c1618
+
+$lightness-delta: -15%;
+
+// Glaucous
+$color-1: hsl(220, 54%, 56%);
+$color-1-dark: scale-color($color-1, $lightness: $lightness-delta);
+
+// Lavender Blue
+$color-2: hsl(226, 71%, 92%);
+$color-2-dark: scale-color($color-2, $lightness: $lightness-delta);
+
+// Beige
+$color-3: hsl(81, 28%, 90%);
+$color-3-dark: scale-color($color-3, $lightness: $lightness-delta);
+
+// Carnelian
+$color-4: hsl(352, 100%, 44%);
+$color-4-dark: scale-color($color-4, $lightness: $lightness-delta);
+
+// Jet
+$color-5: hsl(0, 0%, 20%);
+$color-5-dark: scale-color($color-5, $lightness: $lightness-delta);
+
+:root {
+	// Colors
+	--light-link-blue-1: hsl(200, 70%, 54%);
+	--light-link-blue-2: hsl(200, 70%, 68%);
+	--color-1: #{$color-1};
+	--color-1-dark: #{$color-1-dark};
+	--color-2: #{$color-2};
+	--color-2-dark: #{$color-2-dark};
+	--color-3: #{$color-3};
+	--color-3-dark: #{$color-3-dark};
+	--color-4: #{$color-4};
+	--color-4-dark: #{$color-4-dark};
+	--color-5: #{$color-5};
+	--color-5-dark: #{$color-5-dark};
+	--blue: #1976d2;
+	--dark-blue: #004ba0;
+	--light-blue: #63a4ff;
+	--white: hsl(0, 0%, 100%);
+	--gray: hsl(0, 0%, 46%);
+	--light-gray: hsl(0, 0%, 70%);
+	--black: hsl(0, 0%, 11%);
+	--text-black: #{$color-5};
+
+	// Misc.
+	--border-radius-1: 3px;
+	--box-shadow-1: 2px 2px 5px 1px #{scale-color($color-5, $lightness: 80%)};
+	--container-width-1: 1100px;
+
+	// Spacing
+	--spacing-1: 4px;
+	--spacing-2: 8px;
+	--spacing-3: 12px;
+	--spacing-4: 16px;
+	--spacing-5: 20px;
+	--spacing-6: 24px;
+	--spacing-7: 28px;
+	--spacing-8: 32px;
+	--spacing-9: 36px;
+	--spacing-10: 40px;
+	--spacing-11: 44px;
+	--spacing-12: 48px;
+}
 
 * {
 	margin: 0;
 	padding: 0;
 }
 
+a {
+	$color: colors.$blue;
+
+	text-decoration: none;
+	color: $color;
+	transition: color variables.$animation-duration linear;
+
+	&:hover {
+		color: functions.fixed-darken($color);
+		text-decoration: underline;
+	}
+
+	&.dark {
+		$color: colors.$blue-dark;
+
+		color: $color;
+
+		&:hover {
+			color: functions.fixed-darken($color);
+		}
+	}
+}
+
 h1 {
-	@include text-size-8;
+	@include mixins.text-size-8;
 }
 
 h2 {
-	@include text-size-7;
+	@include mixins.text-size-7;
 }
 
 h3 {
-	@include text-size-6;
+	@include mixins.text-size-6;
 }
 
 h4 {
-	@include text-size-5;
+	@include mixins.text-size-5;
 }
 
 h5 {
-	@include text-size-4;
+	@include mixins.text-size-4;
 }
 
 h6,
 p,
 a,
 li {
-	@include text-size-3;
+	@include mixins.text-size-3;
 }
 
 ol {
@@ -44,32 +134,32 @@ ul {
 	list-style: none;
 }
 
-@media (min-width: $breakpoint-desktop) {
+@media (min-width: variables.$breakpoint-desktop) {
 	h1 {
-		@include text-size-9;
+		@include mixins.text-size-9;
 	}
 
 	h2 {
-		@include text-size-8;
+		@include mixins.text-size-8;
 	}
 
 	h3 {
-		@include text-size-7;
+		@include mixins.text-size-7;
 	}
 
 	h4 {
-		@include text-size-6;
+		@include mixins.text-size-6;
 	}
 
 	h5 {
-		@include text-size-5;
+		@include mixins.text-size-5;
 	}
 
 	h6,
 	p,
 	a,
 	li {
-		@include text-size-4;
+		@include mixins.text-size-4;
 	}
 
 	ol {

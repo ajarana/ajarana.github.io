@@ -1,5 +1,5 @@
-@import "../../sass/_mixins.scss";
-@import "../../sass/_mixins.scss";
+@use "../../sass/mixins";
+@use "../../sass/variables";
 
 #blogDirectory {
 	min-height: calc(100vh - 159px);
@@ -12,20 +12,20 @@
 	}
 
 	a {
-		@include text-size-5;
+		@include mixins.text-size-5;
 	}
 
 	h2:not(:first-child) {
 		margin-top: 2em;
 	}
 
-	@media (min-width: $breakpoint-desktop) {
+	@media (min-width: variables.$breakpoint-desktop) {
 		p {
 			margin-top: var(--spacing-6);
 		}
 
 		a {
-			@include text-size-6;
+			@include mixins.text-size-6;
 		}
 	}
 }
@@ -57,7 +57,7 @@
 		padding-left: var(--spacing-10);
 	}
 
-	@media (min-width: $breakpoint-desktop) {
+	@media (min-width: variables.$breakpoint-desktop) {
 		max-width: 800px;
 	}
 }

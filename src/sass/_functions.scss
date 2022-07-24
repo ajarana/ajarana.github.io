@@ -1,4 +1,4 @@
-$lightness-delta: 20%;
+$lightness-delta: 25%;
 
 @function fixed-darken($color) {
 	@return scale-color($color, $lightness: -$lightness-delta);

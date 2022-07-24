@@ -1,5 +1,5 @@
-@import "../../sass/_mixins";
-@import "../../sass/_variables";
+@use "../../sass/mixins";
+@use "../../sass/variables";
 
 .alert {
 	box-shadow: var(--box-shadow-1);
@@ -13,17 +13,17 @@
 	}
 
 	.heading {
-		@include text-size-4;
+		@include mixins.text-size-4;
 
 		font-weight: bold;
 		margin: 0 0 var(--spacing-2);
 	}
 
-	@media (min-width: $breakpoint-desktop) {
+	@media (min-width: variables.$breakpoint-desktop) {
 		padding: var(--spacing-5);
 
 		.heading {
-			@include text-size-5;
+			@include mixins.text-size-5;
 
 			margin: 0 0 var(--spacing-3);
 		}

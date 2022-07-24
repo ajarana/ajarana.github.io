@@ -36,3 +36,7 @@
 .red {
 	color: hsl(350, 100%, 50%);
 }
+
+$blue: #1976d2;
+$blue-light: scale-color($blue, $lightness: 45%);
+$blue-dark: scale-color($blue, $lightness: -15%);

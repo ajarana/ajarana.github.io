@@ -1,4 +1,7 @@
-@import "../../sass/mixins";
+@use "../../sass/colors";
+@use "../../sass/functions";
+@use "../../sass/mixins";
+@use "../../sass/variables";
 
 #introduction {
 	color: #fff;
@@ -37,19 +40,20 @@
 		margin-bottom: 0;
 
 		a {
-			color: var(--light-link-blue-2);
+			$color: colors.$blue-light;
+			$color-dark: functions.fixed-darken($color);
+
+			color: $color;
 
 			&:after {
-				border-color: var(--light-link-blue-2) var(--light-link-blue-2)
-					transparent transparent;
+				border-color: $color $color transparent transparent;
 			}
 
 			&:hover {
-				color: var(--light-link-blue-1);
+				color: $color-dark;
 
 				&:after {
-					border-color: var(--light-link-blue-1) var(--light-link-blue-1)
-						transparent transparent;
+					border-color: $color-dark $color-dark transparent transparent;
 				}
 			}
 		}
@@ -105,15 +109,15 @@
 
 		p,
 		a {
-			@include text-size-4;
+			@include mixins.text-size-4;
 		}
 
-		@media (min-width: $breakpoint-desktop) {
+		@media (min-width: variables.$breakpoint-desktop) {
 			max-width: none;
 
 			p,
 			a {
-				@include text-size-5;
+				@include mixins.text-size-5;
 			}
 		}
 
@@ -153,11 +157,11 @@
 	margin: 1.3em 0 0;
 
 	h3 {
-		@include text-size-5;
+		@include mixins.text-size-5;
 	}
 
 	.updated-time {
-		@include text-size-3;
+		@include mixins.text-size-3;
 
 		color: #999;
 		margin: var(--spacing-1) 0 var(--spacing-4);
@@ -173,7 +177,7 @@
 		column-gap: var(--spacing-8);
 
 		.updated-time {
-			@include text-size-4;
+			@include mixins.text-size-4;
 
 			margin: 0;
 		}
