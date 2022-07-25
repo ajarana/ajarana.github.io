@@ -1,7 +1,7 @@
 @use "../../sass/colors";
 @use "../../sass/functions";
-@use "../../sass/mixins";
-@use "../../sass/variables";
+@use "../../sass/typography";
+@use "../../sass/layout";
 
 #introduction {
 	color: #fff;
@@ -109,15 +109,15 @@
 
 		p,
 		a {
-			@include mixins.text-size-4;
+			@include typography.text-size-4;
 		}
 
-		@media (min-width: variables.$breakpoint-desktop) {
+		@media (min-width: layout.$breakpoint-desktop) {
 			max-width: none;
 
 			p,
 			a {
-				@include mixins.text-size-5;
+				@include typography.text-size-5;
 			}
 		}
 
@@ -157,11 +157,11 @@
 	margin: 1.3em 0 0;
 
 	h3 {
-		@include mixins.text-size-5;
+		@include typography.text-size-5;
 	}
 
 	.updated-time {
-		@include mixins.text-size-3;
+		@include typography.text-size-3;
 
 		color: #999;
 		margin: var(--spacing-1) 0 var(--spacing-4);
@@ -177,7 +177,7 @@
 		column-gap: var(--spacing-8);
 
 		.updated-time {
-			@include mixins.text-size-4;
+			@include typography.text-size-4;
 
 			margin: 0;
 		}

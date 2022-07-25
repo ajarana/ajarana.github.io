@@ -1,4 +1,4 @@
-@use "../../sass/_mixins";
+@use "../../sass/typography";
 
 #footer {
 	height: 110px;
@@ -14,7 +14,7 @@
 	}
 
 	h2 {
-		@include mixins.text-size-3;
+		@include typography.text-size-3;
 
 		font-weight: normal;
 	}

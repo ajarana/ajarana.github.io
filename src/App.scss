@@ -1,8 +1,8 @@
 @use "sass/colors";
-@use "sass/responsive";
-@use "sass/mixins";
-@use "sass/variables";
+@use "sass/typography";
+@use "sass/layout";
 @use "sass/functions";
+@use "sass/animations";
 
 // Color palette: https://coolors.co/527bcb-b9c7f3-e8edde-cc001b-0c1618
 
@@ -81,7 +81,7 @@ a {
 
 	text-decoration: none;
 	color: $color;
-	transition: color variables.$animation-duration linear;
+	transition: color animations.$animation-duration linear;
 
 	&:hover {
 		color: functions.fixed-darken($color);
@@ -100,30 +100,30 @@ a {
 }
 
 h1 {
-	@include mixins.text-size-8;
+	@include typography.text-size-8;
 }
 
 h2 {
-	@include mixins.text-size-7;
+	@include typography.text-size-7;
 }
 
 h3 {
-	@include mixins.text-size-6;
+	@include typography.text-size-6;
 }
 
 h4 {
-	@include mixins.text-size-5;
+	@include typography.text-size-5;
 }
 
 h5 {
-	@include mixins.text-size-4;
+	@include typography.text-size-4;
 }
 
 h6,
 p,
 a,
 li {
-	@include mixins.text-size-3;
+	@include typography.text-size-3;
 }
 
 ol {
@@ -134,35 +134,451 @@ ul {
 	list-style: none;
 }
 
-@media (min-width: variables.$breakpoint-desktop) {
+@media (min-width: layout.$breakpoint-desktop) {
 	h1 {
-		@include mixins.text-size-9;
+		@include typography.text-size-9;
 	}
 
 	h2 {
-		@include mixins.text-size-8;
+		@include typography.text-size-8;
 	}
 
 	h3 {
-		@include mixins.text-size-7;
+		@include typography.text-size-7;
 	}
 
 	h4 {
-		@include mixins.text-size-6;
+		@include typography.text-size-6;
 	}
 
 	h5 {
-		@include mixins.text-size-5;
+		@include typography.text-size-5;
 	}
 
 	h6,
 	p,
 	a,
 	li {
-		@include mixins.text-size-4;
+		@include typography.text-size-4;
 	}
 
 	ol {
 		padding-left: var(--spacing-10);
 	}
+}
+
+body {
+	color: var(--black);
+	font-family: "Arimo", sans-serif;
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.mainContainer {
+	@include layout.container-1;
+
+	padding: 0 var(--spacing-6);
+
+	@media (min-width: layout.$breakpoint-desktop) {
+		padding: 0 var(--spacing-10);
+	}
+}
+
+.flexCentered {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flexBottom {
+	display: flex;
+	align-items: flex-end;
+}
+
+.verticalCenter {
+	display: flex;
+	align-items: center;
+}
+
+.blockToFlexCentered {
+	display: block;
+}
+@media (min-width: 768px) {
+	.blockToFlexCentered {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.blockToFlexLeft {
+	display: block;
+	justify-content: flex-start;
+	align-items: center;
+}
+@media (min-width: 768px) {
+	.blockToFlexLeft {
+		display: flex;
+	}
+}
+
+.flexCenteredToFlexLeft {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@media (min-width: 992px) {
+	.flexCenteredToFlexLeft {
+		justify-content: flex-start;
+	}
+}
+
+.flexCenteredToFlexRight {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@media (min-width: 768px) {
+	.flexCenteredToFlexRight {
+		justify-content: flex-end;
+	}
+}
+
+.flexCenteredUp {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.flexRight {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.flexLeft {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.flexLeftUp {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.flexCenteredToFlexTopLeft {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media (min-width: 768px) {
+	.flexCenteredToFlexTopLeft {
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+
+.flexWrapThenNoWrap {
+	flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+	.flexWrapThenNoWrap {
+		flex-wrap: nowrap;
+	}
+}
+
+.inlineBlockToFlexLeft {
+	display: inline-block;
+}
+@media (min-width: 768px) {
+	.inlineBlockToFlexLeft {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+}
+
+.textAlignRight {
+	text-align: right;
+}
+
+.textAlignCenter {
+	text-align: center;
+}
+
+.textAlignleft {
+	text-align: left;
+}
+
+.primaryHeaderWrapper {
+	text-align: center;
+
+	@media (min-width: 992px) {
+		text-align: left;
+	}
+}
+
+.plainLink {
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.plainLink:link,
+.plainLink:visited,
+.plainLink:active {
+	color: #333;
+	text-decoration: none;
+}
+
+.plainLink:hover {
+	text-decoration: underline;
+}
+
+.normalText {
+	font-weight: normal;
+}
+
+.plainList {
+	list-style-type: none;
+}
+
+.menuIsExpanded {
+	height: 100%;
+	overflow: hidden;
+}
+
+.noMargin {
+	margin: 0;
+}
+
+.linkContainer {
+	list-style: none;
+	padding: 0;
+	margin: var(--spacing-4) 0;
+
+	li {
+		margin: 0 0 var(--spacing-4) 0;
+
+		@media (min-width: 768px) {
+			margin-right: 2em;
+			margin-bottom: 0;
+		}
+
+		@media (min-width: 992px) {
+			margin-right: 3em;
+		}
+	}
+
+	li:last-child {
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+
+	@media (min-width: 768px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media (min-width: 992px) {
+		justify-content: flex-start;
+	}
+}
+
+.linkIcon {
+	position: relative;
+
+	&:after {
+		content: "";
+		display: inline-block;
+		$length: 0.22em;
+
+		width: $length;
+		height: $length;
+		border-width: 3px;
+		border-style: solid;
+
+		border-color: colors.$blue colors.$blue transparent transparent;
+		transform: rotate(45deg);
+
+		transition: border-color animations.$animation-duration linear;
+		margin-left: 0.2em;
+		margin-bottom: 1px;
+		position: relative;
+		left: 0;
+		right: -$length;
+	}
+
+	&:hover:after {
+		animation-name: bounce;
+		animation-duration: animations.$animation-duration;
+		animation-direction: alternate;
+		animation-iteration-count: 2;
+		border-color: colors.$blue-dark colors.$blue-dark transparent transparent;
+	}
+
+	@media (min-width: 992px) {
+		&:after {
+			width: 0.26em;
+			height: 0.26em;
+			width: 6px;
+			height: 6px;
+		}
+	}
+}
+
+@keyframes bounce {
+	from {
+		left: 0;
+	}
+
+	to {
+		left: 10px;
+	}
+}
+
+.antiCollapsingMargins {
+	*:first-child {
+		margin-top: 0;
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.code {
+	font-family: monospace;
+	padding: 0.3em 0.6em;
+	background-color: #eee;
+	white-space: nowrap;
+}
+
+.disabled {
+	cursor: not-allowed;
+}
+
+.responsiveCanvas {
+	/*This eliminates inconsistent rendering across browsers, canvas is supposed to be a block-level element across all browsers anyway*/
+	display: block;
+
+	/*myCanvas will inherit its CSS width and style property values from aWrapper*/
+	width: 100%;
+	height: 100%;
+}
+
+.main-container-full-width {
+	padding: 8em 16px;
+	border-bottom: 1px solid #eee;
+
+	@media (min-width: layout.$breakpoint-desktop) {
+		padding: 9em 30px;
+	}
+}
+
+.fullWidthContainerSmall {
+	padding: 5em 16px;
+	border-bottom: 1px solid #eee;
+
+	@media (min-width: 768px) {
+		padding: 5em 30px;
+	}
+}
+
+.images {
+	display: inline-block;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+
+	max-width: 100%;
+
+	@media (min-width: 992px) {
+		max-width: none;
+	}
+}
+
+.hidden-heading {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}
+
+.hero-header-text {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	margin: 0 auto;
+	max-width: 525px;
+	padding: 0;
+
+	box-sizing: content-box;
+
+	h2 {
+		@include typography.text-size-8;
+
+		margin-bottom: var(--spacing-4);
+	}
+
+	p,
+	a {
+		@include typography.text-size-5;
+	}
+
+	@media (min-width: 992px) {
+		max-width: 575px;
+
+		h2 {
+			@include typography.text-size-9;
+		}
+
+		p,
+		a {
+			@include typography.text-size-6;
+		}
+	}
+}
+
+.lightGray {
+	color: #777;
+}
+.backgroundGray {
+	background-color: #f8f8f8;
+}
+.codePurple {
+	color: #c678dd;
+}
+.codeRed {
+	color: #e06c75;
+}
+.codeGreen {
+	color: #98c379;
+}
+.codeBlue {
+	color: #61afef;
+}
+.codeTeal {
+	color: #56b6c2;
+}
+.codeGray {
+	color: #777;
+}
+.codeYellow {
+	color: #e5c07b;
+}
+.codeOrange {
+	color: #d19a66;
+}
+.darkBackground {
+	background-color: #333;
+	color: white;
+}
+
+.red {
+	color: hsl(350, 100%, 50%);
 }

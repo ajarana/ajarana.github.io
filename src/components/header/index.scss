@@ -1,5 +1,6 @@
-@use "../../sass/variables";
-@use "../../sass/mixins";
+@use "../../sass/animations";
+@use "../../sass/typography";
+@use "../../sass/layout";
 
 #header {
 	height: 48px;
@@ -25,11 +26,11 @@
 		flex: 0 1 85%;
 
 		#logo {
-			@include mixins.text-size-6;
+			@include typography.text-size-6;
 
 			font-family: "Source Code Pro", monospace;
 			color: white;
-			transition: color variables.$animation-duration linear;
+			transition: color animations.$animation-duration linear;
 
 			&:hover {
 				color: rgba(255, 255, 255, 0.8);
@@ -37,7 +38,7 @@
 		}
 	}
 
-	@media (min-width: variables.$breakpoint-desktop) {
+	@media (min-width: layout.$breakpoint-desktop) {
 		#titleContainer,
 		.invis-aligner {
 			flex: 0 1 20%;
@@ -65,7 +66,7 @@
 				position: relative;
 				bottom: 0;
 
-				transition: bottom variables.$animation-duration ease-in-out;
+				transition: bottom animations.$animation-duration ease-in-out;
 			}
 
 			.hamburgerIcon {
@@ -74,11 +75,11 @@
 				height: 2px;
 				background-color: white;
 
-				transition: background-color variables.$animation-duration ease-in-out,
-					transform variables.$animation-duration ease-in-out,
-					opacity 0s ease-in-out variables.$animation-duration,
-					margin-bottom variables.$animation-duration ease-in-out
-						variables.$animation-duration;
+				transition: background-color animations.$animation-duration ease-in-out,
+					transform animations.$animation-duration ease-in-out,
+					opacity 0s ease-in-out animations.$animation-duration,
+					margin-bottom animations.$animation-duration ease-in-out
+						animations.$animation-duration;
 			}
 			.hamburgerIcon:not(:last-child) {
 				margin-bottom: 6px;
@@ -88,7 +89,7 @@
 			outline: none;
 		}
 	}
-	@media (min-width: variables.$breakpoint-desktop) {
+	@media (min-width: layout.$breakpoint-desktop) {
 		#buttonWrapper {
 			display: none;
 		}
@@ -135,14 +136,14 @@
 
 	.transitionExpand {
 		transition: height 0s ease-in, width 0s ease-in,
-			background-color variables.$animation-duration ease-in,
-			border-color variables.$animation-duration ease-in;
+			background-color animations.$animation-duration ease-in,
+			border-color animations.$animation-duration ease-in;
 	}
 	.transitionCollapse {
-		transition: height 0s ease-in variables.$animation-duration,
-			width 0s ease-in variables.$animation-duration,
-			background-color variables.$animation-duration ease-in,
-			border-color variables.$animation-duration ease-in;
+		transition: height 0s ease-in animations.$animation-duration,
+			width 0s ease-in animations.$animation-duration,
+			background-color animations.$animation-duration ease-in,
+			border-color animations.$animation-duration ease-in;
 	}
 
 	.headerLink {
@@ -158,14 +159,14 @@
 		}
 
 		p {
-			@include mixins.text-size-6;
+			@include typography.text-size-6;
 
 			margin: 0;
-			transition: color variables.$animation-duration linear;
+			transition: color animations.$animation-duration linear;
 		}
 	}
 
-	@media (min-width: variables.$breakpoint-desktop) {
+	@media (min-width: layout.$breakpoint-desktop) {
 		#headerMenu {
 			position: static;
 			position: relative;
@@ -183,7 +184,7 @@
 
 			p,
 			li {
-				@include mixins.text-size-2;
+				@include typography.text-size-2;
 			}
 
 			.menuItems .selected {
@@ -207,13 +208,13 @@
 				height: 100%;
 				margin: 0;
 
-				transition: background-color variables.$animation-duration linear;
+				transition: background-color animations.$animation-duration linear;
 
 				a {
 					display: flex;
 					align-items: center;
 					height: 100%;
-					transition: color variables.$animation-duration linear;
+					transition: color animations.$animation-duration linear;
 
 					&:hover {
 						p {
@@ -249,7 +250,7 @@
 					position: absolute;
 					bottom: 0;
 					left: calc((100% - #{$underlineLength}) / 2);
-					transition: all variables.$animation-duration ease-in-out;
+					transition: all animations.$animation-duration ease-in-out;
 					border-radius: 3px;
 				}
 
@@ -289,7 +290,7 @@ html.expanded {
 
 		.menuItems {
 			visibility: visible;
-			transition: opacity variables.$animation-duration ease-in-out;
+			transition: opacity animations.$animation-duration ease-in-out;
 			opacity: 1;
 		}
 	}
@@ -298,19 +299,19 @@ html.expanded {
 		padding: 10px 0;
 
 		#hamburgerWrapper {
-			transition: bottom variables.$animation-duration ease-in-out
-				variables.$animation-duration;
+			transition: bottom animations.$animation-duration ease-in-out
+				animations.$animation-duration;
 			bottom: calc(50% - 1px);
 		}
 
 		.hamburgerIcon {
 			background-color: white;
 
-			transition: background-color variables.$animation-duration ease-in-out,
-				transform variables.$animation-duration ease-in-out
-					variables.$animation-duration,
-				opacity 0s ease-in-out variables.$animation-duration,
-				margin-bottom variables.$animation-duration ease-in-out;
+			transition: background-color animations.$animation-duration ease-in-out,
+				transform animations.$animation-duration ease-in-out
+					animations.$animation-duration,
+				opacity 0s ease-in-out animations.$animation-duration,
+				margin-bottom animations.$animation-duration ease-in-out;
 		}
 		.hamburgerIcon:not(:last-child) {
 			margin-bottom: -2px;
