@@ -80,7 +80,7 @@ const Resume = (props: ResumeProps) => {
 				</ul>
 			</header>
 
-			<section className={cx(styles.resumeSection, styles.skillSection)}>
+			<section className={styles.resumeSection}>
 				<h2>Skills</h2>
 
 				{skillSections}
