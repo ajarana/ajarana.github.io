@@ -1,3 +1,27 @@
+// Color palette: https://coolors.co/527bcb-b9c7f3-e8edde-cc001b-0c1618
+
+$lightness-delta: -15%;
+
+// Glaucous
+$color-1: hsl(220, 54%, 56%);
+$color-1-dark: scale-color($color-1, $lightness: $lightness-delta);
+
+// Lavender Blue
+$color-2: hsl(226, 71%, 92%);
+$color-2-dark: scale-color($color-2, $lightness: $lightness-delta);
+
+// Beige
+$color-3: hsl(81, 28%, 90%);
+$color-3-dark: scale-color($color-3, $lightness: $lightness-delta);
+
+// Carnelian
+$color-4: hsl(352, 100%, 44%);
+$color-4-dark: scale-color($color-4, $lightness: $lightness-delta);
+
+// Jet
+$color-5: hsl(0, 0%, 20%);
+$color-5-dark: scale-color($color-5, $lightness: $lightness-delta);
+
 $blue: #1976d2;
 $blue-light: scale-color($blue, $lightness: 45%);
 $blue-dark: scale-color($blue, $lightness: -15%);

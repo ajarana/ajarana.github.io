@@ -8,7 +8,8 @@ const candidate: Candidate = deepFreeze({
 	location: "Canada",
 	email: "johnsmith@email.com",
 	phoneNumber: "703-444-4444",
-	portfolioUrl: "johnsmith.com/portfolio",
+	portfolioUrl: "A portfolio URL",
+	github: "A github URL",
 	skillLists: [
 		{
 			category: "Cooking",
@@ -27,13 +28,6 @@ const candidate: Candidate = deepFreeze({
 			responsibilities: ["Cooking delicious food."],
 		},
 	],
-	personalProjects: [
-		{
-			name: "Cooking with Smith",
-			datesActive: "Sept 2018 - Present",
-			description: "Cooking live!",
-		},
-	],
 	degrees: [
 		{
 			name: "Bachelor of Arts in Culinary Arts",
@@ -46,16 +40,9 @@ const candidate: Candidate = deepFreeze({
 test("renders all headings", () => {
 	render(<Resume candidate={candidate} />);
 
-	const { name, skillLists, previousJobs, personalProjects, degrees } =
-		candidate;
+	const { name, skillLists, previousJobs, degrees } = candidate;
 
-	const headingNames = [
-		name,
-		"Skills",
-		"Work Experience",
-		"Personal Projects",
-		"Education",
-	]
+	const headingNames = [name, "Skills", "Work Experience", "Education"]
 		.concat(skillLists.map(({ category }) => category))
 		.concat(
 			previousJobs.reduce((accum: string[], { jobTitle, company }) => {
@@ -65,7 +52,6 @@ test("renders all headings", () => {
 				return accum;
 			}, [])
 		)
-		.concat(personalProjects.map(({ name }) => name))
 		.concat(degrees.map(({ name }) => name));
 
 	headingNames.forEach((headingName) => {

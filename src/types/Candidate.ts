@@ -28,8 +28,9 @@ export interface Candidate {
 	location: string;
 	email: string;
 	portfolioUrl: string;
+	github: string;
 	skillLists: SkillList[];
 	previousJobs: Job[];
-	personalProjects: PersonalProject[];
+	personalProjects?: PersonalProject[];
 	degrees: AcademicDegree[];
 }

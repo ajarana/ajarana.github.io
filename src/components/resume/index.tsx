@@ -5,11 +5,16 @@ import {
 	faLaptopCode,
 	faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import classNames from "classnames/bind";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const styles = require("./index.module.scss").default;
 
+const cx = classNames.bind(styles);
+
 interface ResumeProps {
 	candidate: Candidate;
+	printMediaType?: boolean;
 }
 
 const Resume = (props: ResumeProps) => {
@@ -19,11 +24,12 @@ const Resume = (props: ResumeProps) => {
 			location,
 			email,
 			portfolioUrl,
+			github,
 			skillLists,
 			previousJobs,
-			personalProjects,
 			degrees,
 		},
+		printMediaType = false,
 	} = props;
 
 	const skillSections = skillLists.map(({ category, skills }) => {
@@ -34,53 +40,53 @@ const Resume = (props: ResumeProps) => {
 		return (
 			<section
 				key={category}
-				className={styles.skillsGroup}
+				className={styles.skillGroup}
 			>
 				<h3>{category}</h3>
 
-				<div className={styles.skillsListContainer}>
+				<div className={styles.skillListContainer}>
 					<ul className={styles.skillList}>{listItems}</ul>
 				</div>
 			</section>
 		);
 	});
 
+	const resumeClassName = cx("resume", {
+		printMediaType,
+	});
+
 	return (
-		<article className={styles.resume}>
+		<article className={resumeClassName}>
 			<header>
 				<h1>{name}</h1>
 
 				<ul className={styles.contactInformation}>
 					<li>
-						<FontAwesomeIcon icon={faLocationDot} />
-						<span>{location}</span>
+						<FontAwesomeIcon icon={faLaptopCode} />
+						<span>{portfolioUrl}</span>
+					</li>
+					<li>
+						<FontAwesomeIcon icon={faGithub} />
+						<span>{github}</span>
 					</li>
 					<li>
 						<FontAwesomeIcon icon={faEnvelope} />
 						<span>{email}</span>
 					</li>
 					<li>
-						<FontAwesomeIcon icon={faLaptopCode} />
-						<span>{portfolioUrl}</span>
+						<FontAwesomeIcon icon={faLocationDot} />
+						<span>{location}</span>
 					</li>
 				</ul>
 			</header>
 
-			<section
-				id={styles.skillSection}
-				className={styles.resumeSection}
-			>
+			<section className={cx(styles.resumeSection, styles.skillSection)}>
 				<h2>Skills</h2>
 
 				{skillSections}
 			</section>
 
-			<div className={styles.separator}></div>
-
-			<section
-				id={styles.workSection}
-				className={styles.resumeSection}
-			>
+			<section className={styles.resumeSection}>
 				<h2>Work Experience</h2>
 
 				<>
@@ -120,30 +126,6 @@ const Resume = (props: ResumeProps) => {
 					)}
 				</>
 			</section>
-
-			<div className={styles.separator}></div>
-
-			<section className={styles.resumeSection}>
-				<h2>Personal Projects</h2>
-
-				<>
-					{personalProjects.map(({ name, datesActive, description }) => (
-						<section
-							key={name}
-							className={styles.accomplishment}
-						>
-							<section className={styles.accomplishmentHeader}>
-								<h3>{name}</h3>
-								<p>{datesActive}</p>
-							</section>
-
-							<p>{description}</p>
-						</section>
-					))}
-				</>
-			</section>
-
-			<div className={styles.separator}></div>
 
 			<section className={styles.resumeSection}>
 				<h2>Education</h2>

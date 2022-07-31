@@ -7,11 +7,12 @@ import ResponsiveCanvasDevelopment from "./pages/blog/ResponsiveCanvasDevelopmen
 import CanvasGameDevelopment from "./pages/blog/CanvasGameDevelopment";
 import Bootstrap3SiteDevelopment from "./pages/blog/Bootstrap3SiteDevelopment";
 import NewsFeedDevelopment from "./pages/blog/NewsFeedDevelopment";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./components/scroll-to-top";
 import HomePage from "./pages/home";
 import BlogPage from "./pages/blog";
 import ResumePage from "./pages/resume";
+import ResumePdfPage from "./pages/resume-pdf";
 
 class App extends Component {
 	componentDidMount() {
@@ -41,41 +42,52 @@ class App extends Component {
 			<Router>
 				<ScrollToTop>
 					<article>
-						<Header />
+						<Switch>
+							{process.env.NODE_ENV === "development" && (
+								<Route
+									exact
+									path="/resume-pdf"
+									component={ResumePdfPage}
+								/>
+							)}
+							<Route>
+								<Header />
 
-						<Route
-							exact
-							path="/"
-							component={HomePage}
-						/>
-						<Route
-							exact
-							path="/blog"
-							component={BlogPage}
-						/>
-						<Route
-							exact
-							path="/resume"
-							component={ResumePage}
-						/>
-						<Route
-							path="/blog/development-responsive-canvas"
-							component={ResponsiveCanvasDevelopment}
-						/>
-						<Route
-							path="/blog/development-canvas-game"
-							component={CanvasGameDevelopment}
-						/>
-						<Route
-							path="/blog/development-bootstrap-3-site"
-							component={Bootstrap3SiteDevelopment}
-						/>
-						<Route
-							path="/blog/development-reactjs-news-feed"
-							component={NewsFeedDevelopment}
-						/>
+								<Route
+									exact
+									path="/"
+									component={HomePage}
+								/>
+								<Route
+									exact
+									path="/blog"
+									component={BlogPage}
+								/>
+								<Route
+									exact
+									path="/resume"
+									component={ResumePage}
+								/>
+								<Route
+									path="/blog/development-responsive-canvas"
+									component={ResponsiveCanvasDevelopment}
+								/>
+								<Route
+									path="/blog/development-canvas-game"
+									component={CanvasGameDevelopment}
+								/>
+								<Route
+									path="/blog/development-bootstrap-3-site"
+									component={Bootstrap3SiteDevelopment}
+								/>
+								<Route
+									path="/blog/development-reactjs-news-feed"
+									component={NewsFeedDevelopment}
+								/>
 
-						<Footer />
+								<Footer />
+							</Route>
+						</Switch>
 					</article>
 				</ScrollToTop>
 			</Router>

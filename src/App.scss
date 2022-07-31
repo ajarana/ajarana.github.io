@@ -4,56 +4,36 @@
 @use "sass/functions";
 @use "sass/animations";
 
-// Color palette: https://coolors.co/527bcb-b9c7f3-e8edde-cc001b-0c1618
-
-$lightness-delta: -15%;
-
-// Glaucous
-$color-1: hsl(220, 54%, 56%);
-$color-1-dark: scale-color($color-1, $lightness: $lightness-delta);
-
-// Lavender Blue
-$color-2: hsl(226, 71%, 92%);
-$color-2-dark: scale-color($color-2, $lightness: $lightness-delta);
-
-// Beige
-$color-3: hsl(81, 28%, 90%);
-$color-3-dark: scale-color($color-3, $lightness: $lightness-delta);
-
-// Carnelian
-$color-4: hsl(352, 100%, 44%);
-$color-4-dark: scale-color($color-4, $lightness: $lightness-delta);
-
-// Jet
-$color-5: hsl(0, 0%, 20%);
-$color-5-dark: scale-color($color-5, $lightness: $lightness-delta);
-
 :root {
 	// Colors
 	--light-link-blue-1: hsl(200, 70%, 54%);
 	--light-link-blue-2: hsl(200, 70%, 68%);
-	--color-1: #{$color-1};
-	--color-1-dark: #{$color-1-dark};
-	--color-2: #{$color-2};
-	--color-2-dark: #{$color-2-dark};
-	--color-3: #{$color-3};
-	--color-3-dark: #{$color-3-dark};
-	--color-4: #{$color-4};
-	--color-4-dark: #{$color-4-dark};
-	--color-5: #{$color-5};
-	--color-5-dark: #{$color-5-dark};
+	--color-1: #{colors.$color-1};
+	--color-1-dark: #{colors.$color-1-dark};
+	--color-2: #{colors.$color-2};
+	--color-2-dark: #{colors.$color-2-dark};
+	--color-3: #{colors.$color-3};
+	--color-3-dark: #{colors.$color-3-dark};
+	--color-4: #{colors.$color-4};
+	--color-4-dark: #{colors.$color-4-dark};
+	--color-5: #{colors.$color-5};
+	--color-5-dark: #{colors.$color-5-dark};
 	--blue: #1976d2;
 	--dark-blue: #004ba0;
 	--light-blue: #63a4ff;
 	--white: hsl(0, 0%, 100%);
 	--gray: hsl(0, 0%, 46%);
 	--light-gray: hsl(0, 0%, 70%);
+	--border-light-gray: #dfdfdf;
 	--black: hsl(0, 0%, 11%);
-	--text-black: #{$color-5};
+	--text-black: #{colors.$color-5};
 
 	// Misc.
 	--border-radius-1: 3px;
-	--box-shadow-1: 2px 2px 5px 1px #{scale-color($color-5, $lightness: 80%)};
+	--box-shadow-1: 2px 2px 5px 1px #{scale-color(
+			colors.$color-5,
+			$lightness: 80%
+		)};
 	--container-width-1: 1100px;
 
 	// Spacing
