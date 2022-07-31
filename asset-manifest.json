@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.e1cd457c.css",
-    "main.js": "/static/js/main.e4fd210e.js",
+    "main.css": "/static/css/main.df6eddc6.css",
+    "main.js": "/static/js/main.9ab9659c.js",
     "static/js/787.749b4a44.chunk.js": "/static/js/787.749b4a44.chunk.js",
     "static/media/andres-arana_front-end-developer.pdf": "/static/media/andres-arana_front-end-developer.bb4cd7e0be042bd6a2e2.pdf",
     "index.html": "/index.html",
-    "main.e1cd457c.css.map": "/static/css/main.e1cd457c.css.map",
-    "main.e4fd210e.js.map": "/static/js/main.e4fd210e.js.map",
+    "main.df6eddc6.css.map": "/static/css/main.df6eddc6.css.map",
+    "main.9ab9659c.js.map": "/static/js/main.9ab9659c.js.map",
     "787.749b4a44.chunk.js.map": "/static/js/787.749b4a44.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1cd457c.css",
-    "static/js/main.e4fd210e.js"
+    "static/css/main.df6eddc6.css",
+    "static/js/main.9ab9659c.js"
   ]
 }
