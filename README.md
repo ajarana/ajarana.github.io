@@ -11,9 +11,9 @@ Please note that the following components, pages, and styles are in the process 
 - resume
 - blog
 - home
-- sass partials
+- Sass partials
 
-Also, I'm currently in the process of implementing [React Query](https://tanstack.com/query/v4) for server state management. **If** the need arises, I plan to use [zustand](https://github.com/pmndrs/zustand) for application-level state management and [Context](https://reactjs.org/docs/context.html) to manage the state for a group of components.
+**If** the need arises, I plan to use [zustand](https://github.com/pmndrs/zustand) for application-level state management and [Context](https://reactjs.org/docs/context.html) to manage the state for a group of components.
 
 ## Getting Started
 

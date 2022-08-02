@@ -1,63 +1,46 @@
-import { Component } from "react";
 import moment from "moment";
 import "./index.scss";
+import { useQuery } from "@tanstack/react-query";
+import { getRepoByName } from "../../api/HomeAPI";
+import { repoKeys } from "../../api/ApiUtils";
 
-interface FooterState {
-	githubData: {
-		portfolio: {
-			lastUpdated: string;
-		};
-	};
-}
+const resumePdf = require("../../assets/andres-arana_front-end-developer.pdf");
 
-class Footer extends Component {
-	state: FooterState = {
-		githubData: {
-			portfolio: {
-				lastUpdated: "No data received yet.",
-			},
-		},
-	};
+const Footer = () => {
+	const repoName = "ajarana.github.io";
 
-	async componentDidMount() {
-		let portfolioResponse = await fetch(
-			"https://api.github.com/repos/ajarana/ajarana.github.io"
-		);
+	const { isError, isLoading, data } = useQuery(repoKeys.repo(repoName), () =>
+		getRepoByName(repoName)
+	);
 
-		let portfolioJson = await portfolioResponse.json();
+	return (
+		<footer
+			id="footer"
+			className="flexCentered"
+		>
+			<div className="mainContainer textAlignCenter">
+				<h2 className="noMargin lightGray">
+					<a
+						href={resumePdf}
+						target="_blank"
+						rel="noreferrer"
+						className="dark"
+					>
+						Resume
+					</a>
+				</h2>
 
-		let formattedPortfolioJson = moment(portfolioJson.pushed_at).format(
-			"MMMM Do YYYY, h:mm:ss a"
-		);
-
-		this.setState({
-			githubData: {
-				...this.state.githubData,
-				portfolio: {
-					...this.state.githubData.portfolio,
-					lastUpdated: formattedPortfolioJson,
-				},
-			},
-		});
-	}
-
-	render() {
-		return (
-			<footer
-				id="footer"
-				className="flexCentered"
-			>
-				<div className="mainContainer textAlignCenter">
+				{!isError && !isLoading && (
 					<h2 className="noMargin lightGray">
 						Portfolio site last updated on:{" "}
 						<span className="footer-updated-on">
-							{this.state.githubData.portfolio.lastUpdated}
+							{moment(data.pushed_at).format("MMMM Do YYYY, h:mm:ss a")}
 						</span>
 					</h2>
-				</div>
-			</footer>
-		);
-	}
-}
+				)}
+			</div>
+		</footer>
+	);
+};
 
 export default Footer;

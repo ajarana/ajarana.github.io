@@ -1,4 +1,8 @@
+import { useQuery } from "@tanstack/react-query";
+import moment from "moment";
 import { NavLink } from "react-router-dom";
+import { repoKeys } from "../../api/ApiUtils";
+import { getRepoByName } from "../../api/HomeAPI";
 import { Project } from "../../types/Project";
 import "./index.scss";
 
@@ -14,11 +18,15 @@ export const CodeProject = (props: CodeProjectProps) => {
 		blogPath,
 		description,
 		warning,
-		lastUpdated,
 		title,
 		projectUrl,
 		codeUrl,
+		repoName,
 	} = project;
+
+	const { isLoading, isError, data } = useQuery(repoKeys.repo(repoName), () =>
+		getRepoByName(repoName)
+	);
 
 	return (
 		<section className="sectionContainer">
@@ -42,7 +50,12 @@ export const CodeProject = (props: CodeProjectProps) => {
 					<header>
 						<h3 className="sectionHeaders">
 							{title}{" "}
-							<span className="updated-time">Last updated: {lastUpdated}</span>
+							{!isError && !isLoading && (
+								<span className="updated-time">
+									Created:{" "}
+									{moment(data.created_at).format("MMMM Do YYYY, h:mm:ss a")}
+								</span>
+							)}
 						</h3>
 
 						<p>{description}</p>

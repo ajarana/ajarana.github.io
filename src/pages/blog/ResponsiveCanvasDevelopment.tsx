@@ -916,7 +916,7 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
 						</p>
 						<p>
 							<a
-								href="https://www.html5rocks.com/en/tutorials/canvas/hidpi/"
+								href="https://web.dev/canvas-hidipi/"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -925,7 +925,7 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
 						</p>
 						<p>
 							<a
-								href="https://www.html5rocks.com/en/tutorials/casestudies/gopherwoord-studios-resizing-html5-games/"
+								href="https://web.dev/gopherwoord-studios-resizing-html5-games/"
 								target="_blank"
 								rel="noopener noreferrer"
 							>

@@ -1,12 +1,15 @@
 import { Component } from "react";
+import { NavLink } from "react-router-dom";
 import "./index.scss";
 
 class CanvasGameDevelopment extends Component {
+	repoUrl = "https://github.com/ajarana/block-aid";
+
 	render() {
 		return (
 			<main>
 				<section className="fullWidthContainerSmall backgroundGray flexCentered">
-					<a href="/agame/">
+					<a href="/block-aid/">
 						<img
 							className="images"
 							src="assets/agame/agame-1x.png"
@@ -21,7 +24,7 @@ class CanvasGameDevelopment extends Component {
 					<p>
 						I built{" "}
 						<a
-							href="/agame/"
+							href="/block-aid/"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -33,15 +36,8 @@ class CanvasGameDevelopment extends Component {
 
 					<h2>Responsive Design</h2>
 					<p>
-						If you're building a web game these days, it should be{" "}
-						<a
-							href="https://adwords.googleblog.com/2015/05/building-for-next-moment.html"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							responsive
-						</a>
-						. Mobile usage is only going to increase as more users get access to
+						If you're building a web game these days, it should be responsive .
+						Mobile usage is only going to increase as more users get access to
 						powerful handheld devices with their ever-increasing capabilities.
 					</p>
 					<p>
@@ -68,15 +64,17 @@ class CanvasGameDevelopment extends Component {
 						comes to responsive design.
 					</p>
 					<p>
-						<a href="/blog/development-responsive-canvas">This article</a> I
-						wrote is a very solid start in order to develop a fully responsive
+						<NavLink to="/blog/development-responsive-canvas">
+							This article
+						</NavLink>{" "}
+						I wrote is a very solid start in order to develop a fully responsive
 						canvas element using pure JavaScript, HTML5, and CSS3.
 					</p>
 					<h2>The JS</h2>
 					<p>
 						I certainly learned a lot from{" "}
 						<a
-							href="https://github.com/ajarana/agame/blob/master/js/agame.js"
+							href={this.repoUrl + "/blob/master/js/agame.js"}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -97,9 +95,8 @@ class CanvasGameDevelopment extends Component {
 								An original method for making a responsive canvas.
 							</strong>{" "}
 							I went through a whole lot of different ways in order to
-							accomplish{" "}
-							<a href="/blog/development-responsive-canvas">my goal</a>, but I
-							learned why things worked the way they did.
+							accomplish my goal, but I learned why things worked the way they
+							did.
 						</li>
 						<li>
 							<strong>
@@ -117,7 +114,7 @@ class CanvasGameDevelopment extends Component {
 							</a>
 							. My game responds to the user's{" "}
 							<a
-								href="https://github.com/ajarana/agame/blob/master/js/agame.js#L482-L485"
+								href={this.repoUrl + "/blob/master/js/agame.js#L482-L485"}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -139,7 +136,7 @@ class CanvasGameDevelopment extends Component {
 								Figuring out an algorithm for detecting adjacency.
 							</strong>{" "}
 							<a
-								href="https://github.com/ajarana/agame/blob/master/js/agame.js#L360-L383"
+								href={this.repoUrl + "/blob/master/js/agame.js#L360-L383"}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -150,7 +147,7 @@ class CanvasGameDevelopment extends Component {
 						<li>
 							<strong>Preventing easy-to-memorize patterns.</strong>{" "}
 							<a
-								href="https://github.com/ajarana/agame/blob/master/js/agame.js#L100-L143"
+								href={this.repoUrl + "/blob/master/js/agame.js#L100-L143"}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -162,7 +159,7 @@ class CanvasGameDevelopment extends Component {
 						<li>
 							<strong>Basic design considerations.</strong> This includes a{" "}
 							<a
-								href="https://github.com/ajarana/agame/blob/master/js/agame.js#L626-L644"
+								href={this.repoUrl + "/blob/master/js/agame.js#L626-L644"}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -170,7 +167,7 @@ class CanvasGameDevelopment extends Component {
 							</a>
 							,{" "}
 							<a
-								href="https://github.com/ajarana/agame/blob/master/js/agame.js#L528-L566"
+								href={this.repoUrl + "/blob/master/js/agame.js#L528-L566"}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -178,7 +175,7 @@ class CanvasGameDevelopment extends Component {
 							</a>
 							, and a{" "}
 							<a
-								href="https://github.com/ajarana/agame/blob/master/js/agame.js#L750-L768"
+								href={this.repoUrl + "/blob/master/js/agame.js#L750-L768"}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -194,15 +191,6 @@ class CanvasGameDevelopment extends Component {
 						making my code.
 					</p>
 					<h2>Credits</h2>
-					<p>
-						<a
-							href="https://adwords.googleblog.com/2015/05/building-for-next-moment.html"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Building for the next moment
-						</a>
-					</p>
 					<p>
 						<a
 							href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"

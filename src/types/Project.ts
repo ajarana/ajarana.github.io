@@ -6,9 +6,9 @@ export interface Project {
 	};
 	blogPath: string;
 	description: string;
-	lastUpdated: string;
 	title: string;
 	codeUrl: string;
 	projectUrl?: string;
 	warning?: string;
+	repoName: string;
 }

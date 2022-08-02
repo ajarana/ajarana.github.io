@@ -13,6 +13,17 @@ import HomePage from "./pages/home";
 import BlogPage from "./pages/blog";
 import ResumePage from "./pages/resume";
 import ResumePdfPage from "./pages/resume-pdf";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false,
+			staleTime: 60 * 60 * 1000,
+			cacheTime: 60 * 60 * 1000,
+		},
+	},
+});
 
 class App extends Component {
 	componentDidMount() {
@@ -39,58 +50,60 @@ class App extends Component {
 
 	render() {
 		return (
-			<Router>
-				<ScrollToTop>
-					<article>
-						<Switch>
-							{process.env.NODE_ENV === "development" && (
-								<Route
-									exact
-									path="/resume-pdf"
-									component={ResumePdfPage}
-								/>
-							)}
-							<Route>
-								<Header />
+			<QueryClientProvider client={queryClient}>
+				<Router>
+					<ScrollToTop>
+						<article>
+							<Switch>
+								{process.env.NODE_ENV === "development" && (
+									<Route
+										exact
+										path="/resume-pdf"
+										component={ResumePdfPage}
+									/>
+								)}
+								<Route>
+									<Header />
 
-								<Route
-									exact
-									path="/"
-									component={HomePage}
-								/>
-								<Route
-									exact
-									path="/blog"
-									component={BlogPage}
-								/>
-								<Route
-									exact
-									path="/resume"
-									component={ResumePage}
-								/>
-								<Route
-									path="/blog/development-responsive-canvas"
-									component={ResponsiveCanvasDevelopment}
-								/>
-								<Route
-									path="/blog/development-canvas-game"
-									component={CanvasGameDevelopment}
-								/>
-								<Route
-									path="/blog/development-bootstrap-3-site"
-									component={Bootstrap3SiteDevelopment}
-								/>
-								<Route
-									path="/blog/development-reactjs-news-feed"
-									component={NewsFeedDevelopment}
-								/>
+									<Route
+										exact
+										path="/"
+										component={HomePage}
+									/>
+									<Route
+										exact
+										path="/blog"
+										component={BlogPage}
+									/>
+									<Route
+										exact
+										path="/resume"
+										component={ResumePage}
+									/>
+									<Route
+										path="/blog/development-responsive-canvas"
+										component={ResponsiveCanvasDevelopment}
+									/>
+									<Route
+										path="/blog/development-canvas-game"
+										component={CanvasGameDevelopment}
+									/>
+									<Route
+										path="/blog/development-bootstrap-3-site"
+										component={Bootstrap3SiteDevelopment}
+									/>
+									<Route
+										path="/blog/development-reactjs-news-feed"
+										component={NewsFeedDevelopment}
+									/>
 
-								<Footer />
-							</Route>
-						</Switch>
-					</article>
-				</ScrollToTop>
-			</Router>
+									<Footer />
+								</Route>
+							</Switch>
+						</article>
+					</ScrollToTop>
+				</Router>
+			</QueryClientProvider>
 		);
 	}
 }
