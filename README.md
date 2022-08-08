@@ -53,6 +53,7 @@ The major components of this project include:
 - [TypeScript](https://github.com/microsoft/TypeScript)
 - [Sass](https://github.com/sass/dart-sass)
 - [React Router](https://github.com/remix-run/react-router)
+- [React Query](https://tanstack.com/query/v4)
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Font Awesome](https://fontawesome.com/)
 - [lint-staged](https://github.com/okonet/lint-staged)
