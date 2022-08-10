@@ -3,328 +3,328 @@
 @use "../../sass/layout";
 
 #header {
-	height: 48px;
-	background-color: #2b2b2b;
-	background-color: #333;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+  height: 48px;
+  background-color: #2b2b2b;
+  background-color: #333;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 
-	> div {
-		height: 100%;
-	}
+  > div {
+    height: 100%;
+  }
 
-	nav {
-		flex: 1;
-		height: 100%;
-		margin: 0 auto;
-	}
+  nav {
+    flex: 1;
+    height: 100%;
+    margin: 0 auto;
+  }
 
-	#titleContainer {
-		flex: 0 1 85%;
+  #titleContainer {
+    flex: 0 1 85%;
 
-		#logo {
-			@include typography.text-size-6;
+    #logo {
+      @include typography.text-size-6;
 
-			font-family: "Source Code Pro", monospace;
-			color: white;
-			transition: color animations.$animation-duration linear;
+      font-family: "Source Code Pro", monospace;
+      color: white;
+      transition: color animations.$animation-duration linear;
 
-			&:hover {
-				color: rgba(255, 255, 255, 0.8);
-			}
-		}
-	}
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
 
-	@media (min-width: layout.$breakpoint-desktop) {
-		#titleContainer,
-		.invis-aligner {
-			flex: 0 1 20%;
-		}
-	}
+  @media (min-width: layout.$breakpoint-desktop) {
+    #titleContainer,
+    .invis-aligner {
+      flex: 0 1 20%;
+    }
+  }
 
-	#buttonWrapper {
-		flex: 0 1 15%;
-		position: relative;
-		z-index: 99;
+  #buttonWrapper {
+    flex: 0 1 15%;
+    position: relative;
+    z-index: 99;
 
-		#mobileButton {
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    #mobileButton {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-			border: 1px solid transparent;
-			background-color: transparent;
-			padding: 0;
-			cursor: pointer;
+      border: 1px solid transparent;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
 
-			.flexBottom {
-				height: 18px;
-			}
+      .flexBottom {
+        height: 18px;
+      }
 
-			#hamburgerWrapper {
-				position: relative;
-				bottom: 0;
+      #hamburgerWrapper {
+        position: relative;
+        bottom: 0;
 
-				transition: bottom animations.$animation-duration ease-in-out;
-			}
+        transition: bottom animations.$animation-duration ease-in-out;
+      }
 
-			.hamburgerIcon {
-				display: block;
-				width: 24px;
-				height: 2px;
-				background-color: white;
+      .hamburgerIcon {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: white;
 
-				transition: background-color animations.$animation-duration ease-in-out,
-					transform animations.$animation-duration ease-in-out,
-					opacity 0s ease-in-out animations.$animation-duration,
-					margin-bottom animations.$animation-duration ease-in-out
-						animations.$animation-duration;
-			}
-			.hamburgerIcon:not(:last-child) {
-				margin-bottom: 6px;
-			}
-		}
-		#mobileButton:focus {
-			outline: none;
-		}
-	}
-	@media (min-width: layout.$breakpoint-desktop) {
-		#buttonWrapper {
-			display: none;
-		}
-	}
+        transition: background-color animations.$animation-duration ease-in-out,
+          transform animations.$animation-duration ease-in-out,
+          opacity 0s ease-in-out animations.$animation-duration,
+          margin-bottom animations.$animation-duration ease-in-out
+            animations.$animation-duration;
+      }
+      .hamburgerIcon:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+    #mobileButton:focus {
+      outline: none;
+    }
+  }
+  @media (min-width: layout.$breakpoint-desktop) {
+    #buttonWrapper {
+      display: none;
+    }
+  }
 
-	#headerMenu {
-		box-sizing: border-box;
-		list-style: none;
-		position: absolute;
-		width: 24px;
-		height: 0px;
-		top: 48px;
+  #headerMenu {
+    box-sizing: border-box;
+    list-style: none;
+    position: absolute;
+    width: 24px;
+    height: 0px;
+    top: 48px;
 
-		left: 0;
-		margin: 0;
-		padding: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
 
-		border-top: 1px solid;
-		border-color: transparent;
+    border-top: 1px solid;
+    border-color: transparent;
 
-		background-color: transparent;
-		z-index: 98;
+    background-color: transparent;
+    z-index: 98;
 
-		.menuItems {
-			visibility: hidden;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+    .menuItems {
+      visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-			margin: 0 48px;
+      margin: 0 48px;
 
-			opacity: 0;
-			transition: none;
-		}
+      opacity: 0;
+      transition: none;
+    }
 
-		.menuItems:first-child {
-			border-top: none;
+    .menuItems:first-child {
+      border-top: none;
 
-			a {
-				margin-top: var(--spacing-5);
-			}
-		}
-	}
+      a {
+        margin-top: var(--spacing-5);
+      }
+    }
+  }
 
-	.transitionExpand {
-		transition: height 0s ease-in, width 0s ease-in,
-			background-color animations.$animation-duration ease-in,
-			border-color animations.$animation-duration ease-in;
-	}
-	.transitionCollapse {
-		transition: height 0s ease-in animations.$animation-duration,
-			width 0s ease-in animations.$animation-duration,
-			background-color animations.$animation-duration ease-in,
-			border-color animations.$animation-duration ease-in;
-	}
+  .transitionExpand {
+    transition: height 0s ease-in, width 0s ease-in,
+      background-color animations.$animation-duration ease-in,
+      border-color animations.$animation-duration ease-in;
+  }
+  .transitionCollapse {
+    transition: height 0s ease-in animations.$animation-duration,
+      width 0s ease-in animations.$animation-duration,
+      background-color animations.$animation-duration ease-in,
+      border-color animations.$animation-duration ease-in;
+  }
 
-	.headerLink {
-		position: relative;
-		color: white;
-		text-align: center;
-		padding: var(--spacing-5) 0;
-		width: 100%;
-		text-decoration: none;
+  .headerLink {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: var(--spacing-5) 0;
+    width: 100%;
+    text-decoration: none;
 
-		&:hover {
-			color: rgba(255, 255, 255, 0.82);
-		}
+    &:hover {
+      color: rgba(255, 255, 255, 0.82);
+    }
 
-		p {
-			@include typography.text-size-6;
+    p {
+      @include typography.text-size-6;
 
-			margin: 0;
-			transition: color animations.$animation-duration linear;
-		}
-	}
+      margin: 0;
+      transition: color animations.$animation-duration linear;
+    }
+  }
 
-	@media (min-width: layout.$breakpoint-desktop) {
-		#headerMenu {
-			position: static;
-			position: relative;
-			display: flex;
-			align-items: center;
-			height: 100%;
-			width: auto;
-			width: 100%;
-			border-top: none;
-			top: 0;
+  @media (min-width: layout.$breakpoint-desktop) {
+    #headerMenu {
+      position: static;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: auto;
+      width: 100%;
+      border-top: none;
+      top: 0;
 
-			max-width: 500px;
-			margin: 0 auto;
-			justify-content: space-between;
+      max-width: 500px;
+      margin: 0 auto;
+      justify-content: space-between;
 
-			p,
-			li {
-				@include typography.text-size-2;
-			}
+      p,
+      li {
+        @include typography.text-size-2;
+      }
 
-			.menuItems .selected {
-				p {
-					color: white;
-					position: relative;
+      .menuItems .selected {
+        p {
+          color: white;
+          position: relative;
 
-					&:after {
-						$underlineLength: 110%;
-						width: $underlineLength;
-						left: calc(-#{$underlineLength - 100%} / 2);
-						height: 1px;
-					}
-				}
-			}
+          &:after {
+            $underlineLength: 110%;
+            width: $underlineLength;
+            left: calc(-#{$underlineLength - 100%} / 2);
+            height: 1px;
+          }
+        }
+      }
 
-			.menuItems {
-				visibility: visible;
-				opacity: 1;
-				border-top: none;
-				height: 100%;
-				margin: 0;
+      .menuItems {
+        visibility: visible;
+        opacity: 1;
+        border-top: none;
+        height: 100%;
+        margin: 0;
 
-				transition: background-color animations.$animation-duration linear;
+        transition: background-color animations.$animation-duration linear;
 
-				a {
-					display: flex;
-					align-items: center;
-					height: 100%;
-					transition: color animations.$animation-duration linear;
+        a {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          transition: color animations.$animation-duration linear;
 
-					&:hover {
-						p {
-							color: white;
-						}
-					}
-				}
-			}
-			.menuItems:first-child a {
-				margin-top: 0;
-			}
+          &:hover {
+            p {
+              color: white;
+            }
+          }
+        }
+      }
+      .menuItems:first-child a {
+        margin-top: 0;
+      }
 
-			.secondaryMenuItem {
-				position: absolute;
-				right: 0;
-				top: 0;
-			}
-		}
+      .secondaryMenuItem {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
 
-		#headerMenu .headerLink {
-			p {
-				color: rgba(255, 255, 255, 0.72);
-				position: relative;
-				padding: 4px 0px;
+    #headerMenu .headerLink {
+      p {
+        color: rgba(255, 255, 255, 0.72);
+        position: relative;
+        padding: 4px 0px;
 
-				&:after {
-					$underlineLength: 0%;
-					content: "";
-					display: inline-block;
-					height: 1px;
-					width: $underlineLength;
-					background: white;
-					position: absolute;
-					bottom: 0;
-					left: calc((100% - #{$underlineLength}) / 2);
-					transition: all animations.$animation-duration ease-in-out;
-					border-radius: 3px;
-				}
+        &:after {
+          $underlineLength: 0%;
+          content: "";
+          display: inline-block;
+          height: 1px;
+          width: $underlineLength;
+          background: white;
+          position: absolute;
+          bottom: 0;
+          left: calc((100% - #{$underlineLength}) / 2);
+          transition: all animations.$animation-duration ease-in-out;
+          border-radius: 3px;
+        }
 
-				&.external-header-link {
-					color: white;
-					border: 1px solid white;
-					padding: 4px 12px;
-					border-radius: 3px;
+        &.external-header-link {
+          color: white;
+          border: 1px solid white;
+          padding: 4px 12px;
+          border-radius: 3px;
 
-					&:hover {
-						color: #333;
-						background-color: white;
-					}
-				}
-			}
-		}
-	}
+          &:hover {
+            color: #333;
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
 }
 
 html.expanded {
-	overflow-y: scroll !important;
+  overflow-y: scroll !important;
 }
 
 .expanded,
 .expanded body {
-	height: 100%;
-	overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 
-	#header #headerMenu {
-		height: calc(100% - 48px);
-		min-height: 510px;
-		width: 100%;
+  #header #headerMenu {
+    height: calc(100% - 48px);
+    min-height: 510px;
+    width: 100%;
 
-		background-color: #333;
-		border-top: 1px solid;
-		border-color: #aaa;
+    background-color: #333;
+    border-top: 1px solid;
+    border-color: #aaa;
 
-		.menuItems {
-			visibility: visible;
-			transition: opacity animations.$animation-duration ease-in-out;
-			opacity: 1;
-		}
-	}
+    .menuItems {
+      visibility: visible;
+      transition: opacity animations.$animation-duration ease-in-out;
+      opacity: 1;
+    }
+  }
 
-	#header > div > #buttonWrapper > #mobileButton {
-		padding: 10px 0;
+  #header > div > #buttonWrapper > #mobileButton {
+    padding: 10px 0;
 
-		#hamburgerWrapper {
-			transition: bottom animations.$animation-duration ease-in-out
-				animations.$animation-duration;
-			bottom: calc(50% - 1px);
-		}
+    #hamburgerWrapper {
+      transition: bottom animations.$animation-duration ease-in-out
+        animations.$animation-duration;
+      bottom: calc(50% - 1px);
+    }
 
-		.hamburgerIcon {
-			background-color: white;
+    .hamburgerIcon {
+      background-color: white;
 
-			transition: background-color animations.$animation-duration ease-in-out,
-				transform animations.$animation-duration ease-in-out
-					animations.$animation-duration,
-				opacity 0s ease-in-out animations.$animation-duration,
-				margin-bottom animations.$animation-duration ease-in-out;
-		}
-		.hamburgerIcon:not(:last-child) {
-			margin-bottom: -2px;
-		}
+      transition: background-color animations.$animation-duration ease-in-out,
+        transform animations.$animation-duration ease-in-out
+          animations.$animation-duration,
+        opacity 0s ease-in-out animations.$animation-duration,
+        margin-bottom animations.$animation-duration ease-in-out;
+    }
+    .hamburgerIcon:not(:last-child) {
+      margin-bottom: -2px;
+    }
 
-		.hamburgerIcon:first-child {
-			transform: rotate(45deg);
-		}
-		.hamburgerIcon:nth-child(2) {
-			opacity: 0;
-		}
-		.hamburgerIcon:last-child {
-			transform: rotate(-45deg);
-		}
-	}
+    .hamburgerIcon:first-child {
+      transform: rotate(45deg);
+    }
+    .hamburgerIcon:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburgerIcon:last-child {
+      transform: rotate(-45deg);
+    }
+  }
 }

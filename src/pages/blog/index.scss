@@ -2,75 +2,75 @@
 @use "../../sass/layout";
 
 #blogDirectory {
-	min-height: calc(100vh - 159px);
-	box-sizing: border-box;
-	padding: 4em 0;
-	text-align: center;
+  min-height: calc(100vh - 159px);
+  box-sizing: border-box;
+  padding: 4em 0;
+  text-align: center;
 
-	p {
-		margin-top: var(--spacing-4);
-	}
+  p {
+    margin-top: var(--spacing-4);
+  }
 
-	a {
-		@include typography.text-size-5;
-	}
+  a {
+    @include typography.text-size-5;
+  }
 
-	h2:not(:first-child) {
-		margin-top: 2em;
-	}
+  h2:not(:first-child) {
+    margin-top: 2em;
+  }
 
-	@media (min-width: layout.$breakpoint-desktop) {
-		p {
-			margin-top: var(--spacing-6);
-		}
+  @media (min-width: layout.$breakpoint-desktop) {
+    p {
+      margin-top: var(--spacing-6);
+    }
 
-		a {
-			@include typography.text-size-6;
-		}
-	}
+    a {
+      @include typography.text-size-6;
+    }
+  }
 }
 
 .blogDates {
-	margin: 4em 0;
+  margin: 4em 0;
 }
 
 .blogContainer {
-	transition: none;
-	overflow-wrap: break-word;
-	max-width: 700px;
-	margin: 0 auto;
+  transition: none;
+  overflow-wrap: break-word;
+  max-width: 700px;
+  margin: 0 auto;
 
-	h1,
-	h2 {
-		margin-top: var(--spacing-10);
-	}
+  h1,
+  h2 {
+    margin-top: var(--spacing-10);
+  }
 
-	p,
-	ul,
-	ol,
-	pre {
-		margin-top: var(--spacing-6);
-	}
+  p,
+  ul,
+  ol,
+  pre {
+    margin-top: var(--spacing-6);
+  }
 
-	ul {
-		list-style: disc;
-		padding-left: var(--spacing-10);
-	}
+  ul {
+    list-style: disc;
+    padding-left: var(--spacing-10);
+  }
 
-	@media (min-width: layout.$breakpoint-desktop) {
-		max-width: 800px;
-	}
+  @media (min-width: layout.$breakpoint-desktop) {
+    max-width: 800px;
+  }
 }
 
 .blogContainer pre {
-	white-space: pre-wrap;
+  white-space: pre-wrap;
 
-	padding: 25px;
-	border-radius: 3px;
+  padding: 25px;
+  border-radius: 3px;
 }
 
 #reactThumbnail {
-	padding-top: 20px;
-	background-color: white;
-	border: 1px solid #e1e1e1;
+  padding-top: 20px;
+  background-color: white;
+  border: 1px solid #e1e1e1;
 }

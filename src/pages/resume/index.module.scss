@@ -1,11 +1,11 @@
 @use "../../sass/layout";
 
 .resumePage {
-	@include layout.container-1;
+  @include layout.container-1;
 
-	padding: var(--spacing-6);
+  padding: var(--spacing-6);
 
-	@media (min-width: layout.$breakpoint-desktop) {
-		padding: var(--spacing-10);
-	}
+  @media (min-width: layout.$breakpoint-desktop) {
+    padding: var(--spacing-10);
+  }
 }

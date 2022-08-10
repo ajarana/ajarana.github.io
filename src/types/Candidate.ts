@@ -1,36 +1,36 @@
 interface SkillList {
-	category: string;
-	skills: string[];
+  category: string;
+  skills: string[];
 }
 
 interface Job {
-	jobTitle: string;
-	datesWorked: string;
-	company: string;
-	companyAdditionalInfo?: string;
-	responsibilities: string[];
+  jobTitle: string;
+  datesWorked: string;
+  company: string;
+  companyAdditionalInfo?: string;
+  responsibilities: string[];
 }
 
 interface PersonalProject {
-	name: string;
-	datesActive: string;
-	description: string;
+  name: string;
+  datesActive: string;
+  description: string;
 }
 
 interface AcademicDegree {
-	name: string;
-	datesAttended: string;
-	schoolName: string;
+  name: string;
+  datesAttended: string;
+  schoolName: string;
 }
 
 export interface Candidate {
-	name: string;
-	location: string;
-	email: string;
-	portfolioUrl: string;
-	github: string;
-	skillLists: SkillList[];
-	previousJobs: Job[];
-	personalProjects?: PersonalProject[];
-	degrees: AcademicDegree[];
+  name: string;
+  location: string;
+  email: string;
+  portfolioUrl: string;
+  github: string;
+  skillLists: SkillList[];
+  previousJobs: Job[];
+  personalProjects?: PersonalProject[];
+  degrees: AcademicDegree[];
 }
