@@ -1,18 +1,21 @@
 import { Component } from "react";
 import PortfolioExternalLink from "../../components/external-link";
 import "./index.scss";
+import mixtin1x from "../../assets/projects/mixtin/mixtin-menu-1x.png";
+import mixtin2x from "../../assets/projects/mixtin/mixtin-menu-2x.png";
+import mixtin4x from "../../assets/projects/mixtin/mixtin-menu-4x.png";
 
 class Bootstrap3SiteDevelopment extends Component {
   render() {
     return (
-      <main>
+      <main className="blogPage">
         <section className="fullWidthContainerSmall flexCentered backgroundGray">
           <PortfolioExternalLink url="https://ajarana.github.io/mixtin">
             <img
-              className="images"
-              src="assets/mixtin/mixtin-1x.png"
+              className="heroImage"
+              src={mixtin1x}
               alt="Screenshot of the mobile menu of a Bootstrap website."
-              srcSet="assets/mixtin/mixtin-1x-C.png, assets/mixtin/mixtin-2x-C.png 2x, assets/mixtin/mixtin-4x-C2.png 4x"
+              srcSet={`${mixtin1x}, ${mixtin2x} 2x, ${mixtin4x} 4x`}
             />
           </PortfolioExternalLink>
         </section>

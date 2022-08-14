@@ -54,6 +54,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -418,15 +419,8 @@ body {
 }
 
 .images {
-  display: inline-block;
-  margin: 0 auto;
-  background-repeat: no-repeat;
-
-  max-width: 100%;
-
-  @media (min-width: 992px) {
-    max-width: none;
-  }
+  display: block;
+  width: 320px;
 }
 
 .hidden-heading {

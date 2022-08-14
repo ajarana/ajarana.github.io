@@ -2,20 +2,23 @@ import { Component } from "react";
 import PortfolioExternalLink from "../../components/external-link";
 import PortfolioInternalLink from "../../components/internal-link";
 import "./index.scss";
+import blockAid1x from "../../assets/projects/block-aid/block-aid-1x.png";
+import blockAid2x from "../../assets/projects/block-aid/block-aid-2x.png";
+import blockAid4x from "../../assets/projects/block-aid/block-aid-4x.png";
 
 class CanvasGameDevelopment extends Component {
   repoUrl = "https://github.com/ajarana/block-aid";
 
   render() {
     return (
-      <main>
+      <main className="blogPage">
         <section className="fullWidthContainerSmall backgroundGray flexCentered">
           <PortfolioExternalLink url="https://ajarana.github.io/block-aid/">
             <img
-              className="images"
-              src="assets/agame/agame-1x.png"
+              className="heroImage"
+              src={blockAid1x}
               alt="Screenshot of a memory game."
-              srcSet="assets/agame/agame-1x.png, assets/agame/agame-2x.png 2x, assets/agame/agame-4x.png 4x"
+              srcSet={`${blockAid1x}, ${blockAid2x} 2x, ${blockAid4x} 4x`}
             />
           </PortfolioExternalLink>
         </section>

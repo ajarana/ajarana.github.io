@@ -4,8 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getRepoByName } from "../../api/HomeAPI";
 import { repoKeys } from "../../api/ApiUtils";
 import PortfolioExternalLink from "../external-link";
-
-const resumePdf = require("../../assets/andres-arana_front-end-developer.pdf");
+import resumePdf from "../../assets/resume/andres-arana_front-end-developer.pdf";
 
 const Footer = () => {
   const repoName = "ajarana.github.io";

@@ -135,7 +135,7 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
 
   render() {
     return (
-      <main id="specialPost">
+      <main className="blogPage">
         <div className="fullWidthContainerSmall backgroundGray">
           <div
             id="aWrapper"

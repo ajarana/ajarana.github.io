@@ -1,7 +1,6 @@
 import classNames from "classnames/bind";
 import { ReactNode } from "react";
-
-const styles = require("./index.module.scss").default;
+import styles from "./index.module.scss";
 
 type AlertType = "Error" | "Warning" | "Informational";
 

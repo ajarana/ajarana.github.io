@@ -1,5 +1,8 @@
 import { Component } from "react";
 import PortfolioExternalLink from "../../components/external-link";
+import newsFeed1x from "../../assets/projects/news-feed/news-feed-cropped-1x.png";
+import newsFeed2x from "../../assets/projects/news-feed/news-feed-cropped-2x.png";
+import newsFeed4x from "../../assets/projects/news-feed/news-feed-cropped-4x.png";
 import "./index.scss";
 
 class NewsFeedDevelopment extends Component {
@@ -7,14 +10,14 @@ class NewsFeedDevelopment extends Component {
 
   render() {
     return (
-      <main>
+      <main className="blogPage">
         <section className="fullWidthContainerSmall backgroundGray flexCentered">
           <img
             id="reactThumbnail"
-            className="images"
-            src="assets/arcade/arcade-1x-C2.png"
+            className="heroImage"
+            src={newsFeed1x}
             alt="Screenshot of a news feed made using React and Redux."
-            srcSet="assets/arcade/arcade-1x-C2.png, assets/arcade/arcade-2x-C2.png 2x, assets/arcade/arcade-4x-C2.png 4x"
+            srcSet={`${newsFeed1x}, ${newsFeed2x} 2x, ${newsFeed4x} 4x`}
           />
         </section>
 

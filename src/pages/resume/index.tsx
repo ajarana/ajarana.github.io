@@ -2,9 +2,8 @@ import Alert from "../../components/alert";
 import PortfolioExternalLink from "../../components/external-link";
 import Resume from "../../components/resume";
 import { ANDRES_CANDIDATE_INFO } from "../../constants";
-
-const resumePdf = require("../../assets/andres-arana_front-end-developer.pdf");
-const styles = require("./index.module.scss").default;
+import resumePdf from "../../assets/resume/andres-arana_front-end-developer.pdf";
+import styles from "./index.module.scss";
 
 const ResumePage = () => {
   return (

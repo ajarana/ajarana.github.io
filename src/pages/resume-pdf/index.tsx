@@ -1,7 +1,6 @@
 import Resume from "../../components/resume";
 import { ANDRES_CANDIDATE_INFO } from "../../constants";
-
-const styles = require("./index.module.scss").default;
+import styles from "./index.module.scss";
 
 const ResumePdfPage = () => {
   return (

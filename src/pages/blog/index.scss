@@ -34,6 +34,13 @@
   margin: 4em 0;
 }
 
+.blogPage {
+  .heroImage {
+    display: block;
+    width: 320px;
+  }
+}
+
 .blogContainer {
   transition: none;
   overflow-wrap: break-word;
@@ -73,4 +80,5 @@
   padding-top: 20px;
   background-color: white;
   border: 1px solid #e1e1e1;
+  width: 322px;
 }
