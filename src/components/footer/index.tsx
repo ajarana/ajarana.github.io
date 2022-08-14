@@ -3,6 +3,7 @@ import "./index.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getRepoByName } from "../../api/HomeAPI";
 import { repoKeys } from "../../api/ApiUtils";
+import PortfolioExternalLink from "../external-link";
 
 const resumePdf = require("../../assets/andres-arana_front-end-developer.pdf");
 
@@ -20,14 +21,7 @@ const Footer = () => {
     >
       <div className="mainContainer textAlignCenter">
         <h2 className="noMargin lightGray">
-          <a
-            href={resumePdf}
-            target="_blank"
-            rel="noreferrer"
-            className="dark"
-          >
-            Resume
-          </a>
+          <PortfolioExternalLink url={resumePdf}>Resume</PortfolioExternalLink>
         </h2>
 
         {!isError && !isLoading && (

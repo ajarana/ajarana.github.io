@@ -1,5 +1,7 @@
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Component } from "react";
-import { NavLink } from "react-router-dom";
+import PortfolioExternalLink from "../external-link";
+import PortfolioInternalLink from "../internal-link";
 import "./index.scss";
 
 class Header extends Component {
@@ -56,9 +58,11 @@ class Header extends Component {
       <header id="header">
         <div className="mainContainer flexLeft">
           <div id="titleContainer">
-            <NavLink
-              className="plainLink"
-              to="/"
+            <PortfolioInternalLink
+              navLinkProps={{
+                to: "/",
+              }}
+              linkType="PlainLink"
             >
               <span
                 id="logo"
@@ -66,7 +70,7 @@ class Header extends Component {
               >
                 Andres
               </span>
-            </NavLink>
+            </PortfolioInternalLink>
           </div>
 
           <div
@@ -90,56 +94,58 @@ class Header extends Component {
               className="transitionExpand"
             >
               <li className="menuItems">
-                <NavLink
-                  to="/"
-                  exact
-                  className="textAlignCenter plainLink headerLink"
-                  activeClassName="selected"
+                <PortfolioInternalLink
+                  navLinkProps={{
+                    to: "/",
+                    exact: true,
+                    activeClassName: "selected",
+                  }}
+                  linkType="PlainLink"
                 >
                   <p>Home</p>
-                </NavLink>
+                </PortfolioInternalLink>
               </li>
 
               <li className="menuItems">
-                <NavLink
-                  className="plainLink headerLink"
-                  to="/resume/"
-                  activeClassName="selected"
+                <PortfolioInternalLink
+                  navLinkProps={{
+                    to: "/resume/",
+                    activeClassName: "selected",
+                  }}
+                  linkType="PlainLink"
                 >
                   <p>Resume</p>
-                </NavLink>
+                </PortfolioInternalLink>
               </li>
 
               <li className="menuItems">
-                <NavLink
-                  to="/blog/"
-                  className="plainLink headerLink"
-                  activeClassName="selected"
+                <PortfolioInternalLink
+                  navLinkProps={{
+                    to: "/blog/",
+                    activeClassName: "selected",
+                  }}
+                  linkType="PlainLink"
                 >
                   <p>Blog</p>
-                </NavLink>
+                </PortfolioInternalLink>
               </li>
 
               <li className="menuItems">
-                <a
-                  className="plainLink headerLink"
-                  href="https://github.com/ajarana/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <PortfolioExternalLink
+                  url="https://github.com/ajarana/"
+                  icon={faArrowUpRightFromSquare}
                 >
-                  <p className="external-header-link">GitHub</p>
-                </a>
+                  GitHub
+                </PortfolioExternalLink>
               </li>
 
               <li className="menuItems">
-                <a
-                  className="plainLink headerLink"
-                  href="https://codepen.io/ajarana/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <PortfolioExternalLink
+                  url="https://codepen.io/ajarana/"
+                  icon={faArrowUpRightFromSquare}
                 >
-                  <p className="external-header-link">CodePen</p>
-                </a>
+                  CodePen
+                </PortfolioExternalLink>
               </li>
             </ul>
           </nav>

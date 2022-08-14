@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PortfolioExternalLink from "../../components/external-link";
 
 class ResponsiveCanvasDevelopment extends Component<any, any> {
   aWrapper: HTMLElement | null = null;
@@ -140,11 +141,7 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             id="aWrapper"
             className="blogContainer"
           >
-            <a
-              href="https://codepen.io/ajarana/pen/aJgPMR"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <PortfolioExternalLink url="https://codepen.io/ajarana/pen/aJgPMR">
               <canvas
                 id="myCanvas"
                 className="responsiveCanvas"
@@ -152,7 +149,7 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
                 A canvas showing a plethora of cascading colors using 40
                 different blocks.
               </canvas>
-            </a>
+            </PortfolioExternalLink>
           </div>
         </div>
         <div
@@ -167,13 +164,9 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
           <section>
             <p>
               Building a high-quality{" "}
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">
                 canvas
-              </a>{" "}
+              </PortfolioExternalLink>{" "}
               that's fully compatible with nearly all the various device pixel
               ratios, screen resolutions, and browsers available isn't an easy
               task. The main challenges revolve around maintaining the canvas's
@@ -191,55 +184,32 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
               <li>
                 <strong>
                   You can store the contents in a temporary canvas using the{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage">
                     CanvasRenderingContext2D.drawImage()
-                  </a>{" "}
+                  </PortfolioExternalLink>{" "}
                   method.
                 </strong>{" "}
                 After the original canvas width and height attributes are
-                rescaled, you can call{" "}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
-                >
-                  drawImage()
-                </a>{" "}
-                again in order to restore the content from the temporary canvas.
+                rescaled, you can call drawImage() again in order to restore the
+                content from the temporary canvas.
               </li>
 
               <li>
                 <strong>
                   You can store the contents in an{" "}
-                  <a
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image">
                     Image object
-                  </a>{" "}
+                  </PortfolioExternalLink>{" "}
                   using{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL">
                     HTMLCanvasElement.toDataURL()
-                  </a>
+                  </PortfolioExternalLink>
                   .
                 </strong>{" "}
                 After the original canvas is rescaled,{" "}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
-                >
+                <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage">
                   drawImage()
-                </a>{" "}
+                </PortfolioExternalLink>{" "}
                 can be called in order to restore canvas contents. This option
                 is very similar to the first one.
               </li>
@@ -265,8 +235,7 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
                 &lt;<span className="codeRed">div</span>{" "}
                 <span className="codeBlue">id</span>=
                 <span className="codeGreen">"aWrapper"</span>&gt;
-                {`
-  `}
+                {`\n  `}
                 <span className="codeGray">
                   &lt;!--Include some fallback content on the 0.00001% chance
                   your user's browser doesn't support canvas --&gt;
@@ -319,13 +288,9 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             <p>
               Then we create some JavaScript variables to reference the
               necessary elements in our DOM and access the{" "}
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">
                 2D rendering context
-              </a>{" "}
+              </PortfolioExternalLink>{" "}
               we'll use to draw shapes with.
             </p>
             <pre className="darkBackground">
@@ -356,25 +321,17 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             </h2>
             <p>
               The canvas coordinate space must be rendered according to the{" "}
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio">
                 device pixel ratio
-              </a>{" "}
+              </PortfolioExternalLink>{" "}
               of the display, otherwise the content will become blurry for any
               display with a device pixel ratio higher than 1. These displays
               are often found in mobile and tablet devices, and have more than 1
               physical pixel representing every logical pixel. A more in-depth
               look into this subtopic can be found{" "}
-              <a
-                href="https://www.html5rocks.com/en/tutorials/canvas/hidpi/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://web.dev/canvas-hidipi/">
                 here
-              </a>
+              </PortfolioExternalLink>
               .
             </p>
             <p>
@@ -386,15 +343,8 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             </p>
             <p>
               <span className="red">Warning:</span> A devicePixelRatio with a
-              floating pointer number value won't always be pretty (e.g.{" "}
-              <a
-                href="https://mydevice.io/devices/#samsunggalaxys6"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Microsoft's Lumia 1520
-              </a>{" "}
-              with a 2.5 pixel ratio).
+              floating pointer number value won't always be pretty (e.g.
+              Microsoft's Lumia 1520 with a 2.5 pixel ratio).
             </p>
             <pre className="darkBackground">
               <code>
@@ -432,78 +382,46 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             <ol>
               <li>
                 <strong>
-                  <a
-                    target="_blank"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth"
-                    rel="noopener noreferrer"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth">
                     window.innerWidth
-                  </a>{" "}
+                  </PortfolioExternalLink>{" "}
                   and{" "}
-                  <a
-                    target="_blank"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight"
-                    rel="noopener noreferrer"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight">
                     window.innerHeight
-                  </a>
+                  </PortfolioExternalLink>
                 </strong>
               </li>
               <li>
                 <strong>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth">
                     window.outerWidth
-                  </a>{" "}
+                  </PortfolioExternalLink>{" "}
                   and{" "}
-                  <a
-                    target="_blank"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight"
-                    rel="noopener noreferrer"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight">
                     window.outerHeight
-                  </a>
+                  </PortfolioExternalLink>
                 </strong>
               </li>
               <li>
                 <strong>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Screen/width"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Screen/width">
                     window.screen.width
-                  </a>{" "}
+                  </PortfolioExternalLink>{" "}
                   and{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Screen/height"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Screen/height">
                     window.screen.height
-                  </a>
+                  </PortfolioExternalLink>
                 </strong>
               </li>
               <li>
                 <strong>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Screen/availWidth"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Screen/availWidth">
                     window.screen.availWidth
-                  </a>{" "}
+                  </PortfolioExternalLink>{" "}
                   and{" "}
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/Screen/availHeight"
-                  >
+                  <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Screen/availHeight">
                     window.screen.availHeight
-                  </a>
+                  </PortfolioExternalLink>
                 </strong>
               </li>
             </ol>
@@ -635,13 +553,9 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
               </code>
             </pre>
             <p>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round">
                 Math.round
-              </a>{" "}
+              </PortfolioExternalLink>{" "}
               (only useful for when you don't want the canvas to be 100% of the
               viewport height/width) is used on{" "}
               <span className="code">width</span> because floating point numbers
@@ -653,23 +567,15 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             <p>
               This function draws some rectangles to help show the responsive
               canvas in action. At the end, we use the{" "}
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">
                 window.requestAnimationFrame
-              </a>{" "}
+              </PortfolioExternalLink>{" "}
               method. This allows the browser to call your draw function before
               its next repaint, with whatever frequency it deems appropriate. As
               a result, this option is preferable to the{" "}
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval">
                 window.setInterval()
-              </a>{" "}
+              </PortfolioExternalLink>{" "}
               method of updating a canvas.{" "}
             </p>
             <pre className="darkBackground">
@@ -822,13 +728,9 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             </pre>
             <p>
               Setting an ID for the request allows for canceling later using{" "}
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame">
                 window.cancelAnimationFrame()
-              </a>
+              </PortfolioExternalLink>
               .
             </p>
             <h2>Listening for the changes to our viewport</h2>
@@ -854,13 +756,9 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             </pre>
             <p>
               Events such as{" "}
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/Events/orientationchange"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/Events/orientationchange">
                 orientationchange
-              </a>{" "}
+              </PortfolioExternalLink>{" "}
               can also be used for mobile and tablet devices, but they're
               unreliable across browsers. For example, window.innerWidth and
               window.outerWidth will update properly by the time the
@@ -874,24 +772,16 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             <ul>
               <li>
                 <strong>
-                  <a
-                    href="https://codepen.io/ajarana/full/aJgPMR/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <PortfolioExternalLink url="https://codepen.io/ajarana/full/aJgPMR/">
                     CodePen (Full page)
-                  </a>
+                  </PortfolioExternalLink>
                 </strong>
               </li>
               <li>
                 <strong>
-                  <a
-                    href="https://codepen.io/ajarana/pen/aJgPMR/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <PortfolioExternalLink url="https://codepen.io/ajarana/pen/aJgPMR/">
                     CodePen (Editor view)
-                  </a>
+                  </PortfolioExternalLink>
                 </strong>
               </li>
             </ul>
@@ -906,40 +796,24 @@ class ResponsiveCanvasDevelopment extends Component<any, any> {
             </p>
             <h2>Credits</h2>
             <p>
-              <a
-                href="https://developer.mozilla.org/en-US/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/">
                 MDN
-              </a>
+              </PortfolioExternalLink>
             </p>
             <p>
-              <a
-                href="https://web.dev/canvas-hidipi/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://web.dev/canvas-hidipi/">
                 High DPI Canvas
-              </a>
+              </PortfolioExternalLink>
             </p>
             <p>
-              <a
-                href="https://web.dev/gopherwoord-studios-resizing-html5-games/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://web.dev/gopherwoord-studios-resizing-html5-games/">
                 Case Study: Auto-Resizing HTML5 Games
-              </a>
+              </PortfolioExternalLink>
             </p>
             <p>
-              <a
-                href="https://stackoverflow.com/questions/3543358/resizing-a-html-canvas-blanks-its-contents"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <PortfolioExternalLink url="https://stackoverflow.com/questions/3543358/resizing-a-html-canvas-blanks-its-contents">
                 Resizing a HTML canvas blanks its contents
-              </a>
+              </PortfolioExternalLink>
             </p>
             <div className="blogDates">
               <p className="spacedOut lightGray">

@@ -1,4 +1,5 @@
 import Alert from "../../components/alert";
+import PortfolioExternalLink from "../../components/external-link";
 import Resume from "../../components/resume";
 import { ANDRES_CANDIDATE_INFO } from "../../constants";
 
@@ -15,14 +16,12 @@ const ResumePage = () => {
         <p>
           This resume is responsive and its layout will adjust to the viewport
           width. A{" "}
-          <a
-            href={resumePdf}
-            target="_blank"
-            rel="noreferrer"
-            className="dark"
+          <PortfolioExternalLink
+            url={resumePdf}
+            linkType="DarkLink"
           >
             pdf version
-          </a>{" "}
+          </PortfolioExternalLink>{" "}
           is also available.
         </p>
       </Alert>

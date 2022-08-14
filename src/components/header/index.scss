@@ -30,10 +30,9 @@
 
       font-family: "Source Code Pro", monospace;
       color: white;
-      transition: color animations.$animation-duration linear;
 
       &:hover {
-        color: rgba(255, 255, 255, 0.8);
+        color: white;
       }
     }
   }
@@ -146,26 +145,6 @@
       border-color animations.$animation-duration ease-in;
   }
 
-  .headerLink {
-    position: relative;
-    color: white;
-    text-align: center;
-    padding: var(--spacing-5) 0;
-    width: 100%;
-    text-decoration: none;
-
-    &:hover {
-      color: rgba(255, 255, 255, 0.82);
-    }
-
-    p {
-      @include typography.text-size-6;
-
-      margin: 0;
-      transition: color animations.$animation-duration linear;
-    }
-  }
-
   @media (min-width: layout.$breakpoint-desktop) {
     #headerMenu {
       position: static;
@@ -183,8 +162,15 @@
       justify-content: space-between;
 
       p,
-      li {
+      li,
+      a {
         @include typography.text-size-2;
+
+        color: rgba(255, 255, 255, 0.72);
+
+        &:hover {
+          color: white;
+        }
       }
 
       .menuItems .selected {
@@ -234,11 +220,13 @@
       }
     }
 
-    #headerMenu .headerLink {
-      p {
+    #headerMenu {
+      p,
+      a {
         color: rgba(255, 255, 255, 0.72);
         position: relative;
         padding: 4px 0px;
+        transition: color animations.$animation-duration linear;
 
         &:after {
           $underlineLength: 0%;

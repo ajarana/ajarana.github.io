@@ -1,9 +1,14 @@
+import {
+  faAngleRight,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import { useQuery } from "@tanstack/react-query";
 import moment from "moment";
-import { NavLink } from "react-router-dom";
 import { repoKeys } from "../../api/ApiUtils";
 import { getRepoByName } from "../../api/HomeAPI";
 import { Project } from "../../types/Project";
+import PortfolioExternalLink from "../external-link";
+import PortfolioInternalLink from "../internal-link";
 import "./index.scss";
 
 interface CodeProjectProps {
@@ -28,23 +33,28 @@ export const CodeProject = (props: CodeProjectProps) => {
     getRepoByName(repoName)
   );
 
+  const image = projectUrl ? (
+    <PortfolioExternalLink url={projectUrl}>
+      <img
+        className="images"
+        src={asset.src}
+        alt={asset.alt}
+        srcSet={asset.srcset}
+      />
+    </PortfolioExternalLink>
+  ) : (
+    <img
+      className="images"
+      src={asset.src}
+      alt={asset.alt}
+      srcSet={asset.srcset}
+    />
+  );
+
   return (
     <section className="sectionContainer">
       <div className="project flexCenteredToFlexTopLeft flexWrapThenNoWrap invisible">
-        <figure className="imageHolder flexCentered">
-          <a
-            href={projectUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="images"
-              src={asset.src}
-              alt={asset.alt}
-              srcSet={asset.srcset}
-            />
-          </a>
-        </figure>
+        <figure className="imageHolder flexCentered">{image}</figure>
 
         <div className="listContainer">
           <header>
@@ -66,35 +76,33 @@ export const CodeProject = (props: CodeProjectProps) => {
           <ul className="linkContainer">
             {projectUrl && (
               <li>
-                <a
-                  href={projectUrl}
-                  className="linkIcon"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <PortfolioExternalLink
+                  url={projectUrl}
+                  icon={faArrowUpRightFromSquare}
                 >
                   View project
-                </a>
+                </PortfolioExternalLink>
               </li>
             )}
 
             <li>
-              <a
-                href={codeUrl}
-                className="linkIcon"
-                target="_blank"
-                rel="noopener noreferrer"
+              <PortfolioExternalLink
+                url={codeUrl}
+                icon={faArrowUpRightFromSquare}
               >
                 View code
-              </a>
+              </PortfolioExternalLink>
             </li>
 
             <li>
-              <NavLink
-                to={blogPath}
-                className="linkIcon"
+              <PortfolioInternalLink
+                icon={faAngleRight}
+                navLinkProps={{
+                  to: blogPath,
+                }}
               >
                 Read more
-              </NavLink>
+              </PortfolioInternalLink>
             </li>
           </ul>
         </div>

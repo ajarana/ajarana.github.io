@@ -1,0 +1,24 @@
+@use "../../sass/colors";
+@use "../../sass/functions";
+
+$color: colors.$blue-light;
+$color-dark: functions.fixed-darken($color);
+
+.plainLink {
+  composes: link from "./index.module.scss";
+
+  color: $color;
+
+  svg {
+    color: $color;
+  }
+
+  &:hover {
+    color: $color-dark;
+    text-decoration: none;
+
+    svg {
+      color: $color-dark;
+    }
+  }
+}

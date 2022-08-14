@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { NavLink } from "react-router-dom";
+import PortfolioInternalLink from "../../components/internal-link";
 import "./index.scss";
 
 class BlogPage extends Component {
@@ -13,25 +13,41 @@ class BlogPage extends Component {
           >
             <h2>March 2017</h2>
             <p>
-              <NavLink to="/blog/development-responsive-canvas">
+              <PortfolioInternalLink
+                navLinkProps={{
+                  to: "/blog/development-responsive-canvas",
+                }}
+              >
                 Building a Responsive Canvas Using Vanilla JavaScript
-              </NavLink>
+              </PortfolioInternalLink>
             </p>
             <h2>July 2017</h2>
             <p>
-              <NavLink to="/blog/development-canvas-game">
+              <PortfolioInternalLink
+                navLinkProps={{
+                  to: "/blog/development-canvas-game",
+                }}
+              >
                 Building an HTML5 Canvas Game
-              </NavLink>
+              </PortfolioInternalLink>
             </p>
             <p>
-              <NavLink to="/blog/development-bootstrap-3-site">
+              <PortfolioInternalLink
+                navLinkProps={{
+                  to: "/blog/development-bootstrap-3-site",
+                }}
+              >
                 Building a Bootstrap 3 Image Gallery
-              </NavLink>
+              </PortfolioInternalLink>
             </p>
             <p>
-              <NavLink to="/blog/development-reactjs-news-feed">
+              <PortfolioInternalLink
+                navLinkProps={{
+                  to: "/blog/development-reactjs-news-feed",
+                }}
+              >
                 Building a ReactJS News Feed
-              </NavLink>
+              </PortfolioInternalLink>
             </p>
           </section>
         </div>

@@ -1,7 +1,12 @@
-import { NavLink } from "react-router-dom";
 import { CodeProjects } from "../../components/code-projects";
 import "./index.scss";
 import { Project } from "../../types/Project";
+import PortfolioInternalLink from "../../components/internal-link";
+import PortfolioExternalLink from "../../components/external-link";
+import {
+  faAngleRight,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 const HomePage = () => {
   const projects: Project[] = [
@@ -75,23 +80,24 @@ const HomePage = () => {
 
             <ul className="linkContainer">
               <li>
-                <a
-                  href="https://github.com/ajarana/ajarana.github.io"
-                  className="linkIcon"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <PortfolioExternalLink
+                  url="https://github.com/ajarana/ajarana.github.io"
+                  linkType="LightLink"
+                  icon={faArrowUpRightFromSquare}
                 >
                   Site code
-                </a>
+                </PortfolioExternalLink>
               </li>
               <li>
-                <NavLink
-                  className="linkIcon"
-                  to="/resume/"
-                  rel="noopener noreferrer"
+                <PortfolioInternalLink
+                  icon={faAngleRight}
+                  linkType="LightLink"
+                  navLinkProps={{
+                    to: "/resume/",
+                  }}
                 >
                   Resume
-                </NavLink>
+                </PortfolioInternalLink>
               </li>
             </ul>
           </div>
