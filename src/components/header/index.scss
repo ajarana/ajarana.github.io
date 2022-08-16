@@ -112,6 +112,17 @@
     background-color: transparent;
     z-index: 98;
 
+    a,
+    p {
+      @include typography.text-size-6;
+
+      color: white;
+    }
+
+    a {
+      padding: var(--spacing-5) 0;
+    }
+
     .menuItems {
       visibility: hidden;
       display: flex;
@@ -165,8 +176,6 @@
       li,
       a {
         @include typography.text-size-2;
-
-        color: rgba(255, 255, 255, 0.72);
 
         &:hover {
           color: white;
