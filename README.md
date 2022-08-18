@@ -13,6 +13,8 @@ Please note that the following components, pages, and styles are in the process 
 - home
 - Sass partials
 
+Currently also in the process of switching over to [styled-components](https://styled-components.com/) from Sass / CSS Modules.
+
 **If** the need arises, I plan to use [zustand](https://github.com/pmndrs/zustand) for application-level state management and [Context](https://reactjs.org/docs/context.html) to manage the state for a group of components.
 
 ## Getting Started
@@ -52,6 +54,7 @@ The major components of this project include:
 - [React](https://github.com/facebook/react)
 - [TypeScript](https://github.com/microsoft/TypeScript)
 - [Sass](https://github.com/sass/dart-sass)
+- [CSS Modules](https://github.com/css-modules/css-modules)
 - [React Router](https://github.com/remix-run/react-router)
 - [React Query](https://tanstack.com/query/v4)
 - [Create React App](https://github.com/facebook/create-react-app)
