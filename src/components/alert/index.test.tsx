@@ -1,23 +1,23 @@
 import { render, screen } from "@testing-library/react";
+import { ThemeProvider } from "styled-components";
 import Alert from ".";
+import { DEFAULT_THEME } from "../../themes";
 
-test("renders all headings", () => {
+test("renders heading and children", () => {
   const heading = "The heading!";
   const copy = "The copy!";
 
   render(
-    <Alert alertType="Informational">
-      <h3>{heading}</h3>
-      <p>{copy}</p>
-    </Alert>
+    <ThemeProvider theme={DEFAULT_THEME}>
+      <Alert heading={heading}>
+        <p>{copy}</p>
+      </Alert>
+    </ThemeProvider>
   );
 
-  const headingElement = screen.getByRole("heading", {
-    name: heading,
-  });
+  const headingNode = screen.getByText(heading);
+  const copyNode = screen.getByText(copy);
 
-  const pElement = screen.getByText(copy);
-
-  expect(headingElement).toBeInTheDocument();
-  expect(pElement).toBeInTheDocument();
+  expect(headingNode).toBeInTheDocument();
+  expect(copyNode).toBeInTheDocument();
 });

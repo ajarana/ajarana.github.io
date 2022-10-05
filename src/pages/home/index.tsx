@@ -1,12 +1,25 @@
 import { CodeProjects } from "../../components/code-projects";
 import "./index.scss";
-import PortfolioInternalLink from "../../components/internal-link";
-import PortfolioExternalLink from "../../components/external-link";
 import {
   faAngleRight,
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { PROJECTS } from "../../constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ExternalLink from "../../components/external-link";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components/macro";
+import { TYPOGRAPHY } from "../../styled-partials";
+
+const HeroLink = styled(NavLink)`
+  ${TYPOGRAPHY.text500}
+
+  color: ${({ theme }) => theme.heroHeader.link.default};
+
+  &:hover {
+    color: ${({ theme }) => theme.heroHeader.link.hover};
+  }
+`;
 
 const HomePage = () => {
   return (
@@ -31,24 +44,22 @@ const HomePage = () => {
 
             <ul className="linkContainer">
               <li>
-                <PortfolioExternalLink
-                  url="https://github.com/ajarana/ajarana.github.io"
-                  linkType="LightLink"
-                  icon={faArrowUpRightFromSquare}
+                <HeroLink
+                  as={ExternalLink}
+                  href="https://github.com/ajarana/ajarana.github.io"
                 >
                   Site code
-                </PortfolioExternalLink>
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </HeroLink>
               </li>
               <li>
-                <PortfolioInternalLink
-                  icon={faAngleRight}
-                  linkType="LightLink"
-                  navLinkProps={{
-                    to: "/resume/",
-                  }}
+                <HeroLink
+                  as={NavLink}
+                  to="/resume"
                 >
                   Resume
-                </PortfolioInternalLink>
+                  <FontAwesomeIcon icon={faAngleRight} />
+                </HeroLink>
               </li>
             </ul>
           </div>

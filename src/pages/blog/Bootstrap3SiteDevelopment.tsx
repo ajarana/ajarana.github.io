@@ -1,5 +1,5 @@
 import { Component } from "react";
-import PortfolioExternalLink from "../../components/external-link";
+import ExternalLink from "../../components/external-link";
 import "./index.scss";
 import mixtin1x from "../../assets/projects/mixtin/mixtin-menu-1x.png";
 import mixtin2x from "../../assets/projects/mixtin/mixtin-menu-2x.png";
@@ -10,23 +10,23 @@ class Bootstrap3SiteDevelopment extends Component {
     return (
       <main className="blogPage">
         <section className="fullWidthContainerSmall flexCentered backgroundGray">
-          <PortfolioExternalLink url="https://ajarana.github.io/mixtin">
+          <ExternalLink href="https://ajarana.github.io/mixtin">
             <img
               className="heroImage"
               src={mixtin1x}
               alt="Screenshot of the mobile menu of a Bootstrap website."
               srcSet={`${mixtin1x}, ${mixtin2x} 2x, ${mixtin4x} 4x`}
             />
-          </PortfolioExternalLink>
+          </ExternalLink>
         </section>
 
         <section className="mainContainer blogContainer">
           <h1>Building a Bootstrap 3 Image Gallery</h1>
           <p>
             I designed and developed{" "}
-            <PortfolioExternalLink url="https://ajarana.github.io/mixtin">
+            <ExternalLink href="https://ajarana.github.io/mixtin">
               this gallery
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             using Boostrap 3 components, LESS, HTML5, and a little bit of
             JavaScript. Bootstrap takes care of a lot of things for you: the
             design, media queries, modular classes, meta tags, and UI
@@ -38,45 +38,45 @@ class Bootstrap3SiteDevelopment extends Component {
           <p>
             Components used included navbars, containers, columns, among other
             components. Bootstrap's extensive{" "}
-            <PortfolioExternalLink url="http://getbootstrap.com/components/">
+            <ExternalLink href="http://getbootstrap.com/components/">
               documentation
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             does more than enough to get you through any problems.
           </p>
           <h2>LESS</h2>
           <p>
             My{" "}
-            <PortfolioExternalLink url="https://github.com/ajarana/mixtin/tree/master/less">
+            <ExternalLink href="https://github.com/ajarana/mixtin/tree/master/less">
               LESS directory
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             consisted of the Bootstrap LESS files along with my own custom ones.
             Vanilla Bootstrap isn't enough for a distinct look, though
             customization does come with its own set of problems since Bootstrap
             3 does not use things like{" "}
-            <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox">
+            <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox">
               flexbox
-            </PortfolioExternalLink>
+            </ExternalLink>
             .
           </p>
           <h2>HTML5</h2>
           <p>
             I used the{" "}
-            <PortfolioExternalLink url="http://getbootstrap.com/getting-started/#template">
+            <ExternalLink href="http://getbootstrap.com/getting-started/#template">
               basic HTML5 template
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             from Bootstrap's website for this part. Included are necessary meta
             tags and links to the external stylesheets and scripts. The rest is{" "}
-            <PortfolioExternalLink url="https://github.com/ajarana/mixtin/blob/master/index.html">
+            <ExternalLink href="https://github.com/ajarana/mixtin/blob/master/index.html">
               my own code
-            </PortfolioExternalLink>
+            </ExternalLink>
             .
           </p>
           <h2>JS</h2>
           <p>
             I used a little bit of Vanilla JS to make a{" "}
-            <PortfolioExternalLink url="https://github.com/ajarana/mixtin/blob/master/js/mixtinTime1.js">
+            <ExternalLink href="https://github.com/ajarana/mixtin/blob/master/js/mixtinTime1.js">
               counter
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             that keeps track of the date. jQuery is used for other UI effects,
             such as those for the header and image gallery sorting.
           </p>
@@ -92,26 +92,26 @@ class Bootstrap3SiteDevelopment extends Component {
           <p>
             In the future, they will also include other additions to their
             framework including{" "}
-            <PortfolioExternalLink url="https://www.quackit.com/bootstrap/bootstrap_4/differences_between_bootstrap_3_and_bootstrap_4.cfm">
+            <ExternalLink href="https://www.quackit.com/bootstrap/bootstrap_4/differences_between_bootstrap_3_and_bootstrap_4.cfm">
               flexbox, SCSS, rem rather than px, among other changes
-            </PortfolioExternalLink>
+            </ExternalLink>
             .
           </p>
           <h2>Credits</h2>
           <p>
-            <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox">
+            <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox">
               Advanced layouts with flexbox
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <p>
-            <PortfolioExternalLink url="http://getbootstrap.com/">
+            <ExternalLink href="http://getbootstrap.com/">
               Bootstrap
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <p>
-            <PortfolioExternalLink url="https://www.quackit.com/bootstrap/bootstrap_4/differences_between_bootstrap_3_and_bootstrap_4.cfm">
+            <ExternalLink href="https://www.quackit.com/bootstrap/bootstrap_4/differences_between_bootstrap_3_and_bootstrap_4.cfm">
               Differences Between Bootstrap 3 and 4
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <div className="blogDates">
             <p className="spacedOut lightGray">

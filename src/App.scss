@@ -4,6 +4,9 @@
 @use "sass/functions";
 @use "sass/animations";
 
+// cornflower blue #334284
+// primary #263b9b
+// secondary #8ac9e5
 :root {
   // Colors
   --light-link-blue-1: hsl(200, 70%, 54%);
@@ -36,6 +39,9 @@
     )};
   --container-width-1: 1100px;
 
+  // Animations
+  --animation-duration: 0.2s;
+
   // Spacing
   --spacing-1: 4px;
   --spacing-2: 8px;
@@ -55,29 +61,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-a {
-  $color: colors.$blue;
-
-  text-decoration: none;
-  color: $color;
-  transition: color animations.$animation-duration linear;
-
-  &:hover {
-    color: functions.fixed-darken($color);
-    text-decoration: underline;
-  }
-
-  &.dark {
-    $color: colors.$blue-dark;
-
-    color: $color;
-
-    &:hover {
-      color: functions.fixed-darken($color);
-    }
-  }
 }
 
 h1 {
@@ -447,8 +430,7 @@ body {
     margin-bottom: var(--spacing-4);
   }
 
-  p,
-  a {
+  p {
     @include typography.text-size-5;
   }
 
@@ -459,8 +441,7 @@ body {
       @include typography.text-size-9;
     }
 
-    p,
-    a {
+    p {
       @include typography.text-size-6;
     }
   }

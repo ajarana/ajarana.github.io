@@ -1,24 +1,29 @@
 import "styled-components";
 
+interface Link {
+  default: string;
+  hover: string;
+}
+
 interface ThemeContext {
-  text: string;
-  background: string;
-  link: string;
-  linkHover: string;
-  border: string;
-  dividers?: string;
+  text?: string;
+  background?: string;
+  link: Link;
+  border?: string;
+  divider?: string;
+}
+
+interface Variants {
+  primary?: any;
+  secondary?: any;
+  neutral?: any;
 }
 
 declare module "styled-components" {
   export interface DefaultTheme {
     default: ThemeContext;
-    primary: ThemeContext;
-    info: ThemeContext;
-    error: ThemeContext;
-    success: ThemeContext;
-    neutral: ThemeContext;
     heroHeader: ThemeContext;
     header: ThemeContext;
-    footer: ThemeContext;
+    alert: ThemeContext;
   }
 }

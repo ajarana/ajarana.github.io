@@ -3,6 +3,18 @@
 @use "../../sass/typography";
 @use "../../sass/layout";
 
+.whats-up {
+  color: colors.$blue;
+}
+
+.whats-down {
+  color: colors.$blue-light;
+}
+
+.whats-left {
+  color: colors.$blue-dark;
+}
+
 #introduction {
   color: #fff;
   position: relative;
@@ -39,24 +51,24 @@
   .linkContainer {
     margin-bottom: 0;
 
-    a {
-      $color: colors.$blue-light;
-      $color-dark: functions.fixed-darken($color);
+    // a {
+    //   $color: colors.$blue-light;
+    //   $color-dark: functions.fixed-darken($color);
 
-      color: $color;
+    //   color: $color;
 
-      &:after {
-        border-color: $color $color transparent transparent;
-      }
+    //   &:after {
+    //     border-color: $color $color transparent transparent;
+    //   }
 
-      &:hover {
-        color: $color-dark;
+    //   &:hover {
+    //     color: $color-dark;
 
-        &:after {
-          border-color: $color-dark $color-dark transparent transparent;
-        }
-      }
-    }
+    //     &:after {
+    //       border-color: $color-dark $color-dark transparent transparent;
+    //     }
+    //   }
+    // }
 
     @media (min-width: 992px) {
       justify-content: center;

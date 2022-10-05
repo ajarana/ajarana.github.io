@@ -14,6 +14,9 @@ import BlogPage from "./pages/blog";
 import ResumePage from "./pages/resume";
 import ResumePdfPage from "./pages/resume-pdf";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from "styled-components";
+import { DEFAULT_THEME } from "./themes";
+import { GlobalStyles } from "./App.styled";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -53,54 +56,58 @@ class App extends Component {
       <QueryClientProvider client={queryClient}>
         <Router>
           <ScrollToTop>
-            <article>
-              <Switch>
-                {process.env.NODE_ENV === "development" && (
-                  <Route
-                    exact
-                    path="/resume-pdf"
-                    component={ResumePdfPage}
-                  />
-                )}
-                <Route>
-                  <Header />
+            <ThemeProvider theme={DEFAULT_THEME}>
+              <GlobalStyles />
 
-                  <Route
-                    exact
-                    path="/"
-                    component={HomePage}
-                  />
-                  <Route
-                    exact
-                    path="/blog"
-                    component={BlogPage}
-                  />
-                  <Route
-                    exact
-                    path="/resume"
-                    component={ResumePage}
-                  />
-                  <Route
-                    path="/blog/development-responsive-canvas"
-                    component={ResponsiveCanvasDevelopment}
-                  />
-                  <Route
-                    path="/blog/development-canvas-game"
-                    component={CanvasGameDevelopment}
-                  />
-                  <Route
-                    path="/blog/development-bootstrap-3-site"
-                    component={Bootstrap3SiteDevelopment}
-                  />
-                  <Route
-                    path="/blog/development-reactjs-news-feed"
-                    component={NewsFeedDevelopment}
-                  />
+              <article>
+                <Switch>
+                  {process.env.NODE_ENV === "development" && (
+                    <Route
+                      exact
+                      path="/resume-pdf"
+                      component={ResumePdfPage}
+                    />
+                  )}
+                  <Route>
+                    <Header />
 
-                  <Footer />
-                </Route>
-              </Switch>
-            </article>
+                    <Route
+                      exact
+                      path="/"
+                      component={HomePage}
+                    />
+                    <Route
+                      exact
+                      path="/blog"
+                      component={BlogPage}
+                    />
+                    <Route
+                      exact
+                      path="/resume"
+                      component={ResumePage}
+                    />
+                    <Route
+                      path="/blog/development-responsive-canvas"
+                      component={ResponsiveCanvasDevelopment}
+                    />
+                    <Route
+                      path="/blog/development-canvas-game"
+                      component={CanvasGameDevelopment}
+                    />
+                    <Route
+                      path="/blog/development-bootstrap-3-site"
+                      component={Bootstrap3SiteDevelopment}
+                    />
+                    <Route
+                      path="/blog/development-reactjs-news-feed"
+                      component={NewsFeedDevelopment}
+                    />
+
+                    <Footer />
+                  </Route>
+                </Switch>
+              </article>
+            </ThemeProvider>
           </ScrollToTop>
         </Router>
       </QueryClientProvider>

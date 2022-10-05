@@ -1,5 +1,5 @@
 import { Component } from "react";
-import PortfolioExternalLink from "../../components/external-link";
+import ExternalLink from "../../components/external-link";
 import newsFeed1x from "../../assets/projects/news-feed/news-feed-cropped-1x.png";
 import newsFeed2x from "../../assets/projects/news-feed/news-feed-cropped-2x.png";
 import newsFeed4x from "../../assets/projects/news-feed/news-feed-cropped-4x.png";
@@ -34,9 +34,9 @@ class NewsFeedDevelopment extends Component {
           <p>
             As I mentioned before, everything besides the header and footer are
             rendered with ReactJS. I separated the layout between{" "}
-            <PortfolioExternalLink url="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">
+            <ExternalLink href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">
               presentational and container components
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             in order to separate elements that serve as sources of data versus
             those that are simply passed data to present.
           </p>
@@ -46,53 +46,53 @@ class NewsFeedDevelopment extends Component {
           </p>
           <ul>
             <li>
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/src/containers/Filter.js"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/src/containers/Filter.js"}
               >
                 <strong>Filter</strong>
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               (container component)
             </li>
             <li>
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/src/components/Picker.js"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/src/components/Picker.js"}
               >
                 <strong>Picker</strong>
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               (presentational component)
             </li>
             <li>
-              <PortfolioExternalLink
-                url={
+              <ExternalLink
+                href={
                   this.repoUrl + "/blob/master/src/components/ProgressBar.js"
                 }
               >
                 <strong>Progress Bar</strong>
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               (presentational component)
             </li>
             <li>
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/src/components/Refresh.js"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/src/components/Refresh.js"}
               >
                 <strong>Refresh</strong>
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               (presentational component)
             </li>
             <li>
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/src/components/Sources.js"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/src/components/Sources.js"}
               >
                 <strong>Sources</strong>
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               (presentational component)
             </li>
           </ul>
           <h2>Redux</h2>
           <p>
-            <PortfolioExternalLink url="http://redux.js.org/docs/basics/DataFlow.html">
+            <ExternalLink href="http://redux.js.org/docs/basics/DataFlow.html">
               Redux
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             was used for state management; it was really annoying to have to
             pass data through a bunch of componenets just so the last one in the
             chain could have access to some data. Redux stores the entire state
@@ -115,11 +115,11 @@ class NewsFeedDevelopment extends Component {
           <p>
             The styling was very straightforward for this project. The trickiest
             part was making sure components were rendered with the{" "}
-            <PortfolioExternalLink
-              url={this.repoUrl + "/blob/master/src/components/Picker.js#L9"}
+            <ExternalLink
+              href={this.repoUrl + "/blob/master/src/components/Picker.js#L9"}
             >
               correct CSS class
-            </PortfolioExternalLink>
+            </ExternalLink>
             .
           </p>
           <p>
@@ -135,14 +135,14 @@ class NewsFeedDevelopment extends Component {
           </p>
           <h2>Credits</h2>
           <p>
-            <PortfolioExternalLink url="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">
+            <ExternalLink href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">
               Presentational and Container Components
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <p>
-            <PortfolioExternalLink url="http://redux.js.org/docs/basics/DataFlow.html">
+            <ExternalLink href="http://redux.js.org/docs/basics/DataFlow.html">
               Data Flow
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <div className="blogDates">
             <p className="spacedOut lightGray">

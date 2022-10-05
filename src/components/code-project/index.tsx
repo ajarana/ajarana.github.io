@@ -2,13 +2,14 @@ import {
   faAngleRight,
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useQuery } from "@tanstack/react-query";
 import moment from "moment";
+import { NavLink } from "react-router-dom";
 import { repoKeys } from "../../api/ApiUtils";
 import { getRepoByName } from "../../api/HomeAPI";
 import { Project } from "../../types/Project";
-import PortfolioExternalLink from "../external-link";
-import PortfolioInternalLink from "../internal-link";
+import ExternalLink from "../external-link";
 import "./index.scss";
 
 interface CodeProjectProps {
@@ -34,14 +35,14 @@ export const CodeProject = (props: CodeProjectProps) => {
   );
 
   const image = projectUrl ? (
-    <PortfolioExternalLink url={projectUrl}>
+    <ExternalLink href={projectUrl}>
       <img
         className="images"
         src={asset.src}
         alt={asset.alt}
         srcSet={asset.srcset}
       />
-    </PortfolioExternalLink>
+    </ExternalLink>
   ) : (
     <img
       className="images"
@@ -76,33 +77,25 @@ export const CodeProject = (props: CodeProjectProps) => {
           <ul className="linkContainer">
             {projectUrl && (
               <li>
-                <PortfolioExternalLink
-                  url={projectUrl}
-                  icon={faArrowUpRightFromSquare}
-                >
+                <ExternalLink href={projectUrl}>
                   View project
-                </PortfolioExternalLink>
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </ExternalLink>
               </li>
             )}
 
             <li>
-              <PortfolioExternalLink
-                url={codeUrl}
-                icon={faArrowUpRightFromSquare}
-              >
+              <ExternalLink href={codeUrl}>
                 View code
-              </PortfolioExternalLink>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              </ExternalLink>
             </li>
 
             <li>
-              <PortfolioInternalLink
-                icon={faAngleRight}
-                navLinkProps={{
-                  to: blogPath,
-                }}
-              >
+              <NavLink to={blogPath}>
                 Read more
-              </PortfolioInternalLink>
+                <FontAwesomeIcon icon={faAngleRight} />
+              </NavLink>
             </li>
           </ul>
         </div>

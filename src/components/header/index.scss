@@ -2,7 +2,7 @@
 @use "../../sass/typography";
 @use "../../sass/layout";
 
-#header {
+.app-header {
   height: 48px;
   background-color: #2b2b2b;
   background-color: #333;
@@ -14,37 +14,17 @@
 
   > div {
     height: 100%;
+    display: flex;
+    align-items: center;
   }
 
-  nav {
-    flex: 1;
-    height: 100%;
-    margin: 0 auto;
-  }
-
-  #titleContainer {
+  .logoContainer {
     flex: 0 1 85%;
-
-    #logo {
-      @include typography.text-size-6;
-
-      font-family: "Source Code Pro", monospace;
-      color: white;
-
-      &:hover {
-        color: white;
-      }
-    }
-  }
-
-  @media (min-width: layout.$breakpoint-desktop) {
-    #titleContainer,
-    .invis-aligner {
-      flex: 0 1 20%;
-    }
   }
 
   #buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
     flex: 0 1 15%;
     position: relative;
     z-index: 99;
@@ -57,8 +37,10 @@
       padding: 0;
       cursor: pointer;
 
-      .flexBottom {
+      > span {
         height: 18px;
+        display: flex;
+        align-items: flex-end;
       }
 
       #hamburgerWrapper {
@@ -80,145 +62,112 @@
           margin-bottom animations.$animation-duration ease-in-out
             animations.$animation-duration;
       }
+
       .hamburgerIcon:not(:last-child) {
         margin-bottom: 6px;
       }
     }
+
     #mobileButton:focus {
       outline: none;
     }
   }
-  @media (min-width: layout.$breakpoint-desktop) {
-    #buttonWrapper {
-      display: none;
-    }
-  }
 
-  #headerMenu {
+  .portfolioLinks {
     box-sizing: border-box;
     list-style: none;
     position: absolute;
-    width: 24px;
-    height: 0px;
+    width: 100%;
+    height: calc(100% - 48px);
+    min-height: 510px;
     top: 48px;
-
     left: 0;
     margin: 0;
     padding: 0;
-
-    border-top: 1px solid;
-    border-color: transparent;
-
-    background-color: transparent;
+    opacity: 0;
+    border-top: 1px solid #aaa;
+    background-color: #333;
     z-index: 98;
 
-    a,
-    p {
-      @include typography.text-size-6;
-
-      color: white;
-    }
-
-    a {
-      padding: var(--spacing-5) 0;
-    }
-
     .menuItems {
-      visibility: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-
       margin: 0 48px;
-
-      opacity: 0;
-      transition: none;
     }
 
     .menuItems:first-child {
       border-top: none;
+      margin-top: var(--spacing-5);
+    }
+  }
 
-      a {
-        margin-top: var(--spacing-5);
+  &.expanded {
+    .portfolioLinks {
+      opacity: 1;
+      transition: opacity animations.$animation-duration ease-in;
+    }
+
+    #buttonWrapper #mobileButton {
+      padding: 10px 0;
+
+      #hamburgerWrapper {
+        transition: bottom animations.$animation-duration ease-in-out
+          animations.$animation-duration;
+        bottom: calc(50% - 1px);
+      }
+
+      .hamburgerIcon {
+        background-color: white;
+
+        transition: background-color animations.$animation-duration ease-in-out,
+          transform animations.$animation-duration ease-in-out
+            animations.$animation-duration,
+          opacity 0s ease-in-out animations.$animation-duration,
+          margin-bottom animations.$animation-duration ease-in-out;
+      }
+      .hamburgerIcon:not(:last-child) {
+        margin-bottom: -2px;
+      }
+
+      .hamburgerIcon:first-child {
+        transform: rotate(45deg);
+      }
+      .hamburgerIcon:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburgerIcon:last-child {
+        transform: rotate(-45deg);
       }
     }
   }
 
-  .transitionExpand {
-    transition: height 0s ease-in, width 0s ease-in,
-      background-color animations.$animation-duration ease-in,
-      border-color animations.$animation-duration ease-in;
-  }
-  .transitionCollapse {
-    transition: height 0s ease-in animations.$animation-duration,
-      width 0s ease-in animations.$animation-duration,
-      background-color animations.$animation-duration ease-in,
-      border-color animations.$animation-duration ease-in;
+  &.collapsed {
+    .portfolioLinks {
+      transition: opacity animations.$animation-duration ease-in;
+      pointer-events: none;
+    }
   }
 
   @media (min-width: layout.$breakpoint-desktop) {
-    #headerMenu {
-      position: static;
+    .portfolioLinks {
       position: relative;
-      display: flex;
-      align-items: center;
       height: 100%;
-      width: auto;
       width: 100%;
+      min-height: auto;
       border-top: none;
       top: 0;
-
+      transition: none;
+      opacity: 1;
       max-width: 500px;
       margin: 0 auto;
-      justify-content: space-between;
-
-      p,
-      li,
-      a {
-        @include typography.text-size-2;
-
-        &:hover {
-          color: white;
-        }
-      }
-
-      .menuItems .selected {
-        p {
-          color: white;
-          position: relative;
-
-          &:after {
-            $underlineLength: 110%;
-            width: $underlineLength;
-            left: calc(-#{$underlineLength - 100%} / 2);
-            height: 1px;
-          }
-        }
-      }
 
       .menuItems {
-        visibility: visible;
-        opacity: 1;
-        border-top: none;
         height: 100%;
         margin: 0;
-
-        transition: background-color animations.$animation-duration linear;
-
-        a {
-          display: flex;
-          align-items: center;
-          height: 100%;
-          transition: color animations.$animation-duration linear;
-
-          &:hover {
-            p {
-              color: white;
-            }
-          }
-        }
       }
-      .menuItems:first-child a {
+
+      .menuItems:first-child {
         margin-top: 0;
       }
 
@@ -227,101 +176,22 @@
         right: 0;
         top: 0;
       }
-    }
 
-    #headerMenu {
-      p,
-      a {
-        color: rgba(255, 255, 255, 0.72);
-        position: relative;
-        padding: 4px 0px;
-        transition: color animations.$animation-duration linear;
-
-        &:after {
-          $underlineLength: 0%;
-          content: "";
-          display: inline-block;
-          height: 1px;
-          width: $underlineLength;
-          background: white;
-          position: absolute;
-          bottom: 0;
-          left: calc((100% - #{$underlineLength}) / 2);
-          transition: all animations.$animation-duration ease-in-out;
-          border-radius: 3px;
-        }
-
-        &.external-header-link {
-          color: white;
-          border: 1px solid white;
-          padding: 4px 12px;
-          border-radius: 3px;
-
-          &:hover {
-            color: #333;
-            background-color: white;
-          }
-        }
+      ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
     }
-  }
-}
 
-html.expanded {
-  overflow-y: scroll !important;
-}
-
-.expanded,
-.expanded body {
-  height: 100%;
-  overflow: hidden;
-
-  #header #headerMenu {
-    height: calc(100% - 48px);
-    min-height: 510px;
-    width: 100%;
-
-    background-color: #333;
-    border-top: 1px solid;
-    border-color: #aaa;
-
-    .menuItems {
-      visibility: visible;
-      transition: opacity animations.$animation-duration ease-in-out;
-      opacity: 1;
-    }
-  }
-
-  #header > div > #buttonWrapper > #mobileButton {
-    padding: 10px 0;
-
-    #hamburgerWrapper {
-      transition: bottom animations.$animation-duration ease-in-out
-        animations.$animation-duration;
-      bottom: calc(50% - 1px);
+    #buttonWrapper {
+      display: none;
     }
 
-    .hamburgerIcon {
-      background-color: white;
-
-      transition: background-color animations.$animation-duration ease-in-out,
-        transform animations.$animation-duration ease-in-out
-          animations.$animation-duration,
-        opacity 0s ease-in-out animations.$animation-duration,
-        margin-bottom animations.$animation-duration ease-in-out;
-    }
-    .hamburgerIcon:not(:last-child) {
-      margin-bottom: -2px;
-    }
-
-    .hamburgerIcon:first-child {
-      transform: rotate(45deg);
-    }
-    .hamburgerIcon:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburgerIcon:last-child {
-      transform: rotate(-45deg);
+    .logoContainer,
+    .invis-aligner {
+      flex: 0 1 20%;
     }
   }
 }

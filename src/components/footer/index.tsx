@@ -3,8 +3,8 @@ import "./index.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getRepoByName } from "../../api/HomeAPI";
 import { repoKeys } from "../../api/ApiUtils";
-import PortfolioExternalLink from "../external-link";
 import resumePdf from "../../assets/resume/andres-arana_front-end-developer.pdf";
+import ExternalLink from "../external-link";
 
 const Footer = () => {
   const repoName = "ajarana.github.io";
@@ -20,7 +20,7 @@ const Footer = () => {
     >
       <div className="mainContainer textAlignCenter">
         <h2 className="noMargin lightGray">
-          <PortfolioExternalLink url={resumePdf}>Resume</PortfolioExternalLink>
+          <ExternalLink href={resumePdf}>Resume</ExternalLink>
         </h2>
 
         {!isError && !isLoading && (

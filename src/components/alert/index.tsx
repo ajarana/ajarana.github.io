@@ -1,27 +1,58 @@
-import classNames from "classnames/bind";
 import { ReactNode } from "react";
-import styles from "./index.module.scss";
-
-type AlertType = "Error" | "Warning" | "Informational";
+import styled from "styled-components/macro";
+import { BREAKPOINTS } from "../../constants";
+import { TYPOGRAPHY } from "../../styled-partials";
 
 interface AlertProps {
-  alertType: AlertType;
   children: ReactNode;
   heading?: string;
 }
 
-const cx = classNames.bind(styles);
+const StyledAlert = styled("div")`
+  box-shadow: var(--box-shadow-1);
+  padding: var(--spacing-5);
+  border-radius: var(--border-radius-1);
+  background: var(--color-2);
+  background: ${({ theme }) => theme.alert.background};
+  border: 1px solid var(--color-2-dark);
+  border: ${({ theme }) => `1px solid ${theme.alert.border}`};
+  color: var(--text-black);
 
-const Alert = ({ alertType, children, heading }: AlertProps) => {
-  const alertContainerClassName = cx("alert", {
-    informational: alertType === "Informational",
-  });
+  a,
+  p {
+    ${TYPOGRAPHY.text300}
+  }
 
+  a {
+    color: ${({ theme }) => theme.alert.link.default};
+
+    &:hover {
+      color: ${({ theme }) => theme.alert.link.hover};
+    }
+  }
+
+  @media (min-width: ${BREAKPOINTS.lg}) {
+    padding: var(--spacing-6);
+
+    a,
+    p {
+      ${TYPOGRAPHY.text400};
+    }
+  }
+`;
+
+const AlertHeading = styled.p`
+  font-weight: bold;
+  margin: 0 0 var(--spacing-2);
+`;
+
+const Alert = ({ children, heading }: AlertProps) => {
   return (
-    <div className={alertContainerClassName}>
-      {heading && <p className={styles.heading}>{heading}</p>}
+    <StyledAlert>
+      {heading && <AlertHeading>{heading}</AlertHeading>}
+
       {children}
-    </div>
+    </StyledAlert>
   );
 };
 

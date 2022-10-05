@@ -1,10 +1,10 @@
 import { Component } from "react";
-import PortfolioExternalLink from "../../components/external-link";
-import PortfolioInternalLink from "../../components/internal-link";
 import "./index.scss";
 import blockAid1x from "../../assets/projects/block-aid/block-aid-1x.png";
 import blockAid2x from "../../assets/projects/block-aid/block-aid-2x.png";
 import blockAid4x from "../../assets/projects/block-aid/block-aid-4x.png";
+import ExternalLink from "../../components/external-link";
+import { NavLink } from "react-router-dom";
 
 class CanvasGameDevelopment extends Component {
   repoUrl = "https://github.com/ajarana/block-aid";
@@ -13,23 +13,23 @@ class CanvasGameDevelopment extends Component {
     return (
       <main className="blogPage">
         <section className="fullWidthContainerSmall backgroundGray flexCentered">
-          <PortfolioExternalLink url="https://ajarana.github.io/block-aid/">
+          <ExternalLink href="https://ajarana.github.io/block-aid/">
             <img
               className="heroImage"
               src={blockAid1x}
               alt="Screenshot of a memory game."
               srcSet={`${blockAid1x}, ${blockAid2x} 2x, ${blockAid4x} 4x`}
             />
-          </PortfolioExternalLink>
+          </ExternalLink>
         </section>
 
         <section className="mainContainer blogContainer">
           <h1>Building an HTML5 Canvas Game</h1>
           <p>
             I built{" "}
-            <PortfolioExternalLink url="https://ajarana.github.io/block-aid/">
+            <ExternalLink href="https://ajarana.github.io/block-aid/">
               this game
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             game using vanilla JavaScript as my main tool. Below I elaborate on
             the things I learned about both JS and responsive design.
           </p>
@@ -53,31 +53,25 @@ class CanvasGameDevelopment extends Component {
             it's a whole other story. Once I had finished the large viewport
             version of my game, the code didn't transfer so gracefully over to
             smaller viewports. Worse yet, I was using an{" "}
-            <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">
+            <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">
               HTML5 canvas
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             element, which doesn't have a whole lot written about it when it
             comes to responsive design.
           </p>
           <p>
-            <PortfolioInternalLink
-              navLinkProps={{
-                to: "/blog/development-responsive-canvas",
-              }}
-            >
+            <NavLink to="/blog/development-responsive-canvas">
               This article
-            </PortfolioInternalLink>{" "}
+            </NavLink>{" "}
             I wrote is a very solid start in order to develop a fully responsive
             canvas element using pure JavaScript, HTML5, and CSS3.
           </p>
           <h2>The JS</h2>
           <p>
             I certainly learned a lot from{" "}
-            <PortfolioExternalLink
-              url={this.repoUrl + "/blob/master/js/agame.js"}
-            >
+            <ExternalLink href={this.repoUrl + "/blob/master/js/agame.js"}>
               the code
-            </PortfolioExternalLink>{" "}
+            </ExternalLink>{" "}
             I wrote. To be frank, it's inelegant, and I could do much better if
             I had the time to re-write it today. There's way too much use of
             recursive functions, global variables, and for loops with the
@@ -103,19 +97,19 @@ class CanvasGameDevelopment extends Component {
               </strong>{" "}
               The default way mobile browsers take into account user selection
               is through the{" "}
-              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/Events/click">
+              <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/Events/click">
                 click event
-              </PortfolioExternalLink>
+              </ExternalLink>
               . My game responds to the user's{" "}
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/js/agame.js#L482-L485"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/js/agame.js#L482-L485"}
               >
                 first contact with a touchscreen
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               using{" "}
-              <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/Events/touchstart">
+              <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/Events/touchstart">
                 touchstart
-              </PortfolioExternalLink>
+              </ExternalLink>
               . Whether the user is on any device with or without touchscreen
               functionality, the game is immediately responsive.
             </li>
@@ -123,42 +117,42 @@ class CanvasGameDevelopment extends Component {
               <strong>
                 Figuring out an algorithm for detecting adjacency.
               </strong>{" "}
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/js/agame.js#L360-L383"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/js/agame.js#L360-L383"}
               >
                 Green blocks are aware of other green blocks around them
-              </PortfolioExternalLink>
+              </ExternalLink>
               ; the same is true for blue blocks.
             </li>
             <li>
               <strong>Preventing easy-to-memorize patterns.</strong>{" "}
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/js/agame.js#L100-L143"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/js/agame.js#L100-L143"}
               >
                 This
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               prevents easy patterns such as 2x2 squares in the game consisting
               of blocks of the same color.
             </li>
             <li>
               <strong>Basic design considerations.</strong> This includes a{" "}
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/js/agame.js#L626-L644"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/js/agame.js#L626-L644"}
               >
                 point system
-              </PortfolioExternalLink>
+              </ExternalLink>
               ,{" "}
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/js/agame.js#L528-L566"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/js/agame.js#L528-L566"}
               >
                 checking to see if the user selected the correct block
-              </PortfolioExternalLink>
+              </ExternalLink>
               , and a{" "}
-              <PortfolioExternalLink
-                url={this.repoUrl + "/blob/master/js/agame.js#L750-L768"}
+              <ExternalLink
+                href={this.repoUrl + "/blob/master/js/agame.js#L750-L768"}
               >
                 countdown
-              </PortfolioExternalLink>{" "}
+              </ExternalLink>{" "}
               before the game starts.
             </li>
           </ul>
@@ -170,19 +164,19 @@ class CanvasGameDevelopment extends Component {
           </p>
           <h2>Credits</h2>
           <p>
-            <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">
+            <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">
               Canvas API
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <p>
-            <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/Events/click">
+            <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/Events/click">
               Click
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <p>
-            <PortfolioExternalLink url="https://developer.mozilla.org/en-US/docs/Web/Events/touchstart">
+            <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/Events/touchstart">
               Touchstart
-            </PortfolioExternalLink>
+            </ExternalLink>
           </p>
           <div className="blogDates">
             <p className="spacedOut lightGray">
