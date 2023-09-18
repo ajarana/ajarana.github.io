@@ -15,7 +15,7 @@ const ResumePage = () => {
           also available.
         </p>
       </Alert>
-
+      test
       <Resume candidate={ANDRES_CANDIDATE_INFO} />
     </main>
   );
